@@ -1,0 +1,326 @@
+start/ps những/n học_sinh/v nội_trú/n bắt_đầu/v một/n ngày/v làm_việc/n rất/v vất_vả/n ./v end/n
+start/ps em/n muốn/v trở_thành/n một/v võ_sĩ/n chuyên_nghiệp/v ,/n nhưng/v giấc/n mơ/v xa/n hơn/v của/n em/v là/n được/v vào/n đại_học/v ”/n ./v end/n
+start/ps ”/n ./v end/n
+start/ps không/n ít/v học_viên/n đã/v phải/n bỏ_cuộc/v trong/n giai_đoạn/v này/n vì/v không_thể/n lết/v đi/n nổi/v với/n hai/v ống_quyển/n sưng_vù/v ,/n thậm_chí/v nứt/n xương/v ./n end/v
+start/ps theo/n ông/v ,/n luyện/v chiêu/n này/v cần/n phải/v có/n ý_chí/v và/n bản_lĩnh/v kiên_cường/n ./v end/n
+start/ps một/n khóa/v học/n kéo_dài/v ba/n tháng/v ở/n các/v lò/n nổi_tiếng/v tại/n bangkok/v đã/n lên/v đến/n 1.500/v usd/n khóa/v ,/n chưa/v kể/n chi_phí/v lưu_trú/n ./v end/n
+start/ps trong/n buổi/v chiều/n quan_sát/v cảnh/n tập_luyện/v tại/n lò/v jittigym/n ,/v chúng_tôi/n rất/v ấn_tượng/n với/v hai/n anh_em/v nhà/n somsak/v ./n end/v
+start/ps em/n không/v tiêu_xài/n riêng/v đồng/n nào/v cả/n ,/v chỉ/n sử_dụng/v một/n phần/v tiền/n đóng/v học_phí/n ,/v còn/n toàn_bộ/v gửi/n về/v cho/n cha_mẹ/v ở/n quê/v nhà/n ./v end/n
+start/ps họ/n đã/v gửi/n cả/v hai/n anh_em/v cho/n thầy/v jitti_damriram/n với/v phương_thức/n “/v bán/n xác/v ”/n ,/v hy_vọng/n một/v ngày/n nào/v đó/n con/v mình/n sẽ/v trở_thành/n những/v đấu_sĩ/n tên_tuổi/v để/n giúp/v gia_đình/n vượt/v qua/n cảnh/v nghèo/n ./v end/n
+start/ps nhưng/n không/v phải/n ai/v cũng/n có/v cơ_hội/n bước/v chân/n vào/v “/n lò/v ”/n để/v theo_đuổi/n giấc/v mơ/n trở_thành/v võ_sĩ/n ./v end/n
+start/ps nếu/n bại_trận/v ,/n họ/v chỉ/n được/v một/n khoản/v tiền/n nhỏ/v gọi/n là/v “/n tiền/v công/n thượng_đài/v ”/n ./v end/n
+start/ps dun/n nói/v :/n “/v thầy/n bảo/v em/n ráng/v tập/n ,/v đến/n cuối/v năm/n nay/v là/n có_thể/v thượng_đài/n được/v rồi/n .../v end/n
+start/ps với/n các/v võ_sinh/n ,/v gian_nan/n nhất/v là/n giai_đoạn/v tập_luyện/n tạo/v lực/n cho/v các/n cú/v đá/n ./v end/n
+start/ps có_thể/n đưa/v họ/n ra/v khỏi/n cảnh/v tăm_tối/n đói_nghèo/v ,/n nhưng/v cũng/n có_thể/v đó/n là/v lần/n cuối_cùng/v họ/n được/v thấy/n ánh/v mặt_trời/n .../v end/n
+start/ps còn/n bé/v kao/n là/v học_viên/n nhỏ/v nhất/n ở/v đây/n ,/v em/n chỉ/v mới/n 9/v tuổi/n ,/v quê/n ở/v tận/n miền/v nam/n thái_lan/v ,/n giáp/v với/n malaysia/v ./n end/v
+start/ps đường/n đến/v võ_đài/n .../v end/n
+start/ps các/n em/v đều/n cho/v biết/n những/v người/n bỏ/v quê/n ra/v đi/n và/v trở/n về/v có/n tiền_bạc/v ,/n sắm_sửa/v nhà_cửa/n đều/v là/n những/v võ_sĩ/n muay_thái/v nên/n ai/v cũng/n kỳ_vọng/v vào/n con/v đường/n này/v để/n đổi_đời/v ./n end/v
+start/ps nơi/n đó/v ,/n họ/v sẽ/n có/v cơ_hội/n khẳng_định/v tên_tuổi/n và/v tài_năng/n ./v end/n
+start/ps tại/n một/v trại/n huấn_luyện/v ở/n ngoại_ô/v bangkok/n ,/v chúng_tôi/n chứng_kiến/v hàng/n trăm/v gương_mặt/n non_choẹt/v tuổi/n chỉ/v khoảng/n sáu/v ,/n bảy/v ,/n cao/v lắm/n là/v 12/n ,/v 13/n tuổi/v ,/n tất_cả/v đều/n đến/v từ/n vùng/v đông/n bắc/v thái/n bởi/v ông/n chủ/v cũng/n xuất_thân/v từ/n đây/v ./n end/v
+start/ps người/n anh/v có/n biệt_danh/v dudt/n ,/v 14/n tuổi/v ,/n học/v muay_thái/n chưa/v đến/n một/v năm/n nhưng/v đã/n 12/v lần/n thượng_đài/v và/n kiếm/v hơn/n 10.000/v baht/n (/v gần/n 300/v usd/n )/v ./n end/v
+start/ps cái/n chân/v còm_nhom/n ,/v ống_quyển/n sưng_vù/v cứ/n thế/v mà/n đá/v vào/n bao/v cát/n suốt/v một/n giờ/v đồng_hồ/n ,/v nhưng/n vẻ/v mặt/n của/v huấn_luyện_viên/n thì/v chẳng/n có/v gì/n hài_lòng/v khi/n nhìn/v thấy/n cảnh/v học_trò/n mồ_hôi/v nhễ_nhại/n ./v end/n
+start/ps chúng_tôi/n đến/v thăm/n lò/v võ/n jittigym/v -/n một/v trong/n những/v lò/n danh_tiếng/v nhất/n tại/v bangkok/n ,/v nằm/n gần/v ga/n tàu_điện_ngầm/v ratchadapisek/n ./v end/n
+start/ps một/n ngày/v họ/n phải/v dành/n ít_nhất/v ba/n giờ/v đồng_hồ/n liên_tục/v đá/n vào/v bao/n cát/v hoặc/n thân/v cây/n chuối/v ./n end/v
+start/ps tt/n -/v với/n một/v bộ_phận/n lớn/v thanh_thiếu_niên/n nông_thôn/v thái_lan/n ,/v muay_thái/n có_thể/v là/n lối_thoát/v duy_nhất/n giúp/v họ/n thoát/v khỏi/n cảnh/v nghèo/n ./v end/n
+start/ps những/n gia_đình/v quá/n nghèo/v không/n đủ/v tiền/n đóng/v học_phí/n thường/v có/n cách/v riêng/n là/v “/n bán/v xác/n ”/v con_em/n mình/v ,/n người/v chủ/n sẽ/v nhận/n trước/v một/n khoản/v học_phí/n tượng_trưng/v và/n gia_đình/v làm/n cam_kết/v sau/n các/v khóa/n huấn_luyện/v ,/n chủ/v sẽ/n tung/v ngay/n các/v em/n vào/v sàn/n đấu/v ,/n những/v khoản/n tiền/v cá_cược/n sau/v những/n trận/v thắng/n sẽ/v trừ/n dần/v vào/n học_phí/v ./n end/v
+start/ps chưa/n kịp/v lau/n nước_mắt/v sau/n bài/v khởi_động/n như/v tra_tấn/n này/v ,/n em/v lại/n được/v một/n huấn_luyện_viên/v khác/n kéo/v ra/n với/v bài/n luyện_tập/v đòn/n chân/v ./n end/v
+start/ps một/n trận/v thắng/n sẽ/v giúp/n họ/v bỏ_túi/n ít_nhất/v 8.000/n baht/v (/n khoảng/v 200/n usd/v )/n ./v end/n
+start/ps các/n em/v có/n đôi/v mắt/n sáng/v nhưng/n luôn/v ánh/n lên/v vẻ/n lì_lợm/v của/n một/v đấu_sĩ/n chuyên_nghiệp/v ./n end/v
+start/ps mỗi/n lần/v thượng_đài/n tùy/v theo/n tính_chất/v khốc_liệt/n của/v trận/n đấu/v ,/n mỗi/v võ_sĩ/n được/v trả/n trung_bình/v 8.000/n -/v 12.000/n baht/v (/n khoảng/v 200/n -/v 300/n usd/v )/n -/v một/n khoản/v tiền/n không/v nhỏ/n ở/v quê/n nhà/v ./n end/v
+start/ps chủ/n lò/v võ/n này/v là/n ông/v jitti_damriram/n -/v cựu/n võ_sĩ/v một/n thời/v vang/n bóng/v của/n thái/v ./n end/v
+start/ps em/n dành/v toàn_bộ/n thời_gian/v buổi/n chiều/v luyện/n muay_thái/v ./n end/v
+start/ps nhưng/n em/v vẫn/n gượng/v dậy/n khi/v nghĩ/n đến/v cảnh/n dãi_nắng_dầm_mưa/v buôn_bán/n của/v cha_mẹ/n ở/v quê/n nhà/v ./n end/v
+start/ps ông/n jitti_damriram/v cho/n biết/v jittigym/n hiện/v có/n hơn/v 100/n học_viên/v ./n end/v
+start/ps sinh/n ra/v và/n lớn/v lên/n trong/v một/n gia_đình/v nghèo/n ở/v tỉnh/n nakhorn_nayok/v ,/n cách/v bangkok/n hơn/v 120/n km/v ,/n cha_mẹ/v buôn_bán/n hàng/v rong/n với/v khoản/n thu_nhập/v ít_ỏi/n không/v đủ/n nuôi/v con/n ăn_học/v ./n end/v
+start/ps jittigym/n bắt_đầu/v nổi_tiếng/n với/v cái/n tên/v “/n international_muay/v (/n muay/v quốc_tế/n )/v ”/n sau/v khi/n cho/v ra_đời/n một_số/v nhà/n vô_địch/v đến/n từ/v châu_âu/n ./v end/n
+start/ps đây/n cũng/v là/n một/v trong/n những/v lò/n đầu_tiên/v tại/n bangkok/v thu_nhận/n học_viên/v nước_ngoài/n ./v end/n
+start/ps tại/n bangkok/v có/n đến/v hàng/n ngàn/v lò/n võ/v thu_hút/n hàng/v trăm/n ngàn/v võ_sinh/n tham_gia/v và/n những/v lò/n võ/v nổi_tiếng/n có/v liên_hệ/n mật_thiết/v với/n những/v sàn/n đấu/v hợp_pháp/n lẫn/v không/n hợp_pháp/v luôn/n đầy_ắp/v thiếu_niên/n đến/v từ/n các/v tỉnh/n miền/v đông/n bắc/v ,/n miền/v nam/n vốn/v được/n xem/v là/n nghèo/v nhất/n nước/v thái/n ./v end/n
+start/ps tùy/n theo/v sự/n tiến_bộ/v của/n từng/v học_viên/n ,/v nhưng/n trung_bình/v từ/n sáu/v tháng/n đến/v một/n năm/v ,/n các/v học_viên/n “/v nhí/n ”/v sẽ/n được/v tung/n lên/v sàn/n đấu/v ./n end/v
+start/ps nhưng/n đồng_môn/v của/n dudt/v nói/n họ/v chưa/n bao_giờ/v chứng_kiến/n cảnh/v dudt/n rên_la/v ,/n một/v phần/n vì/v đó/n là/v bản_lĩnh/n của/v dudt/n và/v một/n phần/v vì/n đó/v là/n đặc_tính/v của/n muay_thái/v ./n end/v
+start/ps ở/n một/v góc/n khác/v trong/n trại/v ,/n chúng_tôi/v thấy/n một/v võ_sinh/n tuổi/v chỉ/n khoảng/v 12/n ,/v 13/n đang/v ra_sức/n đấm/v vào/n bao/v cát/n cứng/v như/n đá/v ,/n em/v cứ/n đấm/v liên_tục/n nhưng/v vị/n huấn_luyện_viên/v vẫn/n nhìn/v và/n lắc_đầu/v ./n end/v
+start/ps trong/n tháng/v đầu_tiên/n ,/v đôi/n tay/v người/n luyện/v sẽ/n sưng_húp/v và/n rỉ/v máu/n liên_tục/v ,/n nhưng/v sẽ/n không/v có/n chuyện/v ngưng/n tập/v ./n end/v
+start/ps những/n ngày/v luyện_tập/n đầu_tiên/v của/n em/v rất/n khổ_cực/v ./n end/v
+start/ps họ/n sẽ/v được/n sử_dụng/v một/n loại/v dược_thảo/n giảm/v đau/n đặc_biệt/v ,/n bôi/v vào/n và/v dùng/n vải/v quấn/n quanh/v đầu/n ngón/v tay/n ./v end/n
+start/ps khoảng/n 20%/v trong/n số/v này/n là/v học_viên/n nội_trú/v chủ_yếu/n là/v người/n thái/v đến/n từ/v các/n tỉnh/v ,/n tuổi/v từ/n 5/v -/n 15/v ./n end/v
+start/ps khóe/n mắt/v em/n đỏ_hoe/v vì/n đau_đớn/v ./n end/v
+start/ps thân_thể/n em/v bầm/n dập/v và/n thâm/v tím/n phải/v nằm/n liệt_giường/v hàng/n tuần/v liền/n ./v end/n
+start/ps sau/n khi/v thiết_lập/n kỷ_lục/v với/n hơn/v 80/n lần/v thượng_đài/n toàn_thắng/v ở/n những/v sàn/n nổi_tiếng/v nhất/n bangkok/v ,/n jitti_damriram/v quyết_định/n giã_từ/v sự_nghiệp/n võ_sĩ/v vào/n năm/v 1991/n ,/v ông/n mở/v lò/n jittigym/v gần/n đại_lộ/v khao_san/n ./v end/n
+start/ps chủ/n lò/v sẽ/n chọn_lựa/v hết_sức/n kỹ_lưỡng/v ,/n xem/v giò/n xem/v chân/n ,/v xem/n mức_độ/v dũng_cảm/n ,/v khả_năng/n lì/v đòn/n và/v sức/n chịu_đựng/v của/n võ_sinh/v xem/n họ/v có_thể/n thắng/v và/n trụ/v được/n bao_lâu/v trên/n những/v sàn/n đấu/v ./n end/v
+start/ps trong/n giây_phút/v giải_lao/n ngắn_ngủi/v ,/n chúng_tôi/v lân_la/n trò_chuyện/v ,/n em/v cho/n biết/v tên/n dun/v ,/n quê/v cách/n bangkok/v 500/n km/v về/n phía/v nam/n ,/v em/n mới/v 9/n tuổi/v ,/n cả/v nhà/n chỉ/v có/n em/v là/n con_trai/v ,/n các/v chị_gái/n đều/v làm_ruộng/n ,/v mẹ/n em/v đã/n mất/v 20.000/n baht/v mới/n có_thể/v cho/n em/v vào/n lò/v này/n ,/v số/n tiền/v gần/n 40.000/v baht/n học_phí/v còn/n nợ/v sẽ/n phải/v trả/n khi/v em/n được/v thượng_đài/n ./v end/n
+start/ps và/n dĩ_nhiên/v ,/n những/v kẻ/n bại_trận/v sẽ/n khó/v tìm/n được/v chỗ_đứng/n lâu_dài/v trên/n con/v đường/n mưu_sinh/v khốc_liệt/n này/v ./n end/v
+start/ps dĩ_nhiên/n ,/v không/n phải/v võ_sinh/n nào/v cũng/n được/v ưu_đãi/n nhận/v vào/n với/v hình_thức/n “/v bán/n xác/v ”/n này/v ./n end/v
+start/ps tại/n lò/v võ/n gần/v khu_vực/n sàn/v đấu/n samrong/v ,/n chúng_tôi/v đã/n chứng_kiến/v một/n bé/v trai/n chừng/v 10/n tuổi/v bắt_đầu/n buổi/v tập/n với/v cảnh/n nghiến/v răng/n chịu/v đau_đớn/n khi/v bị/n nắm/v hai/n chân/v và/n tay/v kéo/n dãn/v ra/n trong/v phần/n khởi_động/v chuẩn_bị/n cho/v bài_tập/n thể_lực/v ./n end/v
+start/ps một/n nhà_báo/v thái_lan/n chuyên/v viết/n về/v muay_thái/n nói/v với/n chúng_tôi/v rằng/n cách/v luyện_tập/n này/v là/n bình_thường/v vì/n ông/v từng/n được/v chứng_kiến/n nhiều/v lò/n chuyên/v cung_cấp/n võ_sĩ/v cho/n các/v sàn/n đấu/v bất_hợp_pháp/n còn/v bắt/n học_viên/v luyện/n những/v cú/n đá/v chân/n bằng/v cách/n cho/v đá/n vào/v gạch/n hoặc/v cột/n nhà/v ./n end/v
+start/ps miệng/n ông/v luôn/n lẩm_bẩm/v :/n “/v ra/n đòn/v yếu/n quá/v ,/n yếu/v quá/n .../v end/n
+start/ps đứng/n sát/v bên/n cạnh/v ,/n người/v huấn_luyện_viên/n miệng/v cứ/n hét/v lớn/n vào/v tai/n em/v :/n “/v kéo/n mạnh/v vào/n ,/v mạnh/n vào/v ,/n mạnh/v vào/n .../v end/n
+start/ps chúng_tôi/n hỏi/v kao/n vì_sao/v thích/n muay_thái/v ,/n em/v chỉ/n cười/v :/n “/v sẽ/n kiếm/v được/n nhiều/v tiền/n ,/v mẹ/n bảo/v thế/n .../v end/n
+start/ps những/n nắm/v đấm/n ,/v những/n cú/v đá/n ,/v cú/n chỏ/v .../n end/v
+start/ps có/n những/v lúc/n chân_tay/v em/n đau/v buốt/n đến/v độ/n không_thể/v cất_bước/n đi/v hay/n cầm/v bút/n được/v ./n end/v
+start/ps họ/n thức_giấc/v từ/n tờ_mờ/v sáng/n ,/v bắt_đầu/n những/v bài/n luyện/v thể_lực/n trước/v khi/n bước/v vào/n những/v giờ/n tập_luyện/v kỹ_thuật/n cực_kỳ/v vất_vả/n ./v end/n
+start/ps đứa/n bé/v gần/n như/v không/n còn/v sức/n nhưng/v môi/n luôn/v mím/n chặt/v và/n chân/v vẫn/n phải/v tung/n cước/v ./n end/v
+start/ps không/n phải/v lúc_nào/n dudt/v cũng/n giành/v thắng_lợi/n ,/v lần/n đầu_tiên/v khi/n được/v xuất_hiện/n tại/v sàn/n đấu/v danh_tiếng/n rajadamnoen/v ,/n em/v đã/n bị/v đối_thủ/n hạ/v knockout/n ./v end/n
+start/ps dudt/n tâm_sự/v :/n “/v buổi/n sáng/v em/n đến/v trường/n (/v dudt/n đang/v học/n lớp/v 7/n )/v ./n end/v
+start/ps jitti_damriram/n từng/v lọt/n vào/v top/n 5/v những/n tay/v đấm/n xuất_sắc/v nhất/n trong/v giai_đoạn/n 1978/v -/n 1981/v ./n end/v
+start/ps người/n võ_sĩ/v có_thể/n đau/v đến/n tột_cùng/v nhưng/n không/v bao_giờ/n được/v kêu_ca/n ./v end/n
+start/ps dư/n ra/v sau/n nhà/v vác/n theo/v một/n cái/v xô/n nhựa/v ,/n hai/v cái/n kẹp/v sắt/n và/v một/n cái/v sạc-lai/n nhỏ/v (/n cái/v cuốc/n để/v làm/n rẫy/v ở/n miền/v núi/n )/v ./n end/v
+start/ps tại/n những/v nơi/n này/v ,/n lượng/v người/n đi/v bắt/n và/v “/n sản_lượng/v ”/n khá/v cao/n nên/v việc/n thu_mua/v khá/n nhộn_nhịp/v ./n end/v
+start/ps hỏi/n cậu/v bé/n về/v bò_cạp/n ,/v cậu/n nghi_ngờ/v :/n “/v chú/n muốn/v mua/n à/v ?/n ”/v ./n end/v
+start/ps đồ_nghề/n đơn_giản/v chỉ/n vậy/v ./n end/v
+start/ps trước/n đào/v chút_xíu/n được/v cả/n ký/v ,/n giờ/v đào/n cả/v ngày/n chưa/v được/n nửa/v ký/n ”/v -/n bác/v năm/n ở/v ấp/n 6/v (/n phú_lộc/v ,/n tân_phú/v )/n lắc_đầu/v nói/n ./v end/n
+start/ps ông/n bạn/v ngồi/n kế/v ./n end/v
+start/ps chỉ/n một/v lỗ/n hang/v áng/n bằng/v hai/n ngón/v tay/n cái/v ,/n dư/v khẳng_định/n với/v tôi/n :/v “/n hang/v này/n chắc_chắn/v có/n một/v “/n đôi/v ”/n ở/v trong/n đó/v !/n ”/v ./n end/v
+start/ps “/n bù_kẹp/v là/n cái/v gì/n ?/v ”/n ./v end/n
+start/ps bỏ/n “/v chiến_lợi_phẩm/n ”/v đầu_tiên/n vào/v chiếc/n xô/v ,/n cậu/v bé/n lại/v sục/n chiếc/v kẹp/n sắt/v xuống/n cái/v hang/n vừa/v đào/n lên/v và/n lôi/v lên/n thêm/v một/n con/v mập_mạp/n hơn/v con/n lúc/v nãy/n ./v end/n
+start/ps việc/n bò_cạp/v bị/n săn_bắt/v nhiều/n sẽ/v làm/n ảnh_hưởng/v lớn/n đến/v mùa_màng/n ./v end/n
+start/ps chúng_tôi/n lên/v rẫy/n giữa/v cái/n nắng/v trưa/n hè/v gay_gắt/n ./v end/n
+start/ps không/n chỉ/v người/n dân/v trong/n xã/v mà/n người/v dân/n từ/v nhiều/n xã/v ven/n đó/v cũng/n đổ_xô/v sang/n đây/v để/n đi/v đào/n ./v end/n
+start/ps tuy_nhiên/n ,/v theo/n ông/v đinh_tuấn_đạt/n -/v phó/n chủ_tịch/v ubnd/n xã/v phú_lộc/n (/v tân_phú/n )/v -/n thì/v chính_quyền/n địa_phương/v cũng/n đành/v bó_tay/n vì/v những/n “/v thợ_săn/n ”/v này/n hoạt_động/v rất/n bí_mật/v ,/n gọn_nhẹ/v ,/n chủ_yếu/v là/n trẻ_em/v ./n end/v
+start/ps xong/n hang/v thứ/n nhất/v ,/n dư/v quay/n qua/v bên/n cạnh/v và/n bắt_gặp/v ngay/n chiếc/v hang/n thứ/v hai/n ./v end/n
+start/ps sau/n 4/v nhát/n cuốc/v ,/n cậu/v dùng/n tay/v bới/n đất/v lên/n ./v end/n
+start/ps cậu/n bé/v chỉ/n cho/v tôi/n chỗ/v thu_mua/n bò_cạp/v duy_nhất/n tại/v đây/n :/v “/n ngay/v ngã/n ba/v ,/n gần/v trụ_sở/n ủy_ban/v xã/n ,/v có/n treo/v tấm/n bảng/v lớn/n lắm/v !/n ”/v ./n end/v
+start/ps ngày/n chủ_nhật/v hè/n này/v có/n ngày/v đào/n được/v cả/n ký_lô/v ,/n mua/v gạo/n ăn/v được/n cả/v tuần/n ”/v -/n dư/v khoe/n ./v end/n
+start/ps dư/n cũng/v như/n rất/v nhiều/n người/v dân/n ở/v phú_lộc/n này/v từ/n lúc/v nhỏ_xíu/n đã/v quen/n với/v loài/n bù_kẹp/v đá/n này/v ./n end/v
+start/ps ở/n hang/v này/n chỉ/v có/n một/v chú/n bò_cạp/v đang/n “/v phòng/n không/v ”/n nhưng/v khá/n lớn/v ./n end/v
+start/ps dù/n đã/v ăn/n nó/v rồi/n ,/v nhưng/n nhìn/v thấy/n đám/v bò_cạp/n còn/v sống/n này/v thực_sự/n thần_kinh/v tôi/n cũng/v không/n còn/v được/n vững/v cho/n lắm/v ./n end/v
+start/ps dư/n giải_thích/v :/n “/v con/n này/v là/n con/v cái/n đang/v có/n bầu/v ./n end/v
+start/ps một/n vị/v rất/n lạ/v ,/n rất/v khó/n tả/v ./n end/v
+start/ps ”/n “/v để/n vậy/v không/n sợ/v nó/n chết/v sao/n ?/v ”/n -/v tôi/n hỏi/v ./n end/v
+start/ps “/n mỗi/v ngày/n tranh_thủ/v ngoài/n giờ/v học/n đi/v đào/n cũng/v kiếm/n được/v chừng/n 10/v -/n 20/v ngàn/n đồng/v ./n end/v
+start/ps nên/n ăn/v ngon/n và/v bổ_dưỡng/n lắm/v ”/n ./v end/n
+start/ps tôi/n quen/v cậu/n bé/v dư/n khi/v hỏi/n đường/v vào/n nhà/v ông/n năm_hưng/v -/n trưởng/v ấp/n ./v end/n
+start/ps rất/n độc/v và/n sưng/v cả/n tuần_lễ/v đó/n ,/v nhức/n lắm/v !/n ”/v ./n end/v
+start/ps và/n tôi/v đã/n thành_công/v khi/n thuyết_phục/v được/n cậu/v cho/n tôi/v đi/n theo/v .../n end/v
+start/ps mai/n ông/v vào/n trong/v vùng/n năm_rưỡi/v mà/n xem/v người_ta/n bắt/v bù_kẹp/n thế_nào/v !/n ”/v ./n end/v
+start/ps vòng/n qua/v mấy/n ruộng/v lúa/n ,/v rẫy/n bắp/v và/n cây_ăn_trái/v đang/n vào/v mùa/n ,/v dư/n kêu/v tôi/n dừng/v lại/n và/v bắt_đầu/n quan_sát/v ./n end/v
+start/ps dư/n móc/v chiếc/n kẹp/v sắt/n vào/v lôi/n ra/v một/n chú/v bò_cạp/n đen_trũi/v ,/n bóng/v nhẫy/n ./v end/n
+start/ps một/n đống/v đen_sì/n ,/v con/n nào/v con/n nấy/v lớn/n hơn/v cả/n con/v tôm_càng/n lúc_nhúc/v dưới/n đáy/v lu/n khiến/v tim/n tôi/v muốn/n nhảy_vọt/v ra/n ngoài/v ./n end/v
+start/ps bò_cạp/n đang/v là/n món/v ăn/n hấp_dẫn/v số_một/n tại/v một_số/n nhà_hàng/v ở/n tp/v hcm/n ./v end/n
+start/ps gắp/n đại/v một/n con/v bỏ/n miệng/v ,/n cảm_nhận/v đầu_tiên/n khi/v răng/n cắn/v vào/n con/v côn_trùng/n cực/v độc/n này/v là/n béo_béo/v ,/n bùi_bùi/v pha/n vị/v ngòn_ngọt/n ./v end/n
+start/ps thấy/n tôi/v ghé/n sát/v mặt/n để/v “/n ngắm/v ”/n con/v vật/n ,/v dư/n cầm/v đưa/n xa/v ra/n kêu/v :/n “/v chú/n đừng/v nhìn/n gần/v vì/n có_thể/v nó/n phun/v độc/n từ/v đuôi/n vào/v mắt/n ./v end/n
+start/ps món/n ăn/v thời_thượng/n ./v end/n
+start/ps sau/n lớp/v đất/n cứng/v phía/n trên/v là/n lớp/v đất/n xốp/v và/n rất/v tơi/n ./v end/n
+start/ps thế_là/n rẫy/v vườn/n bị/v xới/n tung/v lên/n ./v end/n
+start/ps anh/n nguyễn_văn_d_./v (/n ấp/v 5/n ,/v tà_lài/n )/v cho/n biết/v phong_trào/n bắt/v bò_cạp/n rộ/v lên/n từ/v năm_ngoái/n ,/v khi/n cà_phê/v mất_giá/n chỉ/v còn/n chừng/v 5.000/n đồng/v kg/n mà/v chẳng/n ai/v mua/n ./v end/n
+start/ps dư/n lắc_lắc/v chiếc/n xô/v :/n “/v chừng/n này/v khoảng/n 3/v lạng/n ./v end/n
+start/ps hỏi/n sao/v gọi/n “/v bù_kẹp/n ”/v ,/n anh/v cười/n :/v “/n dân/v miền/n tây/v gọi/n con/v bò_cạp/n là/v bù_kẹp/n ./v end/n
+start/ps lúc/n đó/v có/n người/v đến/n hỏi/v mua/n bò_cạp/v giá/n 40/v -/n 50/v ngàn/n đồng/v kg/n ./v end/n
+start/ps trời/n đã/v bắt_đầu/n kéo/v mây/n đen/v chuyển/n mưa/v ./n end/v
+start/ps có/n nhiều/v cái/n để/v viết/n lắm/v !/n ”/v ./n end/v
+start/ps dư/n tỏ_vẻ/v am_tường/n :/v “/n bù_kẹp/v rất/n sạch_sẽ/v ./n end/v
+start/ps dù/n quyết_tâm/v ,/n nhưng/v nghĩ/n đến/v cái/n giống/v vừa/n độc/v vừa/n đen_trùi_trũi/v gớm_ghiếc/n đó/v là/n tôi/v lại/n thấy/v ghê_ghê/n trong/v người/n ./v end/n
+start/ps chúng/n không/v ăn/n mấy/v thứ/n dơ_bẩn/v mà/n chỉ/v hút/n chất/v của/n mấy/v thứ/n côn_trùng/v như/n cuốn_chiếu/v ,/n bọ_rầy/v .../n end/v
+start/ps khác/n xa/v 5/n năm/v trước_đây/n khi/v tôi/n lên/v ,/n phú_lộc/v đang/n trở_nên/v trù_phú/n và/v ngày_càng/n đông_đúc/v hơn/n ./v end/n
+start/ps “/n là/v con/n bò_cạp/v đó/n !/v ”/n ./v end/n
+start/ps thú_thực/n ,/v khi/n ông/v bạn/n rủ/v đi/n ăn/v bò_cạp/n ở/v khu/n sân_bay/v (/n quận/v tân_bình/n )/v ,/n tôi/v chỉ/n định/v đi/n xem/v “/n nó/v ”/n như/v thế_nào/n chứ/v chưa/n dám/v bỏ/n thứ/v côn_trùng/n độc/v đó/n vào/v miệng/n ./v end/n
+start/ps xách/n xô/v xem/n cậu/v đào/n bù_kẹp/v ./n end/v
+start/ps cái/n “/v áo_giáp/n ”/v của/n nó/v nhai/n giòn_rụm/v ,/n tan/v ra/n trong/v miệng/n ./v end/n
+start/ps ngược/n lên/v phú_tân/n ,/v túc_trung/n (/v định_quán/n )/v ,/n tà_lài/v (/n tân_phú/v )/n cũng/v bắt_gặp/n cảnh/v trẻ_con/n ,/v người_lớn/n kéo/v nhau/n đi/v bắt/n bò_cạp/v ./n end/v
+start/ps “/n săn/v ”/n bò_cạp/v núi/n ./v end/n
+start/ps ở/n vùng/v này/n như/v vậy/n là/v cũng/n khá/v lắm/n rồi/v ./n end/v
+start/ps dùng/n tay/v móc/n cho/v ra/n lỗ/v hang/n ,/v dư/n kêu/v :/n “/v thấy/n chưa/v ?/n một/v cặp/n lớn/v đây/n !/v ”/n ./v end/n
+start/ps quẳng/n vội/v bộ_đồ/n vào/v ba_lô/n ,/v tôi/n thẳng/v tiến/n lên/v núi_rừng/n tân_phú/v ./n end/v
+start/ps con/n cái/v thì/n càng/v và/n đuôi/v nhỏ/n hơn/v con/n đực/v ”/n ./v end/n
+start/ps thứ/n này/v ăn/n vô/v là/n đảm_bảo/v “/n ông/v ăn/n bà/v khen/n ”/v à/n nghen/v !/n ”/v ./n end/v
+start/ps ”/n -/v vừa/n suy_nghĩ/v tôi/n vừa/v liếc/n mắt/v nhìn/n một/v lượt/n các/v bàn/n bên/v cạnh/n và/v cả/n .../v end/n
+start/ps “/n bù_kẹp/v !/n ”/v ./n end/v
+start/ps theo/n một/v nông_dân/n ở/v ấp/n 4/v xã/n phú_tân/v ,/n hiện/v trong/n ấp/v có/n gần/v chục/n hộ/v cả/n nhà/v cùng/n đi/v đào/n bò_cạp/v để/n bán/v ./n end/v
+start/ps đi/n cùng/v với/n đó/v là/n tình_trạng/v nhiều/n rẫy/v vườn/n trồng/v bắp/n và/v cây_ăn_trái/n bị/v những/n người/v đi/n bắt/v bò_cạp/n làm/v hư_hại/n khiến/v nhiều/n chủ/v vườn/n khốn_đốn/v ,/n phải/v kêu/n lên/v chính_quyền/n ./v end/n
+start/ps hỏi/n đường/v xong_xuôi/n ,/v nai_nịt/n gọn_gàng/v đúng/n chất/v dân/n đi/v rừng/n ,/v tôi/n vù/v xe/n vào/v vùng/n năm_rưỡi/v (/n nằm/v trên/n địa_bàn/v phú_lộc/n -/v xã/n vùng_đệm/v của/n vườn_quốc_gia/v nam_cát_tiên/n )/v ./n end/v
+start/ps có/n “/v đầu_ra/n ”/v ,/n người/v dân/n nơi/v đây/n đổ/v lên/n rẫy/v ,/n lên/v núi/n để/v săn/n chúng/v đem/n bán/v ./n end/v
+start/ps ”/n cậu/v tròn/n mắt/v ngạc_nhiên/n .../v end/n
+start/ps cậu/n bé/v cười/n :/v “/n làm_sao/v chết/n được/v ,/n chú/v để/n cả/v tuần/n nó/v cũng/n chưa/v chắc/n đã/v chết/n nữa/v !/n ”/v ./n end/v
+start/ps nói/n rồi/v cậu/n bé/v vung/n cuốc/v bổ/n xuống/v ./n end/v
+start/ps cậu/n dư/v giở/n lu/v cho/n tôi/v xem/n đám/v bò_cạp/n mà/v mấy/n ngày/v nay/n cậu/v bắt/n được/v ./n end/v
+start/ps dư/n cho/v biết/n giá/v mua/n hơn/v một/n năm/v trước_đây/n là/v khoảng/n 2.000/v đ/n con/v ./n end/v
+start/ps “/n nhiều/v người/n bắt/v quá/n ,/v đến/n giờ/v bù_kẹp/n càng/v lúc/n càng/v ít/n đi/v ./n end/v
+start/ps con/n vật/v bị/n chiếc/v kẹp/n sắt/v giữ/n chặt/v ,/n chỉ/v giơ/n được/v mỗi/n cặp/v càng/n và/v chiếc/n đuôi/v nhọn_hoắt/n lên/v đe_dọa/n ./v end/n
+start/ps tại/n các/v ấp/n khác/v tình_hình/n cũng/v tương_tự/n ./v end/n
+start/ps chúng_tôi/n trở/v về/n nhà/v cậu/n ./v end/n
+start/ps chừng/n 3/v tiếng/n đồng_hồ/v ,/n cậu/v bé/n đã/v đào/n được/v hơn/n 20/v con/n ./v end/n
+start/ps “/n cái/v gì/n ?/v ”/n ./v end/n
+start/ps những/n con/v bò_cạp/n đen_nhánh/v ,/n càng/v tua_tủa/n ,/v lông/n xù_xì/v làm/n nao/v lòng/n các/v vị/n thực_khách/v ./n end/v
+start/ps chia_tay/n cậu/v bé/n ,/v tôi/n cũng/v không/n quên/v mua/n số/v bò_cạp/n mình/v cùng/n cậu/v đi/n săn/v suốt/n buổi/v trưa/n dù_rằng/v đưa/n về/v thành_phố/n cũng/v không/n biết/v để/n làm/v gì/n ./v end/n
+start/ps phóng_viên/n cũng/v chết/n như/v cơm_bữa/n ,/v bạn_bè/n tôi/v mới/n tối_qua/v thôi/n bốn/v đứa/n còn/v ngồi/n ăn/v ở/n quán/v ăn/n âm_phủ/v trên/n phố/v huế/n ,/v ngày/n hôm/v sau/n hai/v ký_giả/n của/v abc/n tử_trận/v trên/n quốc_lộ/v gần/n đông_hà/v ,/n quảng_trị/v ./n end/v
+start/ps anh/n chờ_đợi/v trong/n sự/v hồi_hộp/n bồn_chồn/v ./n end/v
+start/ps tôi/n gọi/v cái/n này/v là/n “/v rút_ruột/n mình/v để/n kéo_dài/v sự_nghiệp/n ”/v ./n end/v
+start/ps trong/n chuyến/v trở_về/n vn/v nhân_dịp/n đại_lễ/v 30/n -/v 4/n năm/v nay/n ,/v chúng_tôi/n đã/v nghe/n nick_út/v kể/n lại/v khoảnh_khắc/n đó/v :/n “/v điều/n quan_trọng/v nhất/n trong/v bức/n ảnh/v này/n là/v khi/n tôi/v giơ/n máy_ảnh/v lên/n thì/v tất_cả/n mọi/v người/n đang/v chạy/n vội/v về/n phía/v bà/n ngoại/v kim_phúc/n với/v đứa/n trẻ/v hấp_hối/n ,/v ngáp/n lần/v cuối_cùng/n trên/v tay/n bà/v ./n end/v
+start/ps lên/n xe/v ,/n hành_động/v đầu_tiên/n của/v tôi/n là/v chắp/n tay/v lại/n và/v khấn/n người/v anh/n ruột/v của/n mình/v -/n phóng_viên/v chiến_trường/n huỳnh_thành_mỹ/v -/n rằng/v :/n em/v đã/n chụp/v được/n bức/v ảnh/n tàn_khốc/v về/n chiến_tranh/v ./n end/v
+start/ps thời/n đó/v ,/n ở/v sài_gòn/n ,/v cứ/n tối/v về/n là/v kéo/n nhau/v đi/n ăn_uống/v ,/n nhảy_nhót/v cho/n thỏa/v sức/n bởi/v biết_đâu/n được/v ,/n ngày/v hôm/n sau/v mình/n có_thể/v không/n còn/v nữa/n .../v end/n
+start/ps anh/n rất/v bức_xúc/n và/v gân_cổ/n giải_thích/v với/n đồng_nghiệp/v người/n mỹ/v rằng/n đó/v là/n nạn_nhân/v bom/n napalm/v ,/n là/v nạn_nhân/n của/v chiến_tranh/n .../v end/n
+start/ps cái/n nghiệp/v cầm/n máy/v ra/n trận/v làm/n phóng_viên/v chiến_trường/n đã/v đưa/n nick_út/v lên/n đỉnh/v vinh_quang/n ,/v nhưng/n với/v người/n “/v thầy/n ”/v đầu_tiên/n và/v cũng/n là/v người/n anh_trai/v của/n nick_út/v -/n huỳnh_thành_mỹ/v ,/n phóng_viên/v chiến_trường/n kỳ_cựu/v cũng/n của/v hãng/n tin/v ap/n -/v thì/n đó/v là/n con/v đường/n không_thể/v quay/n trở_lại/v với/n những/v người_thân/n .../v end/n
+start/ps phía/n sau/v cũng/n có/v một/n người/v đàn_ông/n ôm/v xác/n một/v đứa/n trẻ/v giống/n như_thế/v .../n end/v
+start/ps ”/n ./v end/n
+start/ps huỳnh_thành_mỹ/n là/v một/n anh_chàng/v bảnh_trai/n ,/v làm/n cho/v hãng/n phim/v anpha/n ,/v tốt_nghiệp/n cử_nhân/v văn_chương/n ,/v từng/n là/v diễn_viên/n điện_ảnh/v ,/n đã/v xuất_hiện/n trên/v trang/n bìa/v báo/n điện_ảnh/v sài_gòn/n ,/v cho/n tới/v ngày/n vác/v máy_ảnh/n xin/v đầu_quân/n làm/v phóng_viên/n chiến_trường/v cho/n hãng/v ap/n ./v end/n
+start/ps nhưng/n cuối_cùng/v với/n sự/v cương_quyết/n của/v nick_út/n ,/v họ/n phải/v chấp_nhận/n để/v anh/n trở_thành/v phóng_viên/n chiến_trường/v của/n hãng/v ./n end/v
+start/ps ”/n -/v đó/n là/v những/n dòng/v đúc_kết/n của/v một/n phóng_viên/v chiến_trường/n lẫy_lừng/v :/n tim_page/v ./n end/v
+start/ps những/n người_quản_lý/v hãng/n tin/v ap/n tại/v sài_gòn/n lắc_đầu/v từ_chối/n :/v “/n anh/v cậu/n đã/v chết/n rồi/v ,/n dù/v rất/n muốn/v chúng_tôi/n cũng/v không/n muốn/v thêm/n một/v người/n trong/v gia_đình/n này/v chết/n nữa/v !/n ”/v ./n end/v
+start/ps “/n cuộc_chiến/v cần/n nhiều/v nhà_báo/n nói/v lên/n sự_thật/v .../n end/v
+start/ps horst/n mắt/v vẫn/n không/v rời/n bức/v ảnh/n và/v lầm_bầm/n :/v “/n gửi/v ngay/n ,/v gửi/n ngay/v ,/n đây/v là/n chiến_tranh/v chứ/n không/v phải/n khiêu_dâm/v !/n ”/v ./n end/v
+start/ps đặc_điểm/n của/v nghề/n này/v là/n không_thể/v tuyển/n tay_ngang/v ,/n tuyển/v người/n không/v có/n trình_độ/v văn_hóa/n vào/v làm/n được/v ./n end/v
+start/ps bộ/n phim/v này/n như/v một/n điểm/v nhấn/n vô_giá/v trong/n 4.000/v thước/n phim/v của/n những/v nhà/n làm/v báo_hình/n thuộc/v đơn_vị/n điện_ảnh/v -/n nhiếp_ảnh/v khu/n 9/v thực_hiện/n thời/v chiến_tranh/n chống/v mỹ/n ,/v nhưng/n để/v có/n nó/v ,/n 19/v phóng_viên/n đã/v ngã/n xuống/v .../n end/v
+start/ps ký_ức/n lại/v trở_về/n với/v ông_già/n bảy_triển/v (/n châu_văn_tiếp/v ,/n người/v phụ_trách/n điện_ảnh/v -/n nhiếp_ảnh/v khu/n 9/v )/n :/v “/n tổn_thất/v của/n chúng_tôi/v thời_gian/n đó/v là/n khủng_khiếp/v nhất/n ,/v gần/n như/v xóa/n sạch/v lực_lượng/n cơ_bản/v của/n khu/v làm/n công_tác/v quay_phim/n chiến_trường/v trong/n suốt/v thời_kỳ/n chống/v mỹ/n ./v end/n
+start/ps gia_đình/n anh_em/v huỳnh_thành_mỹ/n ,/v huỳnh_công_út/n (/v nick_út/n )/v vốn/n là/v nông_dân/n chạy/v nạn/n chiến_tranh/v từ/n long_an/v trôi_dạt/n về/v sài_gòn/n ,/v sống/n ở/v chợ/n dân_sinh/v ./n end/v
+start/ps em/n khát/v nước/n ,/v em/n chết/v !/n ”/v ./n end/v
+start/ps thật_ra/n những/v sự_kiện/n xảy/v ra/n vào/v buổi/n trưa/v 8/n -/v 6/n -/v 1972/n ở/v chiến_trường/n trảng_bàng/v ,/n tây_ninh/v để/n đưa/v ra/n công_luận/v bức/n ảnh/v chấn_động/n thế_giới/v về/n cô/v bé/n kim_phúc/v trần_trụi/n bị/v phỏng/n bom/v napalm/n ,/v được/n chứng_kiến/v không/n chỉ/v có/n mình/v nick_út/n ./v end/n
+start/ps những/n tấm/v ảnh/n chụp/v khác/n của/v anh/n cho/v thấy/n có/v hàng/n chục/v phóng_viên/n và/v cameraman/n đang/v lia/n ống_kính/v chỉ/n vài/v giây/n trước/v đó/n ./v end/n
+start/ps có_lẽ/n tất_cả/v phim/n của/v nhiều/n phóng_viên/v chiến_trường/n đã/v “/n nướng/v ”/n hết/v vào/n đó/v rồi/n ./v end/n
+start/ps tới/n chừng/v vô/n lấy/v xác/n được/v thì/n đã/v rữa/n thối/v ra/n ,/v chỉ/n có/v chiếc/n máy_ảnh/v là/n còn/v nguyên_vẹn/n .../v end/n
+start/ps chỉ/n một/v tháng/n sau/v cái/n ngày/v ấy/n ,/v một/n buổi/v trưa/n trời/v mưa_dầm/n ,/v có/n tiếng/v xe/n và/v ký_giả/n lê_ngọc_cung/v của/n hãng/v ap/n thắng/v gấp/n trước/v nhà/n ,/v gọi/n vợ/v anh/n mỹ/v vào/n và/v đóng/n cửa/v lại/n thông_báo/v cho/n gia_đình/v một/n tin/v sét/n đánh/v :/n phóng_viên/v chiến_trường/n huỳnh_thành_mỹ/v đã/n trúng/v đạn/n ,/v tử_nạn/n ở/v cần_thơ/n ./v end/n
+start/ps và/n nick_út/v đã/n đi/v qua/n cuộc_chiến/v ,/n qua/v bao/n con/v đường/n súng_đạn/v mà/n cái/v chết/n và/v sự/n sống/v chỉ/n trong/v gang_tấc/n :/v “/n chiến_tranh/v khủng_khiếp/n và/v chết_chóc/n ./v end/n
+start/ps hãy/n cho/v em/n cơ_hội/v để/n cả/v thế_giới/n biết/v đến/n nó/v !/n ”/v ./n end/v
+start/ps một/n buổi/v chiều/n anh/v mỹ/n kêu/v nick_út/n ra/v tâm_sự/n :/v “/n cuộc_chiến/v ở/n vn/v kéo_dài/n chưa/v biết/n tới/v khi/n nào/v và/n nó/v cần/n rất/v nhiều/n nhà_báo/v nói/n lên/v sự_thật/n ./v end/n
+start/ps một/n đồng_nghiệp/v người/n mỹ/v bước/n lại/v coi/n rồi/v phán/n :/v “/n hình/v cô/n bé/v trần_truồng/n này/v phải/n bỏ/v ngay/n ,/v không/n xài/v được/n đâu/v !/n ”/v ./n end/v
+start/ps tại/n trụ_sở/v văn_phòng/n hãng/v ap/n tại/v sài_gòn/n ,/v nhận/n tám/v cuộn/n phim/v từ/n tay/v nick_út/n là/v một/n nhân_viên/v phòng/n tối/v người/n nhật/v ./n end/v
+start/ps út/n nghe/v anh_chàng/n người/v nhật/n thảng_thốt/v kêu/n lên/v khi/n đem/v hình/n ra/v :/n “/v ô/n ,/v cô/n bé/v này/n ở_truồng/v !/n ”/v ./n end/v
+start/ps khu_ủy/n cuối_cùng/v chọn/n một/v giải_pháp/n mà/v cho/n tới/v bây_giờ/n tôi/v vẫn/n không/v hiểu/n tại_sao/v giữa/n thời/v chiến_tranh/n người_ta/v dám/n quyết/v những/n điều/v anh_hùng/n đến/v vậy/n :/v chọn/n bổ_sung/v ngay/n người/v từ/n trường/v trung_học/n giải_phóng/v lý_tự_trọng/n ,/v có/n nghĩa_là/v chọn/n chính/v con_em/n của/v cán_bộ/n trung/v ,/n cao_cấp/v để/n đưa/v vào/n nơi/v hiểm_nguy/n nhất/v của/n chiến_trường/v ./n end/v
+start/ps chốc/n sau/v horst_faas/n -/v trưởng/n văn_phòng/v đại_diện/n ap/v -/n về/v tới/n ,/v ông/n gọi/v nick_út/n vào/v ,/n hỏi/v cặn_kẽ/n ,/v coi/n từng/v tấm/n phim/v rồi/n ra_lệnh/v cho/n anh_chàng/v thuộc_cấp/n :/v “/n mày/v phải/n gửi/v ngay/n tấm/v ảnh/n này/v về/n tổng_hành_dinh/v trong/n vòng/v năm/n phút/v !/n ”/v ./n end/v
+start/ps nick_út/n lúc/v đó/n mới/v 10/n tuổi/v ,/n anh/v vẫn/n còn/v nhớ/n rằng/v anh/n mỹ/v là/n một/v người/n đa_tài/v ,/n làm/v ra/n tiền/v đủ/n để/v lo/n cho/v cả/n gia_đình/v ./n end/v
+start/ps chính/n anh/v mỹ/n sau/v những/n đợt/v cầm/n máy/v ra/n chiến_trường/v trở_về/n là/v người/n dạy/v cho/n nick_út/v cầm/n máy/v ,/n nhưng/v dạy/n mãi/v chẳng/n thành/v nghề/n vì/v nick_út/n khá/v .../n end/v
+start/ps nick_út/n kể/v tiếp/n :/v “/n sau/v khi/n chụp/v bức/n ảnh/v ,/n tôi/v đưa/n kim_phúc/v về/n bệnh_viện/v củ_chi/n ,/v gửi/n kim_phúc/v với/n lời/v nhắc_đi_nhắc_lại/n cùng/v bác_sĩ/n :/v “/n tôi/v là/n ký_giả/v ,/n bằng/v mọi/n giá/v các/n anh/v phải/n cứu/v sống/n cháu/v bé/n này/v ”/n ./v end/n
+start/ps sau/n tiếng/v thét/n khủng_khiếp/v của/n cô/v bé/n nhỏ_xíu/v ấy/n ,/v tôi/n đã/v đưa/n máy/v lên/n và/v bấm/n ”/v ./n end/v
+start/ps bộ/n phim/v đánh/n hạm_đội/v nhỏ/n trên/v sông/n -/v một/n trang/v sử/n kiêu_hùng/v của/n những/v người/n lính/v tận/n miền/v cuối/n đất/v cà_mau/n -/v đã/n làm/v không/n ít/v người/n xúc_động/v ./n end/v
+start/ps trong/n những/v ngày_tháng/n ấy/v ,/n lời/v tâm_sự/n cuối_cùng/v của/n người/v anh/n đã/v như/n một/v sự/n tiếp_sức/v cho/n con/v đường/n của/v nick_út/n .../v end/n
+start/ps bức/n ảnh/v được/n phát/v đi/n ,/v nước/n mỹ/v xuống_đường/n ,/v báo_chí/n nhật_bản/v và/n nhiều/v nước/n khác/v phóng/n to/v bằng/n hình/v thật/n ngay/v trước/n tòa_soạn/v báo/n của/v họ/n ./v end/n
+start/ps có/n lần/v gặp/n cảnh/v một/n nồi/v cơm/n sôi/v ùng_ục/n ,/v bên/n cạnh/v là/n xác/v của/n hai/v mẹ_con/n còn/v ấm/n nóng/v ./n end/v
+start/ps tt/n -/v "/n chiến_tranh/v vn/n là/v cuộc_chiến/n đầu_tiên/v được/n các/v phóng_viên/n độc_lập/v tường_thuật/n ,/v cũng/n là/v cuộc_chiến/n đầu_tiên/v được/n chụp/v ảnh/n màu/v ,/n cuộc_chiến/v đầu_tiên/n được/v tường_thuật/n qua/v truyền_hình/n và/v cuộc_chiến/n đầu_tiên/v không/n bị/v kiểm_duyệt/n .../v end/n
+start/ps vào/n ngày/v hôm/n sau/v tại/n washington/v ,/n hàng/v mấy/n ngàn/v người/n xuống_đường/v biểu_tình/n ./v end/n
+start/ps hằng/n ngày/v chúng_tôi/n đi/v trên/n đường/v ,/n người/v chết/n như/v rơm_rạ/n ./v end/n
+start/ps anh/n muốn/v dạy/n em/v trở_thành/n một/v phóng_viên/n chiến_trường/v để/n sau_này/v có_thể/n giúp/v thế_giới/n biết/v được/n chiến_tranh/v là/n tàn_bạo/v ,/n may_ra/v bằng/n cách/v nào/n đó/v làm/n cho/v nó/n kết_thúc/v sớm/n hơn/v !/n ”/v ./n end/v
+start/ps phạm_minh_tước/n hi_sinh/v khi/n vừa/v tròn/n 21/v tuổi/n ,/v mai_thanh_liêm/n thì/v dừng/n lại/v ở/n tuổi/v 22/n ,/v là/n nằm/v trong/n số/v đó/n .../v end/n
+start/ps câu_chuyện/n bị/v ngắt/n ngang/v khi/n có/v hai/n du_khách/v người/n nhật/v tỏ/n ra/v rất/n xúc_động/v ,/n nói_nhỏ/v gì/n đó/v với/n người/v phiên_dịch/n rồi/v bước/n lại/v xin/n chụp/v hình/n chung/v cùng/n minh_hương/v và/n hai/v người/n thợ/v khiếm_thị/n ./v end/n
+start/ps thật/n bất_ngờ/v ,/n nằm/v khuất/n sau/v vườn/n cây/v cạnh/n khu/v du_lịch/n còn/v có/n một/v làng/n với/v những/n ngôi/v nhà/n xinh_xắn/v lợp/n lá/v ,/n vách/v ván/n là/v những/n tổ_ấm/v hạnh_phúc/n của/v năm/n cặp/v uyên_ương/n đều/v là/n những/v nhân_viên/n nơi/v này/n ./v end/n
+start/ps hai/n vợ_chồng/v đã/n có/v một/n cuộc_sống/v tương_đối/n ổn_định/v nhờ/n vào/v nguồn/n thu_nhập/v từ/n việc/v phục_vụ/n trong/v làng/n du_lịch/v ./n end/v
+start/ps ”/n ./v end/n
+start/ps họ/n đã/v có/n cô/v con_gái/n gần/v 3/n tuổi/v dễ_thương/n ,/v bụ_bẫm/n ./v end/n
+start/ps còn/n để/v gọi/n tên/v ,/n chọn/v cho/n đúng/v từng/n mặt_hàng/v ,/n nhạc_cụ/v thì/n các/v học_viên/n cũng/v phải/n tập/v theo/n sơ_đồ/v định_vị/n và/v phải/n thao_tác/v trước/n trên/v sản_phẩm/n ở/v từng/n buổi/v tập/n .../v end/n
+start/ps tất_cả/n đều/v đã/n trải/v qua/n các/v khóa/n đào_tạo/v về/n làm/v hàng/n thủ_công/v mỹ_nghệ/n do/v các/n nghệ_nhân/v nổi_tiếng/n trong/v tp/n đến/v giảng_dạy/n ./v end/n
+start/ps đưa/n cho/v khách/n xem/v một/n bức/v tranh/n được/v cẩn/n bằng/v vỏ/n dừa/v ,/n cô/v giới_thiệu/n :/v “/n xưởng/v sản_xuất/n của/v tụi/n em/v hiện/n có/v khoảng/n 20/v người/n thợ/v ,/n đều/v là/n người/v khiếm_thị/n và/v khuyết_tật/n vận_động/v ,/n đảm_trách/v ./n end/v
+start/ps ban/n nhạc/v gồm/n năm/v nhạc_công/n chơi/v guitar/n tân/v ,/n cổ/v lẫn/n đờn/v cò/n và/v sáo/n .../v end/n
+start/ps tôi/n hỏi/v minh_hương/n về/v những/n cảm_nghĩ/v của/n cô/v khi/n trở_thành/v một/n “/v hướng_dẫn_viên/n ”/v du_lịch/n ,/v cô/n gái/v trẻ/n mỉm/v cười/n ,/v e_thẹn/n :/v “/n trước_đây/v mỗi/n khi/v gặp/n đám/v đông/n là/v em/n né_tránh/v ,/n sợ_hãi/v ./n end/v
+start/ps cứ/n như/v vậy/n mà/v thực_hiện/n ./v end/n
+start/ps cô/n gái/v trẻ/n quê/v ở/n tây_ninh/v này/n đã/v bị/n căn_bệnh/v đậu_mùa/n cướp/v đi/n đôi/v mắt/n khi/v vừa/n tròn/v 4/n tuổi/v ./n end/v
+start/ps hằng/n tháng/v ,/n ngoài/v việc/n sản_xuất/v và/n bán/v hàng/n tại_chỗ/v cho/n khách/v tham_quan/n ,/v xưởng/n còn/v cung_cấp/n một/v khối_lượng/n lớn/v hàng/n cho/v thị_trường/n trong/v và/n ngoài/v nước/n ./v end/n
+start/ps gặp/n nhựt/v có/n cùng/v cảnh_ngộ/n ,/v hai/n người/v cảm_thấy/n đồng_cảm/v ,/n gần_gũi/v chia_sẻ/n rồi/v yêu/n nhau/v ./n end/v
+start/ps “/n quan_trọng/v nhất/n là/v mô_hình/n này/v đã/n giúp/v các/n em/v khiếm_thị/n tự_tin/v ,/n hòa_nhập/v được/n với/v cộng_đồng/n xã_hội/v .../n end/v
+start/ps minh_hương/n bảo/v hầu_như/n tuần/v nào/n cũng/v có/n một_vài/v đoàn/n khách/v trong/n và/v ngoài/n nước/v nghe/n tiếng/v ,/n tìm/v đến/n tham_quan/v ,/n mua/v hàng/n ./v end/n
+start/ps căn/n nhà/v nhỏ/n nhưng/v ấm_cúng/n ,/v đầy_đủ/n vật_dụng/v gia_đình/n ./v end/n
+start/ps nhớ/n lại/v những/n ngày/v đầu/n minh_hương/v kể/n :/v sau/n khi/v được/n đào_tạo/v đặc_biệt/n chỉ/v bằng/n âm_thanh/v về/n những/v giáo_trình/n du_lịch/v ,/n cam_go/v nhất/n với/v các/n “/v hướng_dẫn_viên/n ”/v vẫn/n là/v chuyện/n dẫn/v khách/n tham_quan/v ./n end/v
+start/ps hương/n còn/v có_thể/n chọn/v đúng/n tên/v từng/n sản_phẩm/v để/n thuyết_minh/v ,/n giới_thiệu/v cho/n khách/v ./n end/v
+start/ps nhiều/n khách/v đặt_hàng/n đều/v bất_ngờ/n khi/v biết/n những/v món/n hàng/v tinh_xảo/n này/v đều/n do/v những/n người/v khiếm_thị/n làm/v ra/n .../v end/n
+start/ps ”/n -/v ông/n mai_văn_phúc/v (/n trưởng/v ban/n quản_lý/v cơ_sở/n bảo_trợ/v xã_hội/n kỳ_quang/v -/n thạnh_lộc/v )/n nói/v ./n end/v
+start/ps ,/n sau_cùng/v được/n đưa/v về/n cơ_sở/v kỳ_quang/n -/v thạnh_lộc/n ./v end/n
+start/ps họ/n sống/v âm_thầm/n lặng_lẽ/v cho/n đến/v ngày/n một/v khu/n du_lịch/v sinh_thái/n được/v mọc/n lên/v .../n end/v
+start/ps hương/n cho/v biết/n để/v có_thể/n đưa/v khách/n tham_quan/v đến/n đúng/v từng/n nơi/v ,/n từng/v khu_vực/n ,/v cô/n và/v các/n bạn/v của/n mình/v phải/n luyện_tập/v rất/n kỹ/v ./n end/v
+start/ps tt/n -/v nằm/n trên/v một/n dải/v đất/n nhỏ/v ven/n ngã/v ba/n sông/v rạch_tra/n -/v sài_gòn/n thuộc/v phường/n thạnh_lộc/v ,/n quận/v 12/n ,/v tp/n ./v end/n
+start/ps hai/n “/v ca_sĩ/n ”/v minh_nhựt/n và/v minh_hương/n song_ca/v rất/n “/v mùi/n ”/v bài/n tân/v cổ/n giao_duyên/v một/n đời/v người/n ,/v một/n rừng/v cây/n .../v end/n
+start/ps từ/n những/v người/n lang_thang/v ,/n cơ_nhỡ/v .../n end/v
+start/ps đa_số/n khách/v tham_quan/n đã/v chọn/n mua/v một_số/n mặt_hàng/v ngay/n tại_chỗ/v và/n nhờ/v người/n đóng_gói/v chuyển/n lên/v thuyền/n ./v end/n
+start/ps không/n muốn/v trở_thành/n gánh/v nặng/n cho/v gia_đình/n ,/v hương/n lang_thang/v lên/n tp/v trải/n qua/v nhiều/n mái/v ấm/n ,/v nhà/n mở/v .../n end/v
+start/ps bây_giờ/n nhựt/v vừa/n là/v “/n hướng_dẫn_viên/v ”/n kiêm/v “/n ca_sĩ/v ”/n ,/v còn/n hải/v vừa/n phục_vụ/v vật_lý_trị_liệu/n vừa/v là/n nhạc_công/v của/n các/v chương_trình/n văn_nghệ/v ./n end/v
+start/ps và/n họ/v trở_thành/n những/v người/n phục_vụ/v ,/n hướng_dẫn_viên/v ,/n nghệ_nhân/v ,/n nghệ_sĩ/v .../n end/v
+start/ps ubnd/n phường/v thạnh_lộc/n và/v cơ_sở/n xã_hội/v kỳ_quang/n đã/v tận_dụng/n eo_đất/v ven/n ngã/v ba/n sông/v rộng/n hơn/v 1,3/n ha/v và/n gầy/v dựng/n thành/v vườn/n cây_ăn_trái/v sum_suê/n ,/v mát_mẻ/n với/v ý_định/n ban_đầu/v chỉ/n là/v nơi/n đùm_bọc/v những/n thân_phận/v khốn_khó/n ./v end/n
+start/ps tôi/n không/v khỏi/n bất_ngờ/v khi/n huỳnh_thị_minh_hương/v ,/n cô/v “/n hướng_dẫn_viên/v ”/n du_lịch/v ,/n bước/v lần/n dò/v từng/n bước/v một/n nhưng/v lại/n rất/v chính_xác/n khi/v đưa/n khách/v đến/n tham_quan/v từng/n khu/v xưởng/n sản_xuất/v ,/n đến/v các/n quầy/v triển_lãm/n các/v mặt_hàng/n ./v end/n
+start/ps dường_như/n ở/v cô/n đã/v có/n một/v cảm_quan/n đặc_biệt/v và/n một/v sự/n luyện_tập/v rất/n công_phu/v theo/n những/v sơ_đồ/n định/v sẵn/n ./v end/n
+start/ps vậy/n là/v nên_vợ_nên_chồng/n từ/v ngôi/n làng/v khiếm_thị/n này/v ./n end/v
+start/ps nhưng/n cuối/v năm/n 2004/v đã/n có/v ý_tưởng/n :/v “/n sao/v không/n để/v chính/n những/v người/n khuyết_tật/v làm_chủ/n lấy/v cuộc_sống/n tương_lai/v một_khi/n họ/v có/n tay_nghề/v ,/n có/v tinh_thần/n vươn/v lên/n ?/v ”/n ./v end/n
+start/ps anh/n thấy/v các/n khu/v du_lịch/n khác/v thế_nào/n ,/v ở/n đây/v làm/n có/v giống/n họ/v không/n ?/v ”/n ./v end/n
+start/ps khi/n quay/v trở_lại/n khu/v du_lịch/n ,/v những/n kỹ_thuật_viên/v khiếm_thị/n đã/v túc_trực/n sẵn/v ,/n đón/v chúng_tôi/n ngay/v cổng/n ,/v dẫn/n vào/v phòng/n phục_vụ/v vật_lý_trị_liệu/n để/v được/n phục_hồi/v sức_khỏe/n ./v end/n
+start/ps tôi/n theo/v vợ_chồng/n minh_nhựt/v ,/n phước_hải/v -/n hai/v thành_viên/n trong/v ban/n nhạc/v của/n làng/v du_lịch/n -/v đi/n thăm/v mái/n ấm/v của/n họ/v ./n end/v
+start/ps phường_thạnh_lộc/n hỗ_trợ/v thêm/n 5.000/v m2/n đất/v liền/n kề/v cơ_sở/n theo/v đường_sông/n để/v nối_kết/n với/v nhau/n hình_thành/v khu/n du_lịch/v sinh_thái/n ./v end/n
+start/ps hải/n quê/v ở/n tây_ninh/v ,/n mồ_côi/v từ/n nhỏ/v ,/n bị/v khiếm_thị/n bẩm_sinh/v trôi_dạt/n lên/v tp/n bán/v vé_số/n dạo/v kiếm/n sống/v rồi/n được/v người/n quen/v giới_thiệu/n về/v đây/n ./v end/n
+start/ps nhà/n nghèo/v ,/n cha/v mất/n sớm/v ,/n mẹ/v phải/n chạy_ăn/v từng/n bữa/v nuôi/n hương/v bị/n tật_nguyền/v ./n end/v
+start/ps khi/n các/v anh_chị/n bàn/v việc/n mở/v khu/n du_lịch/v ,/n ban_đầu/v ai/n cũng/v sợ/n ,/v cũng/n lo/v .../n end/v
+start/ps hcm/n có/v một/n ngôi/v làng/n khá/v đặc_biệt/n ./v end/n
+start/ps sau/n bữa/v cơm/n trưa/v với/n các/v món/n ăn/v dân_dã/n cùng/v người/n khiếm_thị/v ,/n nghe/v kể/n về/v cuộc_đời/n và/v những/n câu_chuyện/v vượt/n lên/v số_phận/n của/v chính/n họ/v ,/n tôi/v theo/n đoàn/v khách/n tham_quan/v lên/n du_thuyền/v đi/n dạo/v một/n vòng/v 7/n km/v đường_sông/n sài_gòn/v -/n rạch_tra/v ,/n kéo_dài/v từ/n quận/v 12/n qua/v huyện/n thuận_an/v ,/n tỉnh/v bình_dương/n ,/v thăm/n các/v lò/n gốm/v ở/n lái_thiêu/v .../n end/v
+start/ps so/n ra/v còn/n ít_ỏi/v nhưng/n cũng/v là/n một/v tín_hiệu/n lạc_quan/v cho/n những/v anh_chị_em/n nơi/v này/n .../v end/n
+start/ps khi/n tôi/v đến/n làng/v khiếm_thị/n thạnh_lộc/v cũng/n nhằm/v lúc/n có/v đoàn/n khách/v người/n nhật/v vừa/n ghé/v vào/n tham_quan/v ./n end/v
+start/ps một/n sân_khấu/v nhỏ/n được/v thiết_kế/n nằm/v kề/n bờ/v sông/n khá/v ấn_tượng/n ,/v dưới/n những/v rặng/n dừa/v xanh/n ngát/v ,/n lồng_lộng/v gió/n ./v end/n
+start/ps những/n cư_dân/v sống/n nơi/v đó/n đều/v là/n những/v người/n khiếm_thị/v hoặc/n tật_nguyền/v ./n end/v
+start/ps ví_dụ/n như/v từ/n vị_trí/v xuất_phát/n đến/v xưởng/n thủ_công/v là/n 30/v bước/n ,/v ra/n sân_khấu/v là/n 10/v bước/n .../v end/n
+start/ps nhưng/n khi/v đã/n đến/v đây/n ,/v nhìn/n quanh/v ai/n cũng/v như/n mình/v ,/n biết/v không_thể/n đe_dọa/v để/n tìm/v thuốc/n nên/v đành/n thúc_thủ/v mà/n chịu_đựng/v ./n end/v
+start/ps người/n đập/v đầu/n vào/v tường/n ,/v người/n cố/v trấn_tĩnh/n bằng/v tư_thế/n ngồi_thiền/v ,/n người/v bám/n vào/v thành/n cửa/v chế_ngự/n cảm_giác/v “/n kiến/v bò/n trong/v xương/n ”/v ,/n người/v lại/n bẻ/v cả/n một/v hộp/n nhang/v trừ/n muỗi/v bỏ/n vào/v miệng/n nhai/v ,/n nuốt/v .../n end/v
+start/ps )/n mà/v vẫn/n nghiện/v ;/n người/v không/n có/v nơi/n cư_trú/v nhất_định/n .../v end/n
+start/ps đã/n có/v trường_hợp/n học_viên/v giật/n cánh/v cửa/n bỏ/v chạy/n trong/v giờ/n đưa/v cơm/n ,/v có/n trường_hợp/v rủ/n nhau/v phá/n rào/v ,/n gây_rối/v tập_thể/n ở/v khu/n y_tế/v ,/n có/v người/n lại/v nuốt/n kim_loại/v để/n đòi/v được/n đến/v bệnh_viện/n tìm/v phương/n trốn_chạy/v .../n end/v
+start/ps 1/n ,/v tp/n ./v end/n
+start/ps khất/n :/v “/n tôi/v về/n tham_khảo/v lại/n ý_kiến/v gia_đình/n đã/v ,/n cả/v nhà/n đồng_ý/v ,/n tôi/v sẽ/n đưa/v con_trai/n tới/v ”/n ./v end/n
+start/ps ”/n ./v end/n
+start/ps người/n tựa/v vào/n tường/v ,/n người/v thõng_thượt/n chân_tay/v ,/n người/v bó_gối/n rầu_rĩ/v ,/n ánh/v mắt/n thờ_ơ/v ,/n những/v con/n đại_bàng/v ,/n sư_tử/v xăm/n trên/v vai/n ,/v trên/n ngực/v cũng/n lộ/v rõ/n vẻ/v mệt_mỏi/n .../v end/n
+start/ps chúng/n nhất_quyết/v phải/n cai_nghiện/v ,/n nhất_quyết/v không_thể/n tái/v nghiện/n ,/v nếu/n không/v chúng/n sẽ/v chết/n .../v end/n
+start/ps “/n em/v ôm/n cặp/v đi/n học/v ,/n nói/v là/n sẽ/v đến/n nhà/v bạn/n học/v thi/n rồi/v kéo/n nhau/v đi/n lắc/v ./n end/v
+start/ps một/n tuần/v sau/n ông/v quay/n lại/v ,/n dẫn/v theo/n cậu/v con_trai/n ,/v cả/n hai/v cha_con/n cùng/v ký/n vào/v bản/n hợp_đồng/v và/n bắt_đầu/v nhập/n trại/v ./n end/v
+start/ps tưởng/n ông/v là/n nhà_báo/v ,/n tôi/v hỏi/n thì/v ông/n trả_lời/v :/n “/v tôi/n mang/v về/n cho/v đứa/n con_trai/v ”/n ./v end/n
+start/ps thế/n nhưng/v trang/n chỉ/v rướm/n nước_mắt/v khi/n chợt/v nhớ/n ra/v mình/n đang/v ở/n đâu/v ./n end/v
+start/ps có/n hôm/v ông/n hoảng_hốt/v đưa/n cho/v tôi/n xem/v một/n bản/v cáo_trạng/n :/v bị_cáo/n là/v hai/n vợ_chồng/v ,/n cả/v hai/n đều/v nghiện/n ./v end/n
+start/ps mục/n 3/v trong/n bản/v hợp_đồng/n của/v trung_tâm/n xanh/v ghi/n :/v “/n khi/v đang/n được/v điều_trị/n với/v naltrexone/n ,/v nếu/n bệnh_nhân/v cố_tình/n sử_dụng/v lại/n chất/v ma_túy/n và/v tìm_kiếm/n khoái_cảm/v bằng/n cách/v tăng/n liều/v sẽ/n có/v nguy_cơ/n bị/v quá/n liều/v ,/n gây/v nguy_hiểm/n và/v có_thể/n dẫn/v đến/n tử_vong/v ”/n ./v end/n
+start/ps nhiều/n gia_đình/v có/n con_em/v nghiện/n ma_túy/v đã/n quá/v quen_thuộc/n với/v địa_chỉ/n 463/v nơ_trang_long/n ,/v q._bình_thạnh/n ,/v tp/n ./v end/n
+start/ps thì_ra/n ông/v có/n đứa/v con/n đang/v cai_nghiện/n tại/v trung_tâm/n nhị_xuân/v ./n end/v
+start/ps bác_sĩ/n phạm_quốc_lương/v đưa/n tôi/v đi/n qua/v hai/n cánh/v cửa/n sắt/v khóa/n chặt/v ,/n cả/v dãy/n hành_lang/v dày_đặc/n chấn_song/v sắt/n đến/v các/n phòng/v lưu/n trị/v ./n end/v
+start/ps trần/n nhà/v ,/n tường/v rào/n bốn/v phía/n đều/v có/n lưới/v b40/n ,/v song/n sắt/v phủ/n kín/v vậy_mà/n họ/v vẫn/n trốn/v được/n ,/v chúng_tôi/n phải/v căng/n hết/v tất_cả/n giác_quan/v để/n cảnh_giác/v .../n end/v
+start/ps người/n cha/v nói/n ,/v quyết_liệt/n một/v niềm/n tin/v .../n end/v
+start/ps nhưng/n tôi/v vẫn/n phải/v đến/n ,/v mang/n những/v bài_học/n này/v cho/n con/v tôi/n ,/v các/n bạn/v của/n nó/v ./n end/v
+start/ps ông/n đặc_biệt/v chú_ý/n đến/v những/n vụ/v án/n có/v sự/n xuất_hiện/v của/n cái/v chết/n ./v end/n
+start/ps cậu/n con_trai/v 19/n tuổi/v đang/n là/v sinh_viên/n năm/v 2/n ./v end/n
+start/ps thêm/n nhiều/v người/n trẻ/v -/n rường_cột/v của/n đất_nước/v -/n lại/v “/n nhập/v trại/n ”/v ./n end/v
+start/ps không/n tiền/v mua/n thuốc/v ,/n chồng/v chở/n vợ/v đi/n cướp/v ,/n rồi/v đi/n giết/v người/n ./v end/n
+start/ps theo/n quy_định/v của/n thành_phố/v ,/n những/v người/n nghiện/v ma_túy/n bắt_buộc/v phải/n đưa/v đi/n các/v trường/n -/v trung_tâm/n chữa/v bệnh/n -/v giáo_dục/n -/v lao_động/n xã_hội/v :/n người/v đã/n được/v cai_nghiện/n tại/v gia_đình/n ,/v cộng_đồng/n mà/v vẫn/n tái/v nghiện/n ;/v người/n đã/v được/n giáo_dục/v nhiều/n lần/v tại/n địa_phương/v (/n xã/v ,/n phường/v ,/n thị_trấn/v .../n end/v
+start/ps (/n kỳ/v 1/n )/v :/n từ/v trạm/n trung_chuyển/v .../n end/v
+start/ps trang/n đã/v bị/n tạm/v giữ/n trong/v một/n “/v động/n lắc/v ”/n ở/v đường/n bùi_viện/v ngay/n ngày/v đáng_ra/n phải/v thi/n tốt_nghiệp/v thpt/n ./v end/n
+start/ps “/n nó/v đang/n học/v đh/n luật/v ,/n nghe/v lời/n bạn_bè/v rủ_rê/n mà/v trở_thành/n nghiện/v ma_túy/n ./v end/n
+start/ps người/n đàn_ông/v đăm_chiêu/n đọc/v bản/n “/v hợp_đồng/n cai_nghiện/v ”/n của/v trung_tâm/n xanh/v (/n 301/v trần_hưng_đạo/n ,/v q/n ./v end/n
+start/ps lắc/n rồi/v thì/n tìm/v chỗ/n ngủ/v cho/n đến/v khi/n nào/v cái/n mặt/v hết/n “/v ngu/n ”/v mới/n dám/v về/n nhà/v ”/n ./v end/n
+start/ps một/n thanh_niên/v đang/n chúi/v vào/n góc/v phòng/n ,/v vừa/n đập/v đầu/n vào/v tường/n vừa/v thở/n hào_hển/v ,/n mấy/v người/n ngồi/v sát/n cạnh/v nghiến/n răng/v quay/n mặt/v đi/n ./v end/n
+start/ps “/n nhưng/v đừng/n có/v thấy/n điệu_bộ/v của/n họ/v như_vậy/n mà/v tưởng/n là/v đẩy/n nhẹ/v cũng/n ngã/v ./n end/v
+start/ps ”/n ,/v bs/n lương/v kể/n ./v end/n
+start/ps ở/n phòng/v bên/n vọng/v ra/n tiếng/v bình_bịch/n ,/v rên_la/n nho_nhỏ/v ,/n chúng_tôi/v vội/n chạy/v sang/n xem/v ./n end/v
+start/ps môi_trường/n cách_ly/v ,/n các/v liệu_pháp/n tâm_lý/v ,/n lao_động/v ,/n học_tập/v để/n trở_lại/v một/n cuộc_sống/v đời_thường/n cũng/v đều/n xuất_phát/v từ/n đây/v .../n end/v
+start/ps ban_đêm/n ,/v giờ/n của/v những/n cuộc/v vui_chơi/n ngoài/v đời/n cũng/v là/n lúc/v trong/n phòng/v lưu/n trị/v có/n nhiều/v người/n lên_cơn/v vã/n thuốc/v nhất/n ./v end/n
+start/ps trạm/n trung_chuyển/v lúc_nào/n cũng/v tấp_nập/n người/v ra_vào/n ./v end/n
+start/ps sau/n những/v cơn/n đau/v thắt/n ,/v oằn/n mình/v vật_vã/n để/v cai/n ma_túy/v ,/n những/v người/n trẻ/v lỡ_bước/n sa_chân/v vào/n vực/v sâu/n đang/v làm/n gì/v ,/n nghĩ/v gì/n từ/v những/n cánh/v rừng/n xa_xôi/v .../n end/v
+start/ps bám/n vào/v song/n cửa_sổ/v ,/n trang/v hồn_nhiên/n kể/v cho/n tôi/v nghe/n về/v những/n đêm/v “/n thăng_hoa/v ”/n cùng/v với/n thuốc/v lắc/n mới/v chỉ/n cách/v đây/n một/v tuần/n ./v end/n
+start/ps qua/n chấn_song/v sắt/n trên/v cánh/n cửa/v ,/n hàng/v chục/n cặp/v mắt/n ngước/v lên/n nhìn/v chúng_tôi/n ,/v vẻ/n lạnh_lùng/v đến/n vô_cảm/v ./n end/v
+start/ps mẹ/n thương/v em/n ,/v cho/n em/v nhiều/n tiền/v lắm/n ,/v đâu/n có/v biết/n em/v mua/n xì_ke/v ,/n thuốc/v lắc/n gì/v đâu/n .../v end/n
+start/ps và/n như/v một/n kịch_bản/v quen_thuộc/n ,/v cậu/n đã/v gặp_gỡ/n với/v chất/n bột/v trắng/n trong/v một/n dịp/v sinh_nhật/n bạn/v và/n trở_thành/v con_nghiện/n từ/v đó/n ./v end/n
+start/ps mảnh/n sân/v bên/n trong/v cách/n một/v hàng_rào/n lưới/v b40/n thấp_thoáng/v bóng/n áo/v đồng_phục/n học_viên/v đang/n kéo/v cái/n ống/v nước/n hay/v xách/n chồng/v khay/n cơm/v lên/n các/v lầu/n ./v end/n
+start/ps khoảnh/n sân/v bên/n ngoài/v la_liệt/n các/v bà/n ,/v các/n chị/v đứng/n ngồi/v nhấp_nhổm/n chờ/v được/n thăm_nuôi/v ./n end/v
+start/ps trước/n hôm/v lên/n trường/v ,/n tôi/v hay/n dẫn/v nó/n lên/v đây/n nghe/v xử/n án/v ma_túy/n ,/v nay/n tôi/v ghi_chép/n lại/v mang/n lên/v cho/n nó/v đọc/n để/v củng_cố/n quyết_tâm/v cai_nghiện/n .../v end/n
+start/ps đọc/n chưa/v đủ/n ,/v ông/n còn/v hỏi_đi_hỏi_lại/n các/v bác_sĩ/n ,/v tư_vấn/n viên/v rồi/n .../v end/n
+start/ps 51%/n trong/v số/n đó/v có/n độ/v tuổi/n 18/v -/n 25/v ,/n 30%/v đã/n tốt_nghiệp/v thpt/n ./v end/n
+start/ps trong/n phòng/v cắt_cơn/n ban_đầu/v có/n mấy/v cô/n bé/v nom/n thật/v xinh/n gái/v ./n end/v
+start/ps em/n không/v muốn/n đi/v đắc_lắc/n ,/v bình_phước/n .../v end/n
+start/ps sau/n khi/v mặc/n bộ/v quần_áo/n đồng_phục/v ,/n nom/v các/n cô/v cậu/n tóc/v vàng/n ,/v tóc/n đỏ/v đã/n bớt/v vẻ/n ngổ_ngáo/v ,/n bất_cần/v đời/n ,/v nhất_là/n khi/v nhìn/n thấy/v những/n dãy/v rào/n lưới/v ./n end/v
+start/ps ở/n tòa_án/v tp/n hcm/v ,/n trong/v khi/n tất_cả/v mọi/n người/v đều/n ngán_ngẩm/v với/n các/v phiên_tòa/n xử/v tội_phạm/n “/v mua_bán/n ma_túy/v ”/n ,/v thỉnh_thoảng/n tôi/v lại/n gặp/v một/n người/v đàn_ông/n ./v end/n
+start/ps tt/n -/v hàng/n vạn/v người/n trẻ/v tuổi/n đã/v sa_chân/n vào/v vực/n sâu/v ma_túy/n ,/v hàng/n ngàn/v gia_đình/n tan_nát/v ,/n điêu_đứng/v vì/n thảm_họa/v khủng_khiếp/n của/v heroin/n ,/v xã_hội/n mất/v đi/n hàng/v vạn/n sức_lao_động/v trong/n tuổi/v thanh_xuân/n ,/v tiêu/n tốn/v hàng/n ngàn/v tỉ/n đồng/v để/n phòng_chống/v và/n cai_nghiện/v trong/n cộng_đồng/v ,/n hàng/v chục/n trường/v ,/n trại/v được/n hối_hả/v dựng/n lên/v trong/n những/v cánh/n rừng/v miền/n đông/v nam_bộ/n và/v tây_nguyên/n để/v cách_ly/n hàng/v vạn/n người/v trẻ/n với/v “/n cái_chết_trắng/v ”/n ./v end/n
+start/ps ”/n -/v đó/n là/v điều/n cô/v bé/n quan_tâm/v lúc/n này/v ./n end/v
+start/ps ghi_chép/n từ/v những/n cánh/v rừng/n “/v cai_nghiện/n ”/v .../n end/v
+start/ps ông/n bố/v kể/n về/v tia/n sét/v đã/n đánh/v trúng/n gia_đình/v mình/n khi/v phát_hiện/n nguyên_nhân/v cậu/n con_trai/v học_hành/n sút_kém/v ,/n hay/v đóng/n chặt/v cửa/n phòng/v cả/n ngày/v và/n liên_tục/v tìm/n cách/v xin/n tiền/v ./n end/v
+start/ps thỉnh_thoảng/n lại/v có/n một/v chiếc/n xe/v thùng/n trờ/v tới/n ,/v một_vài/n hay/v có_khi/n cả/v mấy/n chục/v thanh_niên/n áo_quần/v xốc_xếch/n ,/v mắt/n còn/v lờ_đờ/n được/v đưa/n xuống/v làm/n thủ_tục/v kiểm_tra/n ,/v nhập/n trại/v ./n end/v
+start/ps “/n thật/v khủng_khiếp/n ,/v đi/n nghe/v tòa/n riết/v tôi/n hay/v gặp/n ác_mộng/v ./n end/v
+start/ps trong/n phòng/v ,/n những/v người/n đàn_ông/v ,/n thanh_niên/v nằm/n ngồi/v ken/n kín/v ,/n dáng_điệu/v uể_oải/n ,/v mắt/n dán/v vào/n tivi/v ./n end/v
+start/ps hcm/n -/v đó/n là/v nơi/n làm/v nhiệm_vụ/n tiếp_nhận/v quản_lý/n và/v chuyển_giao/n người/v nghiện/n cho/v các/n cơ_sở/v cai_nghiện/n trên/v rừng/n ./v end/n
+start/ps tiếp/n đó/v là/n những/v ngày/n cả/v nhà/n như/v sống/n trong/v cơn/n động_đất/v khi/n ông/v đóng_cửa/n cai_nghiện/v cho/n con/v tại/n nhà/v ./n end/v
+start/ps bs/n lương/v đứng/n quan_sát/v một/n lát/v ,/n bảo/v tình_hình/n vẫn/v ổn/n ,/v không/n cần/v chích/n thuốc/v an_thần/n ./v end/n
+start/ps .../n end/v
+start/ps hcm/n )/v ,/n mục/v thứ/n 3/v khiến/n ông/v phải/n đọc_đi_đọc_lại/v tới/n bốn/v lần/n ./v end/n
+start/ps lên/n rừng/v cai_nghiện/n -/v đó/n là/v sự/n lựa_chọn/v gần/n như/v duy_nhất/n sau/v nhiều/n thất_bại/v của/n xã_hội/v trong/n việc/v phòng_chống/n ma_túy/v ./n end/v
+start/ps vợ/n chết/v vì/n bệnh/v aids/n trong/v trại_giam/n ,/v chồng/n ra/v tòa/n lãnh/v án/n tử_hình/v .../n end/v
+start/ps thất_bại/n ./v end/n
+start/ps bs/n lương/v bảo/n đó/v là/n những/v tư_thế/n đặc_trưng/v của/n con_nghiện/v thiếu/n thuốc/v ,/n hầu_hết/v những/n người/v được/n tập_trung/v ở/n đây/v đều/n đang/v trong/n giai_đoạn/v cắt_cơn/n ./v end/n
+start/ps nghe/n nói/v đến/n liệu_pháp/v naltrexone/n “/v nhẹ_nhàng/n hơn/v ”/n nên/v ông/n tìm/v đến/n trung_tâm/v xanh/n ./v end/n
+start/ps cháu/n có/v quyết_tâm/n cai_nghiện/v ,/n nhưng/v thật_tình/n cũng/v khó/n mà/v yên_tâm/n ./v end/n
+start/ps những/n anh_chàng/v này/n khi/v còn/n ở/v nhà/n ,/v khi/n ở/v trong/n môi_trường/v của/n mình/v ,/n mỗi/v lần/n vã/v thuốc/n là/v một/n lần/v phá_phách/n ,/v vật_vã/n ,/v thậm_chí/n hủy_hoại/v cơ_thể/n ,/v gây/n áp_lực/v khủng_khiếp/n với/v gia_đình/n và/v những/n người/v xung_quanh/n để/v tìm/n cách/v được/n thỏa_mãn/v cơn/n nghiện/v ./n end/v
+start/ps “/n tôi/v đã/n được/v tư_vấn/n về/v tác_dụng/n đối_kháng/v của/n naltrexone/v ,/n về/v nguy_cơ/n sốc/v quá/n liều/v nếu/n cố_ý/v dùng/n heroin/v ./n end/v
+start/ps hỏi/n tiền/v đâu/n mua/v thuốc/n lắc/v ,/n trang/v vẫn/n rất/v hồn_nhiên/n :/v “/n tiền/v mẹ/n cho/v ./n end/v
+start/ps chỉ/n trong/v sáu/n tháng/v đầu/n năm/v 2005/n ,/v riêng/n trạm/v trung_chuyển/n đã/v chuyển/n đến/v các/n trường/v cai_nghiện/n của/v thành_phố/n 2.640/v học_viên/n ./v end/n
+start/ps những/n con_số/v lạnh_lùng/n nhưng/v đó/n là/v những/n mất_mát/v quá/n lớn/v của/n cá_nhân/v ,/n của/v gia_đình/n ,/v xã_hội/n .../v end/n
+start/ps nhiều/n nữ/v lao_động/n ở/v đây/n cũng/v có/n cùng/v tâm_trạng/n như/v hằng_nga/n .../v end/n
+start/ps cô/n gái/v tên/n trần_thị_tr/v ,/n 23/v tuổi/n ,/v quê/n xã/v thanh_hải/n ,/v huyện/n lục_ngạn/v ,/n bắc_giang/v ,/n sang/v từ/n cuối/v tháng/n 2/v -/n 2004/v ,/n làm/v được/n ba/v tháng/n thì/v bỏ/n ra/v ngoài/n ./v end/n
+start/ps hôm/n tôi/v lang_thang/n ở/v bệnh_viện/n tp/v tân_trúc/n tình_cờ/v gặp/n chị/v nguyễn_thị_vân/n ,/v 51/n tuổi/v ,/n quê/v thái_bình/n ,/v giúp_việc/n cho/v một/n gia_đình/v ở/n huyện/v tân_trúc/n đã/v gần/n ba/v năm/n ./v end/n
+start/ps cho/n đến/v giờ/n tùng/v đã/n bị/v “/n bán/v ”/n qua/v tới/n ông/v chủ/n thứ/v mấy/n thì/v chính/n anh/v cũng/n không/v còn/n nhớ/v ./n end/v
+start/ps chị/n kể/v thời_gian/n mới/v sang/n vất_vả/v lắm/n ,/v vừa/n dọn_dẹp/v căn/n nhà/v ba/n tầng/v ,/n sân/v vườn/n ,/v lo/n cơm_nước/v cho/n gia_đình/v ,/n vừa/v phải/n đi/v làm/n ,/v may/n nệm/v ,/n ghế/v da/n cho/v xưởng/n may/v của/n gia_đình/v chủ/n :/v “/n 5/v g/n sáng/v phải/n dậy/v ,/n dọn_dẹp/v ,/n đi/v chợ/n ,/v dắt/n chó/v đi/n dạo/v ,/n làm/v đồ/n ăn/v sáng/n .../v end/n
+start/ps tôi/n theo/v ông/n hoàng/v ,/n cán_bộ/v cảnh_sát/n trại/v tạm/n giam/v ,/n xuống/v phòng/n thẩm_vấn/v hai/n lao_động/v bỏ/n trốn/v ở/n tầng/v 8/n ./v end/n
+start/ps giọng/n giang/v run_run/n kể/v :/n “/v tôi/n sang/v làm/n giúp_việc/v nhà/n cho/v một/n bà/v chủ/n ở/v huyện/n bình_đông/v ,/n mới/v được/n gần/v hai/n tuần/v thì/n có/v bạn/n trai/v của/n bà/v chủ/n đến/v chơi/n ,/v bà/n chủ/v bảo/n tôi/v cùng/n đi/v với/n hắn/v ra/n chợ/v mua/n đồ/v ,/n không/v ngờ/n tên/v này/n chở/v tôi/n về/v nhà/n hắn/v và/n hãm_hiếp/v ,/n lúc/v tôi/n chống_cự/v hắn/n lôi/v trở/n vào/v và/n đánh/v gãy/n tay/v .../n end/v
+start/ps tối/n 13/v -/n 3/v -/n 2005/v ,/n cảnh_sát/v đl/n ập/v vào/n kiểm_tra/v lao_động/n bỏ/v trốn/n ,/v mấy/n chục/v người/n lao_động/v vn/n hoảng_sợ/v chạy/n trốn/v ./n end/v
+start/ps chị/n mai/v đã/n để_dành/v được/n 8.000/v đài_tệ/n (/v khoảng/n 4/v triệu/n đồng/v )/n ,/v cũng/n đã/v trả/n được/v một/n phần/v món/n nợ/v 25/n triệu/v lo/n thủ_tục/v sang/n đl/v ./n end/v
+start/ps ”/n ./v end/n
+start/ps hai/n năm/v làm_việc/n ,/v ngân/n hầu_như/v chỉ/n lặng_lẽ/v như/n chiếc/v bóng/n ,/v chỉ/n biết/v dành_dụm/n tiền/v gửi/n về/v nhà/n để/v trả/n bớt/v số/n nợ/v của/n gia_đình/v ,/n chị/v bảo/n chẳng/v dám/n mua/v gì/n cho/v mình/n ngoài/v mấy/n cái/v áo/n lạnh/v để_dành/n mặc/v mùa/n đông/v ./n end/v
+start/ps trông/n chị/v mai/n gầy_guộc/v ,/n mặt/v hốc_hác/n ,/v hai/n hốc/v mắt/n sâu/v trũng/n và/v còn/n hằn/v vết/n thâm/v ./n end/v
