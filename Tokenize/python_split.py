@@ -35,7 +35,7 @@ def split_sentences(st):
 # Sau cùng là dấu '!', '?', '.'. Trước nó là bất cứ ký tự gì khác '!', '?', '.'.
 #    regex = re.compile('[^!?\.]+[!?]')
 #    sentences = regex.findall(st)
-    regex = re.compile('(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<![A-Z]\.)(?<=\.|\?)\s')
+    regex = re.compile('(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<![A-Z]\.)(?<=\.|\?|!)\s')
 #    regex = re.compile('(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=.|\?|!)\s')
     sentences = re.split(regex,st)
      
@@ -44,31 +44,6 @@ def split_sentences(st):
     
     return lst
 # Tách câu.################################################################ END
-
-def SplitSentence(text):
-    sentences = []
-    #ký tự i bắt đầu =0
-    i = 0
-    #ký tự bắt đầu câu =0
-    begin = 0
-
-    #lặp từng ký tự trong text
-    while i < len(text):
-        if i == len(text)-1:
-            sentences.append(text[begin:i].strip())
-            break
-        #nếu gặp ký tự kết thúc
-        if (text[i]=='\n'):
-            sentences.append(text[begin:i].strip())
-            begin=i+1
-        if (text[i]=='.' or text[i]=='!' or text[i]=='...' or text[i]=='?'):
-            #nếu sau đó là khoảng trắng hoặc xuống dòng.
-            if re.match('\s',text[i+1]) or re.match('\n',text[i+1]):
-                sentences.append(text[begin:i].strip())
-                begin=i+1
-                
-    i+=1
-    return sentences
 
 # BEGIN.########################### Tach tu to #############################
 def tokenize(the_list):
@@ -94,4 +69,5 @@ display_out_file(list_sentences,'sentences.txt',link_output_file)
 # ############# In kết quả tách tu to #######################################
 #tokens = tokenize(lst_sntncs)
 #display_out_file(tokens,'tokens.txt',link_output_file)
+
 print (datetime.now()-start)
