@@ -18,8 +18,9 @@ def display_out_file(lst,filename):
 def main():
     word_freq = dict() #count word.
     word_word_freq = defaultdict(dict)
+    word_word_prob = defaultdict(dict)
     
-    with open(link_train_file+'inputhalf.pos','r',encoding='utf-8') as inputfile:
+    with open(link_train_file+'input.pos','r',encoding='utf-8') as inputfile:
         for line in inputfile:                                                  #Duyet tung dong.
             line1 = line.lower()                                                #Bo? viet hoa.
             
@@ -58,20 +59,55 @@ def main():
         
     display_out_file(word_word_freq,'word_to_word_freq.txt')
 # Tinh xác suất.
-#    Smoothing
-    for eachWord in word_freq:
-        for thisWord in word_freq:
-            if thisWord not in word_word_freq[eachWord]:
-                word_word_freq[eachWord][thisWord] = 1
-    display_out_file(word_word_freq,'word_to_word_freq_after_add_one.txt')            
+#    Add one, 
+#    for eachWord in word_freq:
+#        for thisWord in word_freq:
+#            if thisWord not in word_word_freq[eachWord]:
+#                word_word_freq[eachWord][thisWord] = 1
+#    display_out_file(word_word_freq,'word_to_word_freq_after_add_one.txt')            
 # Xasc suat
     v = len(word_freq)
+    print (v)
                 
     for eachWord in word_freq:
         for thisWord in word_word_freq[eachWord]:
-            word_word_freq[eachWord][thisWord] = round((word_word_freq[eachWord][thisWord] + 1)/(word_freq[eachWord] + v),6)
+            word_word_prob[eachWord][thisWord] = round((word_word_freq[eachWord][thisWord] + 1)/(word_freq[eachWord] + v),6)
     
-    display_out_file(word_word_freq,'word_to_word_prob.txt')
+    display_out_file(word_word_prob,'word_to_word_prob.txt')
+    Lmodel = {}
+    Lmodel['Language model'] = word_word_prob
+    Lmodel['Word count'] = word_freq
+    with open(link_result_file + 'model.txt', 'w',encoding='utf8') as outfile:
+        json.dump(Lmodel, outfile, ensure_ascii=False)
+        
+    with open(link_result_file + 'display_model.txt', 'w',encoding='utf8') as outfile:
+        outfile.write('Language model:\n')
+        for key,value in Lmodel['Language model'].items():
+            outfile.write('%s:%s\n' % (key, value))
+        outfile.write('\nWord count:\n')    
+        for key,value in Lmodel['Word count'].items():
+            outfile.write('%s:%s\n' % (key, value))
+    
+    def sentences_Probability(sentence):
+        prob = 1
+    
+        prev = 'None'
+        curr = sentence[0]
+    
+        for word in sentence:
+            if prev is 'None':                                           #Neu chua duyet tiep word thư 2.
+                prev = ''
+                pass
+            else:
+                prev = curr
+                curr = word
+                if curr not in word_word_freq[prev]:                            #Tu moi khong co trong bo train.
+                    prob *= round(1/word_freq[prev],6)    
+                else:
+                    prob *= word_word_prob[prev][curr]
+             
+    
+        return prob
     
 if __name__ == "__main__":main()
 print (datetime.now()-start)
