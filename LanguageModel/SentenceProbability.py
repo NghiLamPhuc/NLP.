@@ -1,5 +1,4 @@
 import json
-from collections import defaultdict
 import pprint
 
 link_folder_ = '\\Users\\NghiLam\\Documents\\GATSOP\\LanguageModel\\'
@@ -19,10 +18,8 @@ def main():
         probability = Lmodel['Language model']
         word_count = Lmodel['Word count']
         totalWord = len(word_count)
-        
-#    fout = open(link_folder_ + 'output.txt','w',encoding='utf-8')    
 
-    s = 'Tôi ăn cơm .'
+    s = 'Tôi đi học .'
     lst_word = s.lower().split()
     
     prev = 'None'
