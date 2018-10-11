@@ -24,23 +24,28 @@ def remove_some(s):
 
 # The^m space va`o giua chu cai va ky tu dac biet
 def add_space_after_word_matecharacter(s):
-    return re.sub('(?<=\w)(?=[.,\-\)\}\]?!%\":;])', ' ', s)
+    return re.sub('(?<=\w)(?=[.,\/\_\-\(\)\{\}\[\]?!%\":;])', ' ', s)
     
+        
 def add_space_before_word_metacharacter(s):
-    return re.sub('(?<=[.,\(\{\[?!%\":;])(?=\w)', ' ', s)
+    return re.sub('(?<=[.,\/\_\-\(\)\{\}\[\]?!%\":;])(?=\w)', ' ', s)
+    
+      
+def add_space_1(s):
+    return re.sub('(?<=[.,\(\-\)\}\]?!%\":;])(?=[.,\(\-\)\}\]?!%\":;])', ' ', s)
+
 
 # BEGIN.########################### Tach cau #############################
 def split_sentences(st):
     lst = list()
 # Sau cùng là dấu '!', '?', '.'. Trước nó là bất cứ ký tự gì khác '!', '?', '.'.
-#    regex = re.compile('[^!?\.]+[!?]')
+#    regex = re.compile('[^!?\.]+[!?\n\.]')
 #    sentences = regex.findall(st)
-    regex = re.compile('(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<![A-Z]\.)(?<=\.|\?|!)\s')
-#    regex = re.compile('(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=.|\?|!)\s')
+    regex = re.compile('(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<![A-Z]\.)(?<=[\.\?!])[\s\n]')
     sentences = re.split(regex,st)
-     
-    for s in sentences:
-        lst.append(s.strip())
+    lst = sentences
+#    for s in sentences:
+#        lst.append(s.strip())
     
     return lst
 # Tách câu.################################################################ END
@@ -52,9 +57,10 @@ def tokenize(the_list):
     regex = re.compile('[^\s]+')
     
     for i in the_list:
-#        i1 = add_space_after_word_matecharacter(i)
-        i2 = add_space_before_word_metacharacter(i)
-        token = regex.findall(i2)
+        i = add_space_before_word_metacharacter(i)
+        i = add_space_after_word_matecharacter(i)
+        i = add_space_1(i)
+        token = regex.findall(i)
         lst.append(token)
         
     return lst
@@ -66,8 +72,15 @@ f.write(input_file)
 # ############# In kết quả tách câu ###########################################
 list_sentences = split_sentences(input_file)
 display_out_file(list_sentences,'sentences.txt',link_output_file)
+print (list_sentences[0])
+#print (input_file[3])
 # ############# In kết quả tách tu to #######################################
-#tokens = tokenize(lst_sntncs)
+tokens = tokenize(list_sentences)
+#print (tokens)
+f = open(link_output_file+'token.txt','w',encoding='utf8')
+for t in tokens:
+     f.write("%s\n" % t)
+
 #display_out_file(tokens,'tokens.txt',link_output_file)
 
 print (datetime.now()-start)
