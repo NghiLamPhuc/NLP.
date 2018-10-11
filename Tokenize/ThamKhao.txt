@@ -1,2 +1,4 @@
 https://docs.python.org/3/library/re.html
 https://stackoverflow.com/questions/25735644/python-regex-for-splitting-text-into-sentences-sentence-tokenizing
+https://stackoverflow.com/questions/2973436/regex-lookahead-lookbehind-and-atomic-groups
+https://regex101.com/r/nG1gU7/27
