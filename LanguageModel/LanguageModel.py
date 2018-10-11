@@ -71,7 +71,8 @@ def main():
                 
     for eachWord in word_freq:
         for thisWord in word_word_freq[eachWord]:
-            word_word_prob[eachWord][thisWord] = round((word_word_freq[eachWord][thisWord] + 1)/(word_freq[eachWord] + v),6)
+#            word_word_prob[eachWord][thisWord] = round((word_word_freq[eachWord][thisWord] + 1)/(word_freq[eachWord] + v),6)
+            word_word_prob[eachWord][thisWord] = round(word_word_freq[eachWord][thisWord]/word_freq[eachWord],6)
     
     display_out_file(word_word_prob,'word_to_word_prob.txt')
     Lmodel = {}
@@ -87,27 +88,6 @@ def main():
         outfile.write('\nWord count:\n')    
         for key,value in Lmodel['Word count'].items():
             outfile.write('%s:%s\n' % (key, value))
-    
-    def sentences_Probability(sentence):
-        prob = 1
-    
-        prev = 'None'
-        curr = sentence[0]
-    
-        for word in sentence:
-            if prev is 'None':                                           #Neu chua duyet tiep word thư 2.
-                prev = ''
-                pass
-            else:
-                prev = curr
-                curr = word
-                if curr not in word_word_freq[prev]:                            #Tu moi khong co trong bo train.
-                    prob *= round(1/word_freq[prev],6)    
-                else:
-                    prob *= word_word_prob[prev][curr]
-             
-    
-        return prob
     
 if __name__ == "__main__":main()
 print (datetime.now()-start)
