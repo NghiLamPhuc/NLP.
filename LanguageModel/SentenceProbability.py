@@ -1,20 +1,16 @@
 import json
-import pprint
 
 link_folder_ = '\\Users\\NghiLam\\Documents\\GATSOP\\LanguageModel\\'
 link_out_file = link_folder_ + 'outfile\\'
 link_input_file = link_folder_ + 'output\\'
 link_result_file = link_folder_
 
-def display_out_file(lst,filename):
-    file = link_out_file + filename
-    with open(file, 'w', encoding='utf-8') as fout:
-        pprint.pprint(lst,fout)
 
 def main():
     
     with open(link_input_file + 'model.txt',encoding='utf-8') as model_file:    
         Lmodel = json.load(model_file)
+        
         probability = Lmodel['Language model']
         word_count = Lmodel['Word count']
         totalWord = len(word_count)
