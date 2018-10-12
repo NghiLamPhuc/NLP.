@@ -80,7 +80,7 @@ def main():
     Lmodel['Word count'] = word_freq
     with open(link_result_file + 'model.txt', 'w',encoding='utf8') as outfile:
         json.dump(Lmodel, outfile, ensure_ascii=False)
-        
+    # GHI LAI CHO DE NHIN
     with open(link_result_file + 'display_model.txt', 'w',encoding='utf8') as outfile:
         outfile.write('Language model:\n')
         for key,value in Lmodel['Language model'].items():
