@@ -4,7 +4,6 @@ import json
 from datetime import datetime
 start=datetime.now()
 
-
 link_folder_ = '\\Users\\NghiLam\\Documents\\GATSOP\\LanguageModel\\'
 link_out_file = link_folder_ + 'outfile\\'
 link_train_file = link_folder_ + 'input\\'
@@ -19,6 +18,7 @@ def main():
     word_freq = dict() #count word.
     word_word_freq = defaultdict(dict)
     word_word_prob = defaultdict(dict)
+    word_prob_test = dict()
     
     with open(link_train_file+'input.pos','r',encoding='utf-8') as inputfile:
         for line in inputfile:                                                  #Duyet tung dong.
@@ -47,17 +47,17 @@ def main():
                     else:
                         word_freq[word] += 1
                                                                                 #Dem tan suat word_to_word.
-                    if preWord not in word_word_freq:
+                    if preWord not in word_word_freq:                           # Thiếu word => $.
                         word_word_freq[preWord][curWord] = 1
                     elif curWord not in word_word_freq[preWord]:
                         word_word_freq[preWord][curWord] = 1
                     else: word_word_freq[preWord][curWord] += 1
 
 # ghi file.
-    with open(link_out_file+'wordCount.txt','w',encoding='utf8') as outfile:
-        json.dump(word_freq,outfile,ensure_ascii=False)
+#    with open(link_out_file+'wordCount.txt','w',encoding='utf8') as outfile:
+#        json.dump(word_freq,outfile,ensure_ascii=False)
         
-    display_out_file(word_word_freq,'word_to_word_freq.txt')
+    display_out_file(word_word_freq,'word_to_word_freq.txt')                    #Ghi file tan suat word=>word
 # Tinh xác suất.
 #    Add one, 
 #    for eachWord in word_freq:
@@ -70,11 +70,14 @@ def main():
     print (v)
                 
     for eachWord in word_freq:
-        for thisWord in word_word_freq[eachWord]:
+        word_prob_test[eachWord] = 0
+        for followWord in word_word_freq[eachWord]:
 #            word_word_prob[eachWord][thisWord] = round((word_word_freq[eachWord][thisWord] + 1)/(word_freq[eachWord] + v),6)
-            word_word_prob[eachWord][thisWord] = round(word_word_freq[eachWord][thisWord]/word_freq[eachWord],6)
+            word_word_prob[eachWord][followWord] = word_word_freq[eachWord][followWord]/word_freq[eachWord]
+            word_prob_test[eachWord] += word_word_prob[eachWord][followWord]
     
-    display_out_file(word_word_prob,'word_to_word_prob.txt')
+    display_out_file(word_prob_test,'test_probability.txt')
+    
     Lmodel = {}
     Lmodel['Language model'] = word_word_prob
     Lmodel['Word count'] = word_freq
