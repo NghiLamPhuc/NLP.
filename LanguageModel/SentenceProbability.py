@@ -1,4 +1,5 @@
 import json
+from collections import defaultdict
 
 link_folder_ = '\\Users\\NghiLam\\Documents\\GATSOP\\LanguageModel\\'
 link_out_file = link_folder_ + 'outfile\\'
@@ -15,12 +16,18 @@ def main():
         word_count = Lmodel['Word count']
         totalWord = len(word_count)
 
-    s = 'Tôi đi học .'
+#    s = 'Dịch_vụ đang trở_thành lĩnh_vực xuất_khẩu mới đóng_góp đáng_kể vào kim_ngạch xuất_khẩu của Việt_Nam .'
+#    s = 'Hỏi sao gọi “ bù_kẹp ” , anh cười : “ Dân miền Tây gọi con bò_cạp là bù_kẹp .'
+    s = 'Nhưng đó là quyết_định của anh .'
+#    s = 'Kỹ_thuật điêu_luyện , lối chơi thông_minh của Vinh “ sói ” đã làm điên_đảo hầu_hết những đối_thủ từ Á đến Âu mà tuyển miền Nam đã gặp thời ấy như Hàn_Quốc , Hong_Kong , Nhật , các đội Djugaden , Helsinborg ( Thụy_Điển ) , Lask ( Áo ) ...'
+#    s = 'Giờ_đây nhiều nông_dân cố_cựu vùng Đồng_Tháp_Mười này như bác Võ_Văn_Ni ( ấp Bàu_Môn , xã Thạnh_Hưng , huyện Mộc_Hóa ) vẫn còn nhớ như in những ngày đầu khi Trung_tâm Nghiên_cứu thực_nghiệm nông_nghiệp Đồng_Tháp_Mười vừa thành_lập : “ Tôi là người ở Đồng_Tháp_Mười từ thời ông cố đến giờ , tôi hiểu cục đất nơi này còn hơn cả con mình , vậy_mà hồi mấy chú vô tôi cứ cười bảo : để rồi coi , ở không được một vụ đâu , đất này làm chơi thôi chứ cao_sản cao_siếc cái gì ...'    
     lst_word = s.lower().split()
     
     prev = 'None'
     curr = lst_word[0]
-    prob = 1
+    prob = defaultdict(dict)
+    sentence_prob = 1
+    
     for word in lst_word:    
         if prev is 'None':                                           #Neu chua duyet tiep word thư 2.
             prev = ''
@@ -31,25 +38,18 @@ def main():
             #TU da co
             if prev in probability:
                 if curr in probability[prev]:
-                    prob *= probability[prev][curr]
-                elif curr in word_count:
-                    probability[prev][curr] = round(2/(word_count[curr]+totalWord),6)
-                    prob *= probability[prev][curr]
+                    prob[prev][curr] = probability[prev][curr]
+                    sentence_prob *= prob[prev][curr]
                 else:
-                    word_count[curr] = 1
-                    probability[prev][curr] = round(2/(1+totalWord),6)
-                    prob *= probability[prev][curr]
+#                    prob[prev][curr] = 1/(word_count[prev]+totalWord)
+                    prob[prev][curr] = 1/word_count[prev]
+                    sentence_prob *= prob[prev][curr]
             #Tu chua co
             else:
-                word_count[prev] = 1
-                if curr in word_count:    
-                    probability[prev][curr] = round(2/(word_count[curr]+totalWord),6)
-                    prob *= probability[prev][curr]
-                else:
-                    word_count[curr] = 1
-                    probability[prev][curr] = round(2/(1+totalWord),6)
-                    prob *= probability[prev][curr]
-            
-    print (prob)
-        
+                prob[prev][curr] = 1/(1+totalWord)
+                sentence_prob *= prob[prev][curr]
+    
+    print (sentence_prob)
+    for k,v in prob.items():
+        print (k,v)
 if __name__ == "__main__":main()
