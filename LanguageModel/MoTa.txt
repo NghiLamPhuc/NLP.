@@ -1,0 +1,10 @@
+﻿Đếm tần suất từ trước => từ sau.
+Đếm tần suất mỗi từ. (từ này là từ đứng trước).
+Xác suất tính bằng: từ trước từ sau / từ trước.
+
+Đối với những từ không có trong training.
+Nếu từ trước, từ sau có trong model thì lấy ra.
+Nếu từ trước có trong model, từ sau không thì xác suất tính bằng:
+	1 / tổng số từ trước
+Nếu cả 2 từ chưa có trong model,
+	1 / 1+ tổng số từ (có trong train).
