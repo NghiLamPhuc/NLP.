@@ -45,7 +45,6 @@ def CYK(words, grammar):
     table = []
     numOfWord = len(words)
     for j in range(0,numOfWord):
-        print (words[j])
         for key,value in grammar.items():
             for v in value:
                 if words[j] == v:
@@ -88,7 +87,7 @@ def main():
 #        print (v)
 #        count += len(v)
 #    print (count)
-    CYK(words, grammar)
+    print (CYK(words, grammar))
     
 
     print (datetime.now()-start)
