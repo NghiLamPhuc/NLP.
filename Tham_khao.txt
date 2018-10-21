@@ -8,7 +8,19 @@ https://www.quora.com/How-do-I-write-a-dictionary-to-a-file-in-Python
 https://stackoverflow.com/questions/3880399/how-to-send-the-output-of-pprint-module-to-a-log-file
 main http://www.cse.unsw.edu.au/~billw/cs9414/notes/nlp/ambiguity/ambiguity-2009.html
 git	 https://stackoverflow.com/questions/24114676/git-error-failed-to-push-some-refs-to
+2dimensional array
+https://www.tutorialspoint.com/python/python_2darray.htm
+
+tuple
+https://vietjack.com/python/tuple_trong_python.jsp
+2dimensional
+https://stackoverflow.com/questions/2397141/how-to-initialize-a-two-dimensional-array-in-python
 
 Th? thu?t python https://viblo.asia/p/nhung-thu-thuat-python-ban-nhat-dinh-phai-biet-tren-con-duong-go-pro-gGJ59XDGlX2
 Sort dict
 https://stackoverflow.com/questions/20577840/python-dictionary-sorting-in-descending-order-based-on-values
+cyk big o
+https://math.stackexchange.com/questions/503012/how-do-i-prove-an-algorithm-has-n3-time-complexity
+http://lxmls.it.pt/2015/cky.html
+multi key dict
+http://python.omics.wiki/data-structures/dictionary/multiple-keys
