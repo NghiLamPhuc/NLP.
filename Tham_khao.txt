@@ -14,7 +14,7 @@ https://www.tutorialspoint.com/python/python_2darray.htm
 tuple
 https://vietjack.com/python/tuple_trong_python.jsp
 2dimensional
-https://stackoverflow.com/questions/2397141/how-to-initialize-a-two-dimensional-array-in-python
+https://stackoverflow.com/questions/6667201/how-to-define-a-two-dimensional-array-in-python
 
 Th? thu?t python https://viblo.asia/p/nhung-thu-thuat-python-ban-nhat-dinh-phai-biet-tren-con-duong-go-pro-gGJ59XDGlX2
 Sort dict
