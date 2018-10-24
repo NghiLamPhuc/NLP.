@@ -51,11 +51,11 @@ def CYK(words, grammar):
             for k in range(i+1, j+1):
                 temp = ''
                 temp += table[i][k-1] + ' ' + table[k][j]
-#                print (table[i][k-1])
                 for key, value in grammar.items():
                     for v in value:
                         if temp == v:
-                            table[i][j] += key
+#                            table[i][j] += key
+                            table[i][j] = key
                             table[i][j] = table[i][j].lstrip()
     
 
