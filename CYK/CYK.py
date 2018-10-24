@@ -1,12 +1,6 @@
 from datetime import datetime
 
 
-#T = [[11, 12, 5, 2], [15, 6,10], [10, 8, 12, 5], [12,15,8,6]]
-#for r in T:
-#    for c in r:
-#        print(c,end = "end.")
-#    print()
-
 link_folder = '\\Users\\NghiLam\\Documents\\GATSOP\\CYK\\'
 
 
@@ -42,42 +36,34 @@ def getGrammar():
     return gram
 
 def CYK(words, grammar):
-    table = []
     numOfWord = len(words)
+    
+    w, h = numOfWord, numOfWord;
+    table = [[' ' for x in range(w)] for y in range(h)] 
+    
     for j in range(0,numOfWord):
         for key,value in grammar.items():
             for v in value:
                 if words[j] == v:
-                    #table[j-1][j] = key
-                    for ta in range(0,numOfWord):
-                        new = []
-                        for tanew in range(0,numOfWord):
-                            new.append(key)
-                        table.append(new)
-
-        if j<2: pass
-        for i in range(j-2,-1,-1):
-            for k in range(i+1,j-1):
+                    table[j][j] += key
+                    table[j][j] = table[j][j].lstrip()
+        for i in range(j-1,-1,-1):
+            for k in range(i+1, j+1):
                 temp = ''
-                temp += table[i][k]
-                temp += ' '
-                temp += table[k][j]
-                for key,value in grammar.items():
+                temp += table[i][k-1] + ' ' + table[k][j]
+#                print (table[i][k-1])
+                for key, value in grammar.items():
                     for v in value:
                         if temp == v:
-#                           table[i][j] = k
-                            for ta in range(0,numOfWord):
-                                new = []
-                                for tanew in range(0,numOfWord):
-                                    new.append(key)
-                                table.append(new)
-                        
-    print (type(table))
+                            table[i][j] += key
+                            table[i][j] = table[i][j].lstrip()
+    
+
     return table
 
 def main():
     start=datetime.now()
-
+#             0    1     2     3      4     5         6
     words = ('I','saw','the','man','with','the','telescope')
 #    print (type(words[3]))
     grammar = getGrammar()
@@ -87,7 +73,8 @@ def main():
 #        print (v)
 #        count += len(v)
 #    print (count)
-    print (CYK(words, grammar))
+    for i in CYK(words, grammar):
+        print (i)
     
 
     print (datetime.now()-start)
