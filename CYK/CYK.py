@@ -8,8 +8,8 @@ link_folder = '\\Users\\NghiLam\\Documents\\GATSOP\\CYK\\'
 def read_file_TextIOWrappertype(url, filename):                                 # Dùng for để duyệt qua từng phần tử.
     return open(url + filename, 'r', encoding='utf8')
 #============================================================================= Hàm xử lý để lấy grammar.
-def getGrammar():
-    grammarFile = read_file_TextIOWrappertype(link_folder,'grammar.txt')
+def getGrammar(filename):
+    grammarFile = read_file_TextIOWrappertype(link_folder,filename)
 #    Đếm có bao nhiêu quy tắc.
     gram = dict()
     size = 0
@@ -34,7 +34,9 @@ def getGrammar():
 #    In kiểm tra có bao nhiêu quy tắc
 #    print (size)
     return gram
-
+#============================================================================= Hàm CYK.
+#    Thiếu 1: Chưa phân biệt chữ hoa chữ thường.
+#    Thiếu 2: Chưa xử lý giá trị của table, chỉ lưu đc 1 giá trị.
 def CYK(words, grammar):
     numOfWord = len(words)
     
@@ -45,7 +47,8 @@ def CYK(words, grammar):
         for key,value in grammar.items():
             for v in value:
                 if words[j] == v:
-                    table[j][j] += key
+#                    table[j][j] += key
+                    table[j][j] = key
                     table[j][j] = table[j][j].lstrip()
         for i in range(j-1,-1,-1):
             for k in range(i+1, j+1):
@@ -57,16 +60,16 @@ def CYK(words, grammar):
 #                            table[i][j] += key
                             table[i][j] = key
                             table[i][j] = table[i][j].lstrip()
-    
 
     return table
 
 def main():
     start=datetime.now()
 #             0    1     2     3      4     5         6
-    words = ('I','saw','the','man','with','the','telescope')
+#    words = ('I','saw','the','man','with','the','telescope')
+    words = ('She','eats','a','fish','with','a','fork')
 #    print (type(words[3]))
-    grammar = getGrammar()
+    grammar = getGrammar('grammar2.txt')
 #    count = 0
 #    for k,v in grammar.items():
 #        print (k)
