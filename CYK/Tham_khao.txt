@@ -1,0 +1,3 @@
+cyk big o
+https://math.stackexchange.com/questions/503012/how-do-i-prove-an-algorithm-has-n3-time-complexity
+http://lxmls.it.pt/2015/cky.html
