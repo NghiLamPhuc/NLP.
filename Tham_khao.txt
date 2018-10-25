@@ -1,3 +1,6 @@
+utf-8-sig
+https://stackoverflow.com/questions/17912307/u-ufeff-in-python-string
+
 https://stackoverflow.com/questions/12683201/python-re-split-to-split-by-spaces-commas-and-periods-but-not-in-cases-like
 https://quantrimang.com/gioi-thieu-qua-ve-chuoi-so-list-trong-python-140881#mcetoc_1bth6iuio6
 dict json - https://pythonspot.com/save-a-dictionary-to-a-file/
