@@ -19,7 +19,6 @@ class Node:
         else:
             x = self.name + '(' + self.left + ' ' + self.right + ')'
         return x
-    
 
 def displayTree(node):
     if node.left == None and node.right == None:
@@ -41,8 +40,8 @@ def read_file_TextIOWrappertype(url, filename):                                #
 def getGrammar_1(filename, words):
     grammarFile = read_file_TextIOWrappertype(link_folder,filename)
 #    Đếm có bao nhiêu quy tắc.
-    gram = dict()
     size = 0
+    gram = dict()
     for item in grammarFile:
         size += 1
         item = item.replace('\n','')
@@ -68,6 +67,7 @@ def getGrammar_1(filename, words):
 #    In kiểm tra có bao nhiêu quy tắc
 #    print (size)
     return gram
+
 #============================================================================= Hàm CYK.
 #    Thiếu 1: Chưa phân biệt chữ hoa chữ thường.
 #    Thiếu 2: Chưa xử lý giá trị của table, chỉ lưu đc 1 giá trị.
@@ -75,7 +75,8 @@ def CYK(words, grammar):
     numOfWord = len(words)
     
     w, h = numOfWord, numOfWord;
-    table = [['|' for x in range(w)] for y in range(h)] 
+#    table = [['|' for x in range(w)] for y in range(h)]
+    table = [[' ' for x in range(w)] for y in range(h)]
     
     for j in range(0,numOfWord):
         for key,value in grammar.items():
@@ -83,26 +84,27 @@ def CYK(words, grammar):
                 if words[j] == v: # Kiểm tra nếu words[j] rỗng thì ra kết quả luôn.
 #                    table[j][j] += key
                     table[j][j] = key
-                    table[j][j] = table[j][j].lstrip()
-#                    leaf.append(Node(None,None,key,words[j]))
-                    node.append(Node(None,None,key,words[j]))
-        
+#                    table[j][j] = table[j][j].lstrip()
+                    
         for i in range(j-1,-1,-1):
             for k in range(i+1, j+1):
-                temp = ''
-                temp += table[i][k-1] + ' ' + table[k][j]
-                for key, value in grammar.items():
-                    for v in value:
-                        if temp == v: # Kiểm tra nếu temp là rỗng hoặc thiếu thì ra kết quả.
-#                            table[i][j] += key
-                            table[i][j] = key
-                            table[i][j] = table[i][j].lstrip()
-#                            nl = Node()
-                            node.append(Node(table[i][k-1],table[k][j],key,None))
-        for m in range(0,numOfWord):
-            print (table[m],end='\n')
-        print ('\n')
-        
+                if table[i][k-1] != ' ' and table[k][j] != ' ':
+                    left = table[i][k-1].split()
+                    right = table[k][j].split()
+                    for l in left:
+                        for r in right:
+                            temp = ''
+#                            temp += table[i][k-1] + ' ' + table[k][j]
+                            temp += l + ' ' + r
+                            for key,value in grammar.items():
+                                for v in value:
+                                    if temp == v: #Bổ sung Kiểm tra nếu temp là rỗng hoặc thiếu thì ra kết quả.
+                                        table[i][j] += ' ' + key
+                                        table[i][j] = table[i][j].lstrip()
+
+#        for m in range(0,numOfWord):
+#            print (table[m],end='\n')
+#        print ('\n')
         
     return table
 
@@ -113,15 +115,16 @@ terminal = []
 
 def main():
     start=datetime.now()
+    
 #             0    1     2     3      4     5         6
-    words = ('I','saw','the','man','with','the','telescope')
+    words = ('I','saw','the','man','with','the','telescope','in','the','man')
 #    words = ('Tôi','đã_nhìn','một','người_đàn_ông','với','một','ống_nhòm')
 #    words = ('She','eats','a','fish','with','a','fork')
 #    words = ('Tôi','ăn','một','con_cá','với','một','cái_nĩa')
 #    
     grammar = getGrammar_1('grammar1.txt',words)
-#    grammar = getGrammar('grammar1 - Copy.txt')
-#    grammar = getGrammar('grammar2.txt')
+#    grammar = getGrammar_1('grammar1 - Copy.txt',words)
+#    grammar = getGrammar_1('grammar2.txt',words)
 #Đếm có bao nhiêu luật.
 #    count = 0
 #    for k,v in grammar.items():
@@ -129,25 +132,19 @@ def main():
 #        print (v)
 #        count += len(v)
 #    print (count)
-#In bảng table được trả về bởi hàm CYK    
-#    for i in CYK(words, grammar):
-#        print (i)
     w, h = len(words), len(words)
-    table = [['|' for x in range(w)] for y in range(h)] 
+#    table = [['|' for x in range(w)] for y in range(h)]
+    table = [[' ' for x in range(w)] for y in range(h)]
     table = CYK(words, grammar)
+#In bảng table được trả về bởi hàm CYK   
+    for i in table:
+        print (i)
+
     
-#    for i in leaf:
+    
+#    for i in node:
 #        print (i.displayNode())
-    
-#    for i in range(len(words)-1, -1, -1):
-#        for j in range(0, len(words)):
-#            if table[i][j] != '|':
-                
-    
-    
-    for i in node:
-        print (i.displayNode())
-    print ('\n')
+#    print ('\n')
     
 #    for j in node:
 #        if j.name == 'S':
