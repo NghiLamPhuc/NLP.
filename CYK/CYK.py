@@ -1,43 +1,34 @@
 from datetime import datetime
-from collections import defaultdict
 
 class Node:
-    def __init__(self, left, right, name, word):
-        self.left = left
-        self.right = right
-        self.name = name
-        self.word = word
-            
-    def addLeft(self,node):
-        self.left = node
-    def addRight(self,node):
-        self.right = node
-            
-    def displayNode(self):
-        if self.left is None and self.right is None:
-            x = self.name + '{' + self.word + '}'
-        else:
-            x = self.name + '(' + self.left + ' ' + self.right + ')'
-        return x
+	def __init__(self, root, left, right, end):
+		self._root = root
+		self._left = left
+		self._right = right
+		self._terminal = end
+		self._status = True
+		if end == None:
+			self._status = False
 
-def displayTree(node):
-    if node.left == None and node.right == None:
-        return node.word + '_' + node.name
-    else:
-        return '['+displayTree(node.left)+' '+displayTree(node.right)+']_'+node.name
-    
-preTree = list()
-tree = list()
-leaf = list()
+	def root(self):
+		return self._root
+
+	def left(self):
+		return self._left
+
+	def right(self):
+		return self._right
+
+	def status(self):
+		return self._status
+
+	def terminal(self):
+		return self._terminal
 
 link_folder = '\\Users\\NghiLam\\Documents\\GATSOP\\CYK\\'
-
 #============================================================================= read file textIOwrapper.
 def read_file_TextIOWrappertype(url, filename):                                #Dùng for để duyệt qua từng phần tử.
     return open(url + filename, 'r', encoding='utf-8-sig')
-#============================================================================= Hàm xử lý để lấy grammar.
-#def getGrammar(filename):
-#    getGrammar_1(filename)
 #============================================================================= Hàm xử lý để lấy grammar.
 def getGrammar_1(filename, words):
     grammarFile = read_file_TextIOWrappertype(link_folder,filename)
@@ -63,16 +54,6 @@ def getGrammar_1(filename, words):
         elif right not in gram[left]:
             gram[left].append(right)
         
-        list_right = right.split()
-        if len(list_right) > 1:
-            preTree.append(Node(list_right[0],list_right[1],left,None))
-        else:
-            leaf.append(Node(None,None,left,right))
-            
-        for i in range(0,len(words)):
-            if words[i] == right and right not in terminal:
-                terminal.append(right)
-            
 #    In kiểm tra có bao nhiêu quy tắc
 #    print (size)
     return gram
@@ -81,51 +62,63 @@ def getGrammar_1(filename, words):
 #    Thiếu 1: Chưa phân biệt chữ hoa chữ thường.
 def CYK(words, grammar):
     numOfWord = len(words)
+    table = [[[] for i in range(numOfWord)] for j in range(numOfWord)]
+    nodes_back = [[[] for i in range(numOfWord)] for j in range(numOfWord)]
     
-    table = [[' ' for x in range(numOfWord)] for y in range(numOfWord)]
+#    table = [[' ' for x in range(numOfWord)] for y in range(numOfWord)]
     
     for j in range(0,numOfWord):
 #        Kiểm tra 
-#        for key,value in grammar.items():
-#            for v in value:
-#                if words[j] == v:
-#                    table[j][j] = key
-        for l in leaf:
-            if words[j] == l.word:
-                table[j][j] = l.name
-                preTree.append(l)
+        for key,value in grammar.items():
+            for v in value:
+                if words[j] == v:
+                    table[j][j].append(key)
+                    nodes_back[j][j].append(Node(key, None, None, words[j]))
                                         
         for i in range(j-1,-1,-1):
             for k in range(i+1, j+1):
-                if table[i][k-1] != ' ' and table[k][j] != ' ':
-                    left = table[i][k-1].split()
-                    right = table[k][j].split()
-                    for l in left:
-                        for r in right:
-                            temp = ''
-#                            temp += table[i][k-1] + ' ' + table[k][j]
-                            temp += l + ' ' + r
-                            for key,value in grammar.items():
-                                for v in value:
-                                    if temp == v: #Bổ sung Kiểm tra nếu temp là rỗng hoặc thiếu thì ra kết quả.
-                                        if key not in table[i][j]:
-                                            table[i][j] += ' ' + key
-                                            table[i][j] = table[i][j].lstrip()
+                for l in table[i][k-1]:#left:
+                    for r in table[k][j]:#right:
+                        temp = ''
+                        temp += l + ' ' + r
+                        for key,value in grammar.items():
+                            for v in value:
+                                if temp == v: #Bổ sung Kiểm tra nếu temp là rỗng hoặc thiếu thì ra kết quả.
+#                                    table[i][j].append(key)
+                                    table[i][j] = [key]
+                                        
+                                    for b in nodes_back[i][k-1]:
+                                        for c in nodes_back[k][j]:
+                                            if b.root == l and c.root == r:
+                                                nodes_back[i][j].append(Node(key, b, c, None))
 
-                                    
-
-
-#        for m in range(0,numOfWord):
-#            print (table[m],end='\n')
-#        print ('\n')
-        
-    return tree, table
+#    return tree, table
+    return table,nodes_back[0][numOfWord-1]
 
 #============================================================================= Hàm In Cây.
-#def displayParseTree():
-    
-terminal = []
+def printParseTrees(nodes_back):
+	check = False
+	for node in nodes_back:
+		if node.root == 'S':
+			print(getParseTree(node, 3))
+			print()
+			check = True
 
+	if not check:
+		print('The given sentence is not valid according to the grammar.')
+#============================================================================= Hàm.    
+def getParseTree(root, indent):
+	if root.status:
+		return '(' + root.root + ' ' + root.terminal + ')'
+
+	# Calculates the new indent factors that we need to pass forward.
+	new1 = indent + 2 + len(root.left.root) #len(tree[1][0])
+	new2 = indent + 2 + len(root.right.root) #len(tree[2][0])
+	left = getParseTree(root.left, new1)
+	right = getParseTree(root.right, new2)
+	return '(' + root.root + ' ' + left + '\n' \
+			+ ' '*indent + right + ')'
+#============================================================================= Main.
 def main():
     start=datetime.now()
     
@@ -149,20 +142,14 @@ def main():
 #        count += len(v)
 #    print (count)
     
-    tree, table = CYK(words, grammar)
+    table,a = CYK(words, grammar)
 #In bảng table được trả về bởi hàm CYK   
-#    for i in table:
-#        print (i)
-
     for i in table:
         print (i)
+    printParseTrees(a)
+        
     
 
-#        if i.name == 'S':
-#            displayTree(i)
-#            break
-    
-    
     print (datetime.now()-start)
     
 if __name__ == "__main__":main()
