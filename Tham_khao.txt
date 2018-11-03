@@ -19,6 +19,9 @@ https://vietjack.com/python/tuple_trong_python.jsp
 2dimensional
 https://stackoverflow.com/questions/6667201/how-to-define-a-two-dimensional-array-in-python
 
+self
+https://stackoverflow.com/questions/30294383/python3-when-exactly-do-you-need-to-prepend-self-to-variable-declarations
+
 Th? thu?t python https://viblo.asia/p/nhung-thu-thuat-python-ban-nhat-dinh-phai-biet-tren-con-duong-go-pro-gGJ59XDGlX2
 Sort dict
 https://stackoverflow.com/questions/20577840/python-dictionary-sorting-in-descending-order-based-on-values
