@@ -24,22 +24,30 @@ class Node:
 
 	def terminal(self):
 		return self._terminal
+    
+def printBack(node):
+    s = ''
+    if node.terminal != None:
+        s += node._root + '_' + node._terminal
+    else:
+        s += '(' + printBack(node.left) + ' ' + printBack(node.right) + ')_' + node.root
+    return s
 
 link_folder = '\\Users\\NghiLam\\Documents\\GATSOP\\CYK\\'
 #============================================================================= read file textIOwrapper.
 def read_file_TextIOWrappertype(url, filename):                                #Dùng for để duyệt qua từng phần tử.
     return open(url + filename, 'r', encoding='utf-8-sig')
 #============================================================================= Hàm xử lý để lấy grammar.
-def getGrammar_1(filename, words):
+def getGrammar_1(filename):
     grammarFile = read_file_TextIOWrappertype(link_folder,filename)
 #    Đếm có bao nhiêu quy tắc.
-    size = 0
+#    size = 0
     gram = dict()
     for item in grammarFile:
-        size += 1
+#        size += 1
         item = item.replace('\n','')
         item = item.replace(' -> ', '-')
-    
+
         t = 0
         for count in item:
             if count != '-':
@@ -84,28 +92,29 @@ def CYK(words, grammar):
                         for key,value in grammar.items():
                             for v in value:
                                 if temp == v: #Bổ sung Kiểm tra nếu temp là rỗng hoặc thiếu thì ra kết quả.
-#                                    table[i][j].append(key)
-                                    table[i][j] = [key]
+                                    table[i][j].append(key)
+#                                    table[i][j] = [key]
+                                    nodes_back[i][j].append(Node(key, l, r, None))
                                         
-                                    for b in nodes_back[i][k-1]:
-                                        for c in nodes_back[k][j]:
-                                            if b.root == l and c.root == r:
-                                                nodes_back[i][j].append(Node(key, b, c, None))
+#                                    for b in nodes_back[i][k-1]:
+#                                        for c in nodes_back[k][j]:
+#                                            if b.root == l and c.root == r:
+#                                                nodes_back[i][j].append(Node(key, b, c, None))
 
 #    return tree, table
     return table,nodes_back[0][numOfWord-1]
 
 #============================================================================= Hàm In Cây.
 def printParseTrees(nodes_back):
-	check = False
-	for node in nodes_back:
-		if node.root == 'S':
-			print(getParseTree(node, 3))
-			print()
-			check = True
-
-	if not check:
-		print('The given sentence is not valid according to the grammar.')
+    check = False
+    for node in nodes_back:
+        if node.root == 'S':
+            print(getParseTree(node, 3))
+            print()
+            check = True
+        break
+    if check == False:
+        print('The given sentence is not valid according to the grammar.')
 #============================================================================= Hàm.    
 def getParseTree(root, indent):
 	if root.status:
@@ -128,12 +137,10 @@ def main():
 #    words = ('She','eats','a','fish','with','a','fork')
 #    words = ('Tôi','ăn','một','con_cá','với','một','cái_nĩa')
 #    
-    grammar = getGrammar_1('grammar1.txt',words)
-#    grammar = getGrammar_1('grammar1 - Copy.txt',words)
-#    grammar = getGrammar_1('grammar2.txt',words)
+    grammar = getGrammar_1('grammar1.txt')
+#    grammar = getGrammar_1('grammar1 - Copy.txt')
+#    grammar = getGrammar_1('grammar2.txt')
     
-#    table = [[' ' for x in range(len(words))] for y in range(len(words))]
-
 #In ra các luật và Đếm có bao nhiêu luật.
 #    count = 0
 #    for k,v in grammar.items():
@@ -142,12 +149,13 @@ def main():
 #        count += len(v)
 #    print (count)
     
-    table,a = CYK(words, grammar)
+    table,back = CYK(words, grammar)
 #In bảng table được trả về bởi hàm CYK   
     for i in table:
         print (i)
-    printParseTrees(a)
-        
+    printParseTrees(back)
+#    print (back[0]._root+' '+back[0]._left+' '+back[0]._right)
+    
     
 
     print (datetime.now()-start)
