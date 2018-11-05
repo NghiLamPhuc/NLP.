@@ -1,39 +1,8 @@
 from datetime import datetime
+from Node import Node
 
-class Node:
-	def __init__(self, root, left, right, end):
-		self._root = root
-		self._left = left
-		self._right = right
-		self._terminal = end
-		self._status = True
-		if end == None:
-			self._status = False
+link_folder = '\\Users\\NghiLam\\Documents\\NLP\\CYK\\'
 
-	def root(self):
-		return self._root
-
-	def left(self):
-		return self._left
-
-	def right(self):
-		return self._right
-
-	def status(self):
-		return self._status
-
-	def terminal(self):
-		return self._terminal
-    
-def printBack(node):
-    s = ''
-    if node.terminal != None:
-        s += node._root + '_' + node._terminal
-    else:
-        s += '(' + printBack(node.left) + ' ' + printBack(node.right) + ')_' + node.root
-    return s
-
-link_folder = '\\Users\\NghiLam\\Documents\\GATSOP\\CYK\\'
 #============================================================================= read file textIOwrapper.
 def read_file_TextIOWrappertype(url, filename):                                #Dùng for để duyệt qua từng phần tử.
     return open(url + filename, 'r', encoding='utf-8-sig')
@@ -81,20 +50,25 @@ def CYK(words, grammar):
             for v in value:
                 if words[j] == v:
                     table[j][j].append(key)
-                    nodes_back[j][j].append(Node(key, None, None, words[j]))
+#                    nodes_back[j][j].append(Node(key,None,None,words[j]))
+                    nodes_back[j][j].append(Node(key,-1,-1,-1,-1,-1,-1,words[j]))
+                    
                                         
         for i in range(j-1,-1,-1):
             for k in range(i+1, j+1):
-                for l in table[i][k-1]:#left:
-                    for r in table[k][j]:#right:
+#                for l in table[i][k-1]:#left:
+                for l in range(0,len(table[i][k-1])):
+#                    for r in table[k][j]:#right:
+                    for r in range(0,len(table[k][j])):
                         temp = ''
-                        temp += l + ' ' + r
+#                        temp += l + ' ' + r
+                        temp += table[i][k-1][l] + ' ' + table[k][j][r]
                         for key,value in grammar.items():
                             for v in value:
                                 if temp == v: #Bổ sung Kiểm tra nếu temp là rỗng hoặc thiếu thì ra kết quả.
                                     table[i][j].append(key)
-#                                    table[i][j] = [key]
-                                    nodes_back[i][j].append(Node(key, l, r, None))
+#                                    nodes_back[i][j].append(Node(key, l, r, None))
+                                    nodes_back[i][j].append(Node(key,i,k-1,l,k,j,r,None))
                                         
 #                                    for b in nodes_back[i][k-1]:
 #                                        for c in nodes_back[k][j]:
@@ -102,31 +76,30 @@ def CYK(words, grammar):
 #                                                nodes_back[i][j].append(Node(key, b, c, None))
 
 #    return tree, table
-    return table,nodes_back[0][numOfWord-1]
+    return table,nodes_back#[0][numOfWord-1]
 
 #============================================================================= Hàm In Cây.
 def printParseTrees(nodes_back):
     check = False
     for node in nodes_back:
         if node.root == 'S':
-            print(getParseTree(node, 3))
+            print(getParseTree(node))
             print()
             check = True
         break
     if check == False:
         print('The given sentence is not valid according to the grammar.')
 #============================================================================= Hàm.    
-def getParseTree(root, indent):
+def getParseTree(root):
 	if root.status:
 		return '(' + root.root + ' ' + root.terminal + ')'
 
 	# Calculates the new indent factors that we need to pass forward.
-	new1 = indent + 2 + len(root.left.root) #len(tree[1][0])
-	new2 = indent + 2 + len(root.right.root) #len(tree[2][0])
-	left = getParseTree(root.left, new1)
-	right = getParseTree(root.right, new2)
-	return '(' + root.root + ' ' + left + '\n' \
-			+ ' '*indent + right + ')'
+#	new1 = indent + 2 + len(root.left.root) #len(tree[1][0])
+#	new2 = indent + 2 + len(root.right.root) #len(tree[2][0])
+	left = getParseTree(root.left)
+	right = getParseTree(root.right)
+	return '(' + root.root + ' ' + left + '\n' + right + ')'
 #============================================================================= Main.
 def main():
     start=datetime.now()
@@ -136,7 +109,7 @@ def main():
 #    words = ('Tôi','đã_nhìn','một','người_đàn_ông','với','một','ống_nhòm')
 #    words = ('She','eats','a','fish','with','a','fork')
 #    words = ('Tôi','ăn','một','con_cá','với','một','cái_nĩa')
-#    
+    numOfWord = len(words)
     grammar = getGrammar_1('grammar1.txt')
 #    grammar = getGrammar_1('grammar1 - Copy.txt')
 #    grammar = getGrammar_1('grammar2.txt')
@@ -153,10 +126,40 @@ def main():
 #In bảng table được trả về bởi hàm CYK   
     for i in table:
         print (i)
-    printParseTrees(back)
-#    print (back[0]._root+' '+back[0]._left+' '+back[0]._right)
+    
+#    for i in range(numOfWord-1,-1,-1):
+#        for j in range(numOfWord-1,-1,-1):
+#            print (back[0][i])
+    for i in back[0][numOfWord-1]:
+        print (i.name)
+        left = table[i.lrow][i.lcol][i.lorder]
+        right = table[i.rrow][i.rcol][i.rorder]
+        s = left + ' ' + right
+        print (s)
+#        print left
+#        for j in back[i.lrow][i.lcol]:
+#            if j.lrow is -1:
+#                print (j.terminal)
+        j = back[i.lrow][i.lcol][i.lorder]
+        if j.lrow is not -1:
+            leftL = table[j.lrow][j.lcol][j.lorder]
+            leftR = table[j.rrow][j.rcol][j.rorder]
+            sL = leftL + ' ' + leftR
+        else:
+            sL = j.terminal
+#        print right
+        k = back[i.rrow][i.rcol][i.rorder]
+        leftR = table[k.lrow][k.lcol][k.lorder]
+        rightR = table[k.rrow][k.rcol][k.rorder]
+        sR = leftR + ' ' + rightR
+        
+        print (sL + ' ' + sR)
+        
+        
     
     
+#    print (back[1][6][0].name)
+            
 
     print (datetime.now()-start)
     
