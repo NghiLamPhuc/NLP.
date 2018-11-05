@@ -136,10 +136,8 @@ def main():
         right = table[i.rrow][i.rcol][i.rorder]
         s = left + ' ' + right
         print (s)
+        
 #        print left
-#        for j in back[i.lrow][i.lcol]:
-#            if j.lrow is -1:
-#                print (j.terminal)
         j = back[i.lrow][i.lcol][i.lorder]
         if j.lrow is not -1:
             leftL = table[j.lrow][j.lcol][j.lorder]
@@ -149,9 +147,13 @@ def main():
             sL = j.terminal
 #        print right
         k = back[i.rrow][i.rcol][i.rorder]
-        leftR = table[k.lrow][k.lcol][k.lorder]
-        rightR = table[k.rrow][k.rcol][k.rorder]
-        sR = leftR + ' ' + rightR
+        if k.lrow is not -1:
+            leftR = table[k.lrow][k.lcol][k.lorder]
+            rightR = table[k.rrow][k.rcol][k.rorder]
+            sR = leftR + ' ' + rightR
+        else:
+            sR = k.terminal
+        
         
         print (sL + ' ' + sR)
         
