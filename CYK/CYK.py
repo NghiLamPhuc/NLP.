@@ -42,15 +42,12 @@ def CYK(words, grammar):
     table = [[[] for i in range(numOfWord)] for j in range(numOfWord)]
     nodes_back = [[[] for i in range(numOfWord)] for j in range(numOfWord)]
     
-#    table = [[' ' for x in range(numOfWord)] for y in range(numOfWord)]
-    
     for j in range(0,numOfWord):
 #        Kiểm tra 
         for key,value in grammar.items():
             for v in value:
                 if words[j] == v:
                     table[j][j].append(key)
-#                    nodes_back[j][j].append(Node(key,None,None,words[j]))
                     nodes_back[j][j].append(Node(key,-1,-1,-1,-1,-1,-1,words[j]))
                     
                                         
@@ -69,37 +66,24 @@ def CYK(words, grammar):
                                     table[i][j].append(key)
 #                                    nodes_back[i][j].append(Node(key, l, r, None))
                                     nodes_back[i][j].append(Node(key,i,k-1,l,k,j,r,None))
-                                        
-#                                    for b in nodes_back[i][k-1]:
-#                                        for c in nodes_back[k][j]:
-#                                            if b.root == l and c.root == r:
-#                                                nodes_back[i][j].append(Node(key, b, c, None))
-
-#    return tree, table
+                       
     return table,nodes_back#[0][numOfWord-1]
 
-#============================================================================= Hàm In Cây.
-def printParseTrees(nodes_back):
-    check = False
-    for node in nodes_back:
-        if node.root == 'S':
-            print(getParseTree(node))
-            print()
-            check = True
-        break
-    if check == False:
-        print('The given sentence is not valid according to the grammar.')
-#============================================================================= Hàm.    
-def getParseTree(root):
-	if root.status:
-		return '(' + root.root + ' ' + root.terminal + ')'
+#============================================================================= Hàm In Cây 1 dòng.
+table = []
+back = []
 
-	# Calculates the new indent factors that we need to pass forward.
-#	new1 = indent + 2 + len(root.left.root) #len(tree[1][0])
-#	new2 = indent + 2 + len(root.right.root) #len(tree[2][0])
-	left = getParseTree(root.left)
-	right = getParseTree(root.right)
-	return '(' + root.root + ' ' + left + '\n' + right + ')'
+def printTreeByLine(node):
+#   Tai 1 node, neu gia tri left row: lrow bang -1, tuc la node do la terminal.
+    if node.lrow is -1:
+        return node.terminal + '.' + node.name
+    return '[' + printTreeByLine(back[node.lrow][node.lcol][node.lorder]) + ' ' \
+    + printTreeByLine(back[node.rrow][node.rcol][node.rorder]) + ']-' + node.name
+#============================================================================= Hàm In Cây.
+#def printTree(s):
+    
+#============================================================================= Hàm.    
+
 #============================================================================= Main.
 def main():
     start=datetime.now()
@@ -121,48 +105,46 @@ def main():
 #        print (v)
 #        count += len(v)
 #    print (count)
-    
+    global table
+    global back
     table,back = CYK(words, grammar)
 #In bảng table được trả về bởi hàm CYK   
     for i in table:
         print (i)
-    
-#    for i in range(numOfWord-1,-1,-1):
-#        for j in range(numOfWord-1,-1,-1):
-#            print (back[0][i])
+    print ()
+#                                                                              đóng băng đoạn này         
+#    for i in back[0][numOfWord-1]:
+#        print (i.name)
+#        left = table[i.lrow][i.lcol][i.lorder]
+#        right = table[i.rrow][i.rcol][i.rorder]
+#        s = left + ' ' + right
+#        print (s)
+#        while (i1.lrow is not -1):
+#                                                                    print left
+#        j = back[i.lrow][i.lcol][i.lorder]
+#            i1 = back[i.lrow][i.lcol][i.lorder]
+#            if i1.lrow is not -1:
+#                leftL = table[i1.lrow][i1.lcol][i1.lorder]
+#                leftR = table[i1.rrow][i1.rcol][i1.rorder]
+#                sL = leftL + ' ' + leftR
+#            else:
+#                sL = i1.terminal
+##                                                                   print right
+#            i2 = back[i.rrow][i.rcol][i.rorder]
+#            if i.lrow is not -1:
+#                leftR = table[i2.lrow][i2.lcol][i2.lorder]
+#                rightR = table[i2.rrow][i2.rcol][i2.rorder]
+#                sR = leftR + ' ' + rightR
+#            else:
+#                sR = i2.terminal            
+#            print (sL + ' ' + sR)
+#                                                                              đóng băng đoạn này
     for i in back[0][numOfWord-1]:
-        print (i.name)
-        left = table[i.lrow][i.lcol][i.lorder]
-        right = table[i.rrow][i.rcol][i.rorder]
-        s = left + ' ' + right
-        print (s)
-        
-#        print left
-        j = back[i.lrow][i.lcol][i.lorder]
-        if j.lrow is not -1:
-            leftL = table[j.lrow][j.lcol][j.lorder]
-            leftR = table[j.rrow][j.rcol][j.rorder]
-            sL = leftL + ' ' + leftR
-        else:
-            sL = j.terminal
-#        print right
-        k = back[i.rrow][i.rcol][i.rorder]
-        if k.lrow is not -1:
-            leftR = table[k.lrow][k.lcol][k.lorder]
-            rightR = table[k.rrow][k.rcol][k.rorder]
-            sR = leftR + ' ' + rightR
-        else:
-            sR = k.terminal
-        
-        
-        print (sL + ' ' + sR)
-        
-        
+        print (printTreeByLine(i))
+        print ()
+#        printTree(printTreeByLine(i))
+    printTree(printTreeByLine(back[0][numOfWord-1][0]))
     
-    
-#    print (back[1][6][0].name)
-            
-
     print (datetime.now()-start)
     
 if __name__ == "__main__":main()
