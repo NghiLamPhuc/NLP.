@@ -43,7 +43,6 @@ def CYK(words, grammar):
     nodes_back = [[[] for i in range(numOfWord)] for j in range(numOfWord)]
     
     for j in range(0,numOfWord):
-#        Kiểm tra 
         for key,value in grammar.items():
             for v in value:
                 if words[j] == v:
@@ -64,24 +63,25 @@ def CYK(words, grammar):
                             for v in value:
                                 if temp == v: #Bổ sung Kiểm tra nếu temp là rỗng hoặc thiếu thì ra kết quả.
                                     table[i][j].append(key)
-#                                    nodes_back[i][j].append(Node(key, l, r, None))
                                     nodes_back[i][j].append(Node(key,i,k-1,l,k,j,r,None))
                        
-    return table,nodes_back#[0][numOfWord-1]
+    return table,nodes_back
 
 #============================================================================= Hàm In Cây 1 dòng.
 table = []
 back = []
-
 def printTreeByLine(node):
 #   Tai 1 node, neu gia tri left row: lrow bang -1, tuc la node do la terminal.
     if node.lrow is -1:
-        return node.terminal + '.' + node.name
-    return '[' + printTreeByLine(back[node.lrow][node.lcol][node.lorder]) + ' ' \
-    + printTreeByLine(back[node.rrow][node.rcol][node.rorder]) + ']-' + node.name
+        return node.name + '.' + node.terminal
+    return node.name + '-[' + printTreeByLine(back[node.lrow][node.lcol][node.lorder]) + ' ' \
+    + printTreeByLine(back[node.rrow][node.rcol][node.rorder]) + ']'
 #============================================================================= Hàm In Cây.
-#def printTree(s):
+def printTree(s):
     
+    for i in range(len(s)-1,-1,-1):
+        if (s[i] != '-' and s[i] != ']' and s[i] != '[' and s[i] != '.'):
+            print (s[i])  
 #============================================================================= Hàm.    
 
 #============================================================================= Main.
@@ -116,8 +116,9 @@ def main():
     for i in back[0][numOfWord-1]:
         print (printTreeByLine(i))
         print ()
-#        printTree(printTreeByLine(i))
+    
 #    printTree(printTreeByLine(back[0][numOfWord-1][0]))
+    
     
     print (datetime.now()-start)
     
