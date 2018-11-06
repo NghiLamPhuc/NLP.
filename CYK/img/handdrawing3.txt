@@ -1,0 +1,16 @@
+np
+   v
+      det n
+        np
+             p
+                det n
+                  np
+               pp
+           np
+      vp
+                       p
+                          det n
+                            np
+                         pp
+              vp
+     s
