@@ -112,38 +112,12 @@ def main():
     for i in table:
         print (i)
     print ()
-#                                                                              đóng băng đoạn này         
-#    for i in back[0][numOfWord-1]:
-#        print (i.name)
-#        left = table[i.lrow][i.lcol][i.lorder]
-#        right = table[i.rrow][i.rcol][i.rorder]
-#        s = left + ' ' + right
-#        print (s)
-#        while (i1.lrow is not -1):
-#                                                                    print left
-#        j = back[i.lrow][i.lcol][i.lorder]
-#            i1 = back[i.lrow][i.lcol][i.lorder]
-#            if i1.lrow is not -1:
-#                leftL = table[i1.lrow][i1.lcol][i1.lorder]
-#                leftR = table[i1.rrow][i1.rcol][i1.rorder]
-#                sL = leftL + ' ' + leftR
-#            else:
-#                sL = i1.terminal
-##                                                                   print right
-#            i2 = back[i.rrow][i.rcol][i.rorder]
-#            if i.lrow is not -1:
-#                leftR = table[i2.lrow][i2.lcol][i2.lorder]
-#                rightR = table[i2.rrow][i2.rcol][i2.rorder]
-#                sR = leftR + ' ' + rightR
-#            else:
-#                sR = i2.terminal            
-#            print (sL + ' ' + sR)
-#                                                                              đóng băng đoạn này
+
     for i in back[0][numOfWord-1]:
         print (printTreeByLine(i))
         print ()
 #        printTree(printTreeByLine(i))
-    printTree(printTreeByLine(back[0][numOfWord-1][0]))
+#    printTree(printTreeByLine(back[0][numOfWord-1][0]))
     
     print (datetime.now()-start)
     
