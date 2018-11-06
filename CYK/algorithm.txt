@@ -1,8 +1,0 @@
-input: words, grammar
-
-for j = 0 to len(words):
-   table[j][j] = {A|A-> words[j] in grammar}
-   for i = j-1 downto 0:
-      for k = i+1 to j:
-         if table[i][k-1] + table[k][j] in grammar
-         table[i][j] = table[i][k-1] + table[k][j]

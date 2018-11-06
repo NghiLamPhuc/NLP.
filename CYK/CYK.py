@@ -7,7 +7,7 @@ link_folder = '\\Users\\NghiLam\\Documents\\NLP\\CYK\\'
 def read_file_TextIOWrappertype(url, filename):                                #Dùng for để duyệt qua từng phần tử.
     return open(url + filename, 'r', encoding='utf-8-sig')
 #============================================================================= Hàm xử lý để lấy grammar.
-def getGrammar_1(filename):
+def getGrammar(filename):
     grammarFile = read_file_TextIOWrappertype(link_folder,filename)
 #    Đếm có bao nhiêu quy tắc.
 #    size = 0
@@ -88,15 +88,15 @@ def printTree(s):
 def main():
     start=datetime.now()
     
-#             0    1     2     3      4     5         6      7     8     9
-    words = ('I','saw','the','man','with','the','telescope','in','the','man')
-#    words = ('Tôi','đã_nhìn','một','người_đàn_ông','với','một','ống_nhòm')
+#    sentence = read_file_TextIOWrappertype(link_folder,'sentence1.txt.')
+    sentence = read_file_TextIOWrappertype(link_folder,'sentence2.txt.')
+    for i in sentence:
+        words = i.split()
 #    words = ('She','eats','a','fish','with','a','fork')
-#    words = ('Tôi','ăn','một','con_cá','với','một','cái_nĩa')
+    
     numOfWord = len(words)
-    grammar = getGrammar_1('grammar1.txt')
-#    grammar = getGrammar_1('grammar1 - Copy.txt')
-#    grammar = getGrammar_1('grammar2.txt')
+#    grammar = getGrammar('grammar1.txt')
+    grammar = getGrammar('grammar2.txt')
     
 #In ra các luật và Đếm có bao nhiêu luật.
 #    count = 0
@@ -118,7 +118,6 @@ def main():
         print ()
     
 #    printTree(printTreeByLine(back[0][numOfWord-1][0]))
-    
     
     print (datetime.now()-start)
     
