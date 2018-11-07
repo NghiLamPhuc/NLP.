@@ -1,17 +1,9 @@
-np 
-   v 
-      det n 
-        np     p 
-                  det n
-                    np      
-                         p 
-                            det n
-                              np
-
-                           pp
-                       np
-                  pp
-            np
-      vp
-   s
-
+s
+np	vp
+I	v	np
+	saw	np		pp
+		det	n	p	np
+		the	man	with	np		pp
+					det	n	p	np
+					telescope	in	det	n
+								the	man

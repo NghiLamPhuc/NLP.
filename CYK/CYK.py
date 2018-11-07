@@ -1,6 +1,7 @@
 from datetime import datetime
 from Node import Node
 
+
 link_folder = '\\Users\\NghiLam\\Documents\\NLP\\CYK\\'
 
 #============================================================================= read file textIOwrapper.
@@ -67,21 +68,34 @@ def CYK(words, grammar):
                        
     return table,nodes_back
 
-#============================================================================= Hàm In Cây 1 dòng.
+#============================================================================= Hàm In Cây.
 table = []
 back = []
+l_node = []
 def printTreeByLine(node):
 #   Tai 1 node, neu gia tri left row: lrow bang -1, tuc la node do la terminal.
     if node.lrow is -1:
+        l_node.append(node.name + '.' + node.terminal)
+#        l_node.append(node.terminal)
         return node.name + '.' + node.terminal
-    return node.name + '-[' + printTreeByLine(back[node.lrow][node.lcol][node.lorder]) + ' ' \
-    + printTreeByLine(back[node.rrow][node.rcol][node.rorder]) + ']'
-#============================================================================= Hàm In Cây.
-def printTree(s):
-    
-    for i in range(len(s)-1,-1,-1):
-        if (s[i] != '-' and s[i] != ']' and s[i] != '[' and s[i] != '.'):
-            print (s[i])  
+    else:
+        l_node.append(node.name)
+        return node.name + '[' + printTreeByLine(back[node.lrow][node.lcol][node.lorder]) + \
+    ' ' + printTreeByLine(back[node.rrow][node.rcol][node.rorder]) + ']'
+        
+def printTreeByLine2(node):
+    if node.lrow is -1: 
+        return node.name + '(' + node.terminal + ')'
+    else:
+        return node.name + '(' + printTreeByLine2(back[node.lrow][node.lcol][node.lorder]) + \
+        printTreeByLine2(back[node.rrow][node.rcol][node.rorder]) + ')' 
+        
+def printTree1(node):
+    if node.lrow is -1:
+        return node.name + '.' + node.terminal
+    return node.name + '\n' + printTree1(back[node.lrow][node.lcol][node.lorder]) + \
+    ' ' + printTree1(back[node.rrow][node.rcol][node.rorder])
+
 #============================================================================= Hàm.    
 
 #============================================================================= Main.
@@ -92,7 +106,6 @@ def main():
     sentence = read_file_TextIOWrappertype(link_folder,'sentence2.txt.')
     for i in sentence:
         words = i.split()
-#    words = ('She','eats','a','fish','with','a','fork')
     
     numOfWord = len(words)
 #    grammar = getGrammar('grammar1.txt')
@@ -115,7 +128,12 @@ def main():
 
     for i in back[0][numOfWord-1]:
         print (printTreeByLine(i))
+        print (printTree1(i))
         print ()
+    
+#    global l_node
+    for i in l_node:
+        print (i)
     
 #    printTree(printTreeByLine(back[0][numOfWord-1][0]))
     

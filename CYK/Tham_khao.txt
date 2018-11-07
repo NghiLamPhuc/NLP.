@@ -3,3 +3,4 @@ https://math.stackexchange.com/questions/503012/how-do-i-prove-an-algorithm-has-
 http://lxmls.it.pt/2015/cky.html
 cai tien giai thuat cyk
 http://vjs.ac.vn/index.php/jcc/article/view/1412/1844
+https://stackoverflow.com/questions/11479624/is-there-a-way-to-guarantee-hierarchical-output-from-networkx
