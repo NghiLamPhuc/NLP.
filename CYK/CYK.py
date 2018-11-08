@@ -1,7 +1,6 @@
 from datetime import datetime
 from Node import Node
 
-
 link_folder = '\\Users\\NghiLam\\Documents\\NLP\\CYK\\'
 
 #============================================================================= read file textIOwrapper.
@@ -48,7 +47,7 @@ def CYK(words, grammar):
             for v in value:
                 if words[j] == v:
                     table[j][j].append(key)
-                    nodes_back[j][j].append(Node(key,-1,-1,-1,-1,-1,-1,words[j]))
+                    nodes_back[j][j].append(Node(key,-1,-1,-1,-1,-1,-1,words[j],j-j))
                     
                                         
         for i in range(j-1,-1,-1):
@@ -64,7 +63,7 @@ def CYK(words, grammar):
                             for v in value:
                                 if temp == v: #Bổ sung Kiểm tra nếu temp là rỗng hoặc thiếu thì ra kết quả.
                                     table[i][j].append(key)
-                                    nodes_back[i][j].append(Node(key,i,k-1,l,k,j,r,None))
+                                    nodes_back[i][j].append(Node(key,i,k-1,l,k,j,r,None,j-i))
                        
     return table,nodes_back
 
@@ -84,7 +83,7 @@ def printTreeByLine(node):
     ' ' + printTreeByLine(back[node.rrow][node.rcol][node.rorder]) + ']'
         
 def printTreeByLine2(node):
-    if node.lrow is -1: 
+    if node.lrow is -1:
         return node.name + '(' + node.terminal + ')'
     else:
         return node.name + '(' + printTreeByLine2(back[node.lrow][node.lcol][node.lorder]) + \
@@ -92,8 +91,8 @@ def printTreeByLine2(node):
         
 def printTree1(node):
     if node.lrow is -1:
-        return node.name + '.' + node.terminal
-    return node.name + '\n' + printTree1(back[node.lrow][node.lcol][node.lorder]) + \
+        return '\t'*node.level + node.name + '.' + node.terminal
+    return ' '*node.level + node.name + '\n' + printTree1(back[node.lrow][node.lcol][node.lorder]) + \
     ' ' + printTree1(back[node.rrow][node.rcol][node.rorder])
 
 #============================================================================= Hàm.    
@@ -102,14 +101,14 @@ def printTree1(node):
 def main():
     start=datetime.now()
     
-#    sentence = read_file_TextIOWrappertype(link_folder,'sentence1.txt.')
-    sentence = read_file_TextIOWrappertype(link_folder,'sentence2.txt.')
+    sentence = read_file_TextIOWrappertype(link_folder,'sentence1.txt.')
+#    sentence = read_file_TextIOWrappertype(link_folder,'sentence2.txt.')
     for i in sentence:
         words = i.split()
     
     numOfWord = len(words)
-#    grammar = getGrammar('grammar1.txt')
-    grammar = getGrammar('grammar2.txt')
+    grammar = getGrammar('grammar1.txt')
+#    grammar = getGrammar('grammar2.txt')
     
 #In ra các luật và Đếm có bao nhiêu luật.
 #    count = 0
@@ -128,14 +127,12 @@ def main():
 
     for i in back[0][numOfWord-1]:
         print (printTreeByLine(i))
+#        print (printTreeByLine2(i))
         print (printTree1(i))
         print ()
-    
-#    global l_node
-    for i in l_node:
-        print (i)
-    
-#    printTree(printTreeByLine(back[0][numOfWord-1][0]))
+
+#    print (l_node)
+        
     
     print (datetime.now()-start)
     

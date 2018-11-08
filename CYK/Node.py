@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self,name,lrow,lcol,lorder,rrow,rcol,rorder,terminal):
+    def __init__(self,name,lrow,lcol,lorder,rrow,rcol,rorder,terminal,level):
         self.name = name
         self.lrow = lrow
         self.lcol = lcol
@@ -8,3 +8,5 @@ class Node:
         self.rcol = rcol
         self.rorder = rorder
         self.terminal = terminal
+        self.level = level
+        
