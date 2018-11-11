@@ -19,3 +19,15 @@ N -> roof
 P -> from
 P -> on
 P -> in
+NP -> She
+V -> eats
+P -> with
+N -> fish
+N -> fork
+Det -> a
+VP -> eats
+NP -> Alice
+V -> called
+NP -> Bob
+P -> from
+NP -> Cardiff
