@@ -45,6 +45,7 @@ def CYK(words, grammar):
     for j in range(0,numOfWord):
         for key,value in grammar.items():
             for v in value:
+#               Neu moi value la terminal thi khong can chay tiep 
                 if words[j] == v:
                     table[j][j].append(key)
                     nodes_back[j][j].append(Node(key,-1,-1,-1,-1,-1,-1,words[j],j-j))
@@ -103,12 +104,13 @@ def main():
     
     sentence = read_file_TextIOWrappertype(link_folder,'sentence1.txt.')
 #    sentence = read_file_TextIOWrappertype(link_folder,'sentence2.txt.')
+#    sentence = read_file_TextIOWrappertype(link_folder,'sentence3.txt.')
+    
     for i in sentence:
         words = i.split()
     
     numOfWord = len(words)
     grammar = getGrammar('grammar1.txt')
-#    grammar = getGrammar('grammar2.txt')
     
 #In ra các luật và Đếm có bao nhiêu luật.
 #    count = 0
@@ -124,6 +126,7 @@ def main():
     for i in table:
         print (i)
     print ()
+
 
     for i in back[0][numOfWord-1]:
         print (printTreeByLine(i))
