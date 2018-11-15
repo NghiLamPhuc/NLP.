@@ -107,7 +107,9 @@ def main():
 #    sentence = read_file_TextIOWrappertype(link_folder,'sentence3.txt.')
     
     for i in sentence:
+        print (i)
         words = i.split()
+        
     
     numOfWord = len(words)
     grammar = getGrammar('grammar1.txt')
