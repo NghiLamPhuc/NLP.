@@ -1,2 +1,4 @@
 function words
 http://voer.edu.vn/m/thuc-tu-va-hu-tu/6c6dac41
+evaluation measures
+https://machinelearningcoban.com/2017/08/31/evaluation/
