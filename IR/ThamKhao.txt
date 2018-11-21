@@ -2,3 +2,11 @@ function words
 http://voer.edu.vn/m/thuc-tu-va-hu-tu/6c6dac41
 evaluation measures
 https://machinelearningcoban.com/2017/08/31/evaluation/
+noi suy
+https://vi.wikipedia.org/wiki/N%E1%BB%99i_suy
+http://voer.edu.vn/m/bai-toan-noi-suy/b6083ffd
+http://vuontoanblog.blogspot.com/2012/10/polynomial-interpolation-lagrange.html
+vector model
+https://butchiso.com/2013/10/tim-hieu-ve-mo-hinh-khong-gian-vector.html
+log term frequency
+https://stackoverflow.com/questions/27067992/why-is-log-used-when-calculating-term-frequency-weight-and-idf-inverse-document
