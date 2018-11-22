@@ -10,3 +10,7 @@ vector model
 https://butchiso.com/2013/10/tim-hieu-ve-mo-hinh-khong-gian-vector.html
 log term frequency
 https://stackoverflow.com/questions/27067992/why-is-log-used-when-calculating-term-frequency-weight-and-idf-inverse-document
+svd
+https://machinelearningcoban.com/2017/06/07/svd/
+hoi quy tuyen tinh
+https://machinelearningcoban.com/2016/12/28/linearregression/
