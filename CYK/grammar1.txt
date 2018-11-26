@@ -24,10 +24,15 @@ V -> eats
 P -> with
 N -> fish
 N -> fork
-Det -> a
+DET -> a
 VP -> eats
 NP -> Alice
 V -> called
 NP -> Bob
 P -> from
 NP -> Cardiff
+V -> includes
+DET -> the
+DET -> a
+N -> meal
+N -> flight
