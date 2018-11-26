@@ -102,9 +102,9 @@ def printTree1(node):
 def main():
     start=datetime.now()
     
-    sentence = read_file_TextIOWrappertype(link_folder,'sentence1.txt.')
+#    sentence = read_file_TextIOWrappertype(link_folder,'sentence1.txt.')
 #    sentence = read_file_TextIOWrappertype(link_folder,'sentence2.txt.')
-#    sentence = read_file_TextIOWrappertype(link_folder,'sentence3.txt.')
+    sentence = read_file_TextIOWrappertype(link_folder,'sentence4.txt.')
     
     for i in sentence:
         print (i)
