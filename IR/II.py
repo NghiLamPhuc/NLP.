@@ -1,24 +1,9 @@
-#!/usr/bin/env python
-# ----------------------------------------------------------------------------
-# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
-# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-# ----------------------------------------------------------------------------
-# Author: Matteo Bertozzi <theo.bertozzi@gmail.com>
-# Site: http://th30z.blogspot.com
-# ----------------------------------------------------------------------------
-
-import unicodedata
 from functools import reduce
 
 # List Of English Stop Words
 # http://armandbrahaj.blog.al/2009/04/14/list-of-english-stop-words/
 _WORD_MIN_LENGTH = 3
-_STOP_WORDS = frozenset([
+_STOP_WORDS = (
 'a', 'about', 'above', 'above', 'across', 'after', 'afterwards', 'again', 
 'against', 'all', 'almost', 'alone', 'along', 'already', 'also','although',
 'always','am','among', 'amongst', 'amoungst', 'amount',  'an', 'and', 'another',
@@ -56,7 +41,7 @@ _STOP_WORDS = frozenset([
 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 
 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 
 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself',
-'yourselves', 'the'])
+'yourselves', 'the')
 
 def word_split(text):
     """
