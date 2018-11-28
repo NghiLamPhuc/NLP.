@@ -30,3 +30,5 @@ https://math.stackexchange.com/questions/503012/how-do-i-prove-an-algorithm-has-
 http://lxmls.it.pt/2015/cky.html
 multi key dict
 http://python.omics.wiki/data-structures/dictionary/multiple-keys
+python
+https://techtalk.vn/nhung-thu-thuat-python-ban-nhat-dinh-phai-biet-tren-con-duong-go-pro.html?fbclid=IwAR1T40alnygVt9lyndeIdwEWZmxlwG1CdY6Tpwp_U8Z9Usw6MkjwVjKjXYk
