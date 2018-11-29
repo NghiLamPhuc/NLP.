@@ -1,4 +1,5 @@
 from functools import reduce
+import re
 
 #http://xltiengviet.wikia.com/wiki/Danh_s%C3%A1ch_stop_word
 
@@ -94,7 +95,9 @@ def search(inverted, query):
             words.append(word)
 
     for word in words:
+        print ('\t'+word)
         results.append(set(inverted[word].keys()))
+        
     print (results)
     if results:
         return reduce(lambda x, y: x and y, results)
@@ -133,7 +136,17 @@ Cấm kỵ:
     
     doc3 = """ddaay la documetn so 3.Thịt gà"""
 
-    
+#    d1 = open('doc1.txt','r',encoding='utf-8-sig')
+#    d2 = open('doc2.txt','r',encoding='utf-8-sig')
+#    d3 = open('doc3.txt','r',encoding='utf-8-sig')
+##    document1 = d1.read()
+#    document2 = d2.read()
+#    document3 = d3.read()
+#    
+#    for line in d1:
+#        line = line.replace('\n','')
+#        line = line.split()
+#        print (line)
     
     inverted = {}
     documents = {'doc1':doc1, 'doc2':doc2, 'doc3':doc3}
@@ -151,18 +164,30 @@ Cấm kỵ:
     # Print Inverted-Index
     for word, doc_locations in inverted.items():
         print (word, doc_locations)
-
-    queries = ['thịt gà','thịt vịt','thịt vịt có tính hàn','Theo Bảng thành phần dinh dưỡng Việt Nam']
+    qQuery = []
+    positionFirst = []
+    
+    queries = ('thịt gà','thịt vịt','thịt vịt có tính hàn','Theo Bảng thành phần dinh dưỡng Việt Nam')
     for query in queries:
         result_docs = search(inverted, query)
         print ()
         print ("Từ '%s' xuất hiện trong: %r" % (query, result_docs))
         
-#        for _, word in word_index(query):
-#            i=word
-#            
-#        for doc in result_docs:
-#            for index in inverted[word][doc]:
-#                print (doc+'   - %s...' % extract_text(doc, index))
-#        print ()
-            
+        for _, word in word_index(query):
+            qQuery.append(word)
+        
+#        for i in qQuery:
+        for i in range(0,len(qQuery)-1):
+            for doc in result_docs:
+                positionFirst.append(doc+':')
+                for index1 in inverted[qQuery[i]][doc]:
+#                    print (index1)
+                    tmp = index1+len(qQuery[i])+1
+#                    print (tmp)
+                    for index2 in inverted[qQuery[i+1]][doc]:
+                        if tmp == index2:
+                            positionFirst.append(index1)
+        print (positionFirst)
+        positionFirst = []
+        qQuery = []
+        
