@@ -100,7 +100,7 @@ def search(inverted, query):
         
     print (results)
     if results:
-        return reduce(lambda x, y: x and y, results)
+        return reduce(lambda x, y: x & y, results)
     return []
 
 def extract_text(doc, index):
@@ -167,7 +167,7 @@ Cấm kỵ:
     qQuery = []
     positionFirst = []
     
-    queries = ('thịt gà','thịt vịt','thịt vịt có tính hàn','Theo Bảng thành phần dinh dưỡng Việt Nam')
+    queries = ('thịt gà','thịt vịt','thịt vịt có tính hàn','Bảng thành phần dinh dưỡng Việt Nam','Thịt gà dồi dài protein.')
     for query in queries:
         result_docs = search(inverted, query)
         print ()
@@ -177,16 +177,21 @@ Cấm kỵ:
             qQuery.append(word)
         
 #        for i in qQuery:
-        for i in range(0,len(qQuery)-1):
+        for i in range(0,len(qQuery)):
             for doc in result_docs:
                 positionFirst.append(doc+':')
                 for index1 in inverted[qQuery[i]][doc]:
 #                    print (index1)
                     tmp = index1+len(qQuery[i])+1
 #                    print (tmp)
-                    for index2 in inverted[qQuery[i+1]][doc]:
+                    if i < len(qQuery)-1:
+                        for index2 in inverted[qQuery[i+1]][doc]:
+                            if tmp == index2:
+                                positionFirst.append(index1)
+                    elif i is (len(qQuery)-1):
+                        index2 = inverted[qQuery[i]][doc]
                         if tmp == index2:
-                            positionFirst.append(index1)
+                                positionFirst.append(index1)
         print (positionFirst)
         positionFirst = []
         qQuery = []
