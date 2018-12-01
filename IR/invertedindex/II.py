@@ -97,7 +97,7 @@ def search(inverted, query):
         results.append(set(inverted[word].keys()))
     print (results)
     if results:
-        return reduce(lambda x, y: x and y, results)
+        return reduce(lambda x, y: x & y, results)
     return []
 
 def extract_text(doc, index):
