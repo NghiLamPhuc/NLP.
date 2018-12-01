@@ -1,5 +1,4 @@
 from functools import reduce
-import re
 
 #http://xltiengviet.wikia.com/wiki/Danh_s%C3%A1ch_stop_word
 
@@ -7,11 +6,13 @@ file = open('stopwords.txt','r',encoding = 'utf-8-sig')
 stopwords = set()
 for line in file:
     line = line.replace('\n','')
+    line = line.strip()
     stopwords.add(line)
 
 #print (stopwords)
 
-
+# Hàm này lấy ra danh sách từ, vị trí.
+# Vị trí là vị trí chữ cái đầu tiên trong từ.
 def word_split(text):
 
     word_list = []  #(vị trí chữ cái bắt đầu, từ)
@@ -22,7 +23,7 @@ def word_split(text):
         if c.isalnum():
             wcurrent.append(c)
             windex = i
-        elif wcurrent:
+        elif len(wcurrent)>0:
             word = ''.join(wcurrent)
             word_list.append((windex - len(word) + 1, word))
             wcurrent = []
@@ -57,23 +58,30 @@ def words_normalize(words):
     return normalized_words
 
 def word_index(text):
-    words = word_split(text)
-    words = words_normalize(words)
-    words = words_not_stop(words)
+    words = word_split(text)            #Tách từ, vị trí.
+    words = words_normalize(words)      #Viết hoa -> thường.
+    words = words_not_stop(words)       #Lấy những từ không có trong stop word.
     return words
 
 # Liệt kê từ xuất hiện vị trí nào trong 1 documents.
 def inverted_index(text):
     inverted = {}
-
-    for index, word in word_index(text):
+    
+    word_pos = word_index(text)
+#    for index, word in word_index(text):
+    for index, word in word_pos:
         locations = inverted.setdefault(word, [])
         locations.append(index)
     
+#    print ('This is inverted of one text')
 #    print (inverted)
     return inverted
 
 #doc_index là 1 inverted_index.
+# Hàm này kết hợp các inverted riêng rẻ, gán thêm vị trí document.
+# Đầu tiên duyệt các từ trong 1 inverted, để lấy từ và location.
+# Sau đó thêm vào một dict có cấu trúc key1: từ key2 document id: value là bộ các vị trí
+#                                                                   ứng trong từng document.
 def inverted_index_add(inverted, doc_id, doc_index):
     for word, locations in doc_index.items():
         temp = inverted.setdefault(word, {})
@@ -87,7 +95,43 @@ def inverted_index_add(inverted, doc_id, doc_index):
 #    Sau đó lấy giao theo : ((thịt-vịt)-tính)-hàn)
 def search(inverted, query):
     words = []
+    stop_words = {}
+    result = dict()
     results = []
+    
+#    Lấy ra các từ (not in stop words)
+#    for _,word in word_index(query):
+#        if word in inverted:
+#            words.append(word)
+    t1 = word_split(query)
+    t1 = words_normalize(t1)
+    for index,w in t1:
+        if w not in stopwords:
+            words.append(w)
+            print (w)
+        else:
+            stop_words.setdefault(index,w)
+    print (stop_words)
+    for word in words:
+        print ('\t'+word)
+#        for k,v in inverted[word].items():
+#            print (k,v)
+#            temp = result.setdefault(word,{})
+#            temp[k] = v
+#    for word in words:
+#        print ('\t'+word)
+        print (set(inverted[word].keys()))
+        results.append(set(inverted[word].keys()))
+        
+    
+    if results:
+        return reduce(lambda x, y: x & y, results)
+    return []
+
+def search2(inverted, query):
+    words = []
+    results = []
+    result = dict()
     
 #    Lấy ra các từ (not in stop words).
     for _,word in word_index(query):
@@ -96,11 +140,17 @@ def search(inverted, query):
 
     for word in words:
         print ('\t'+word)
-        results.append(set(inverted[word].keys()))
-        
-    print (results)
-    if results:
-        return reduce(lambda x, y: x & y, results)
+        for k,v in inverted[word].items():
+#            print (k,v)
+            temp = result.setdefault(word,{})
+            temp[k] = v
+#    print (result)
+    for key,value in result.items():
+        for k,v in value.items():
+            for i in v:
+                print (i)
+    if result:
+        return result
     return []
 
 def extract_text(doc, index):
@@ -153,12 +203,12 @@ Cấm kỵ:
     
     for doc_id, text in documents.items():
         doc_index = inverted_index(text)
-        print ('Đầu tiên liệt kê các từ - vị trí trong mỗi document ---------------------\n')
-        print (doc_index)
+        print ('Đầu tiên liệt kê các từ - vị trí trong mỗi document ----------------\n')
+#        print (doc_index)
         print ()
         inverted_index_add(inverted, doc_id, doc_index)
         print ('Sau đó liệt kê các từ - document - vị trí --------------------------\n')
-        print (inverted)
+#        print (inverted)
         print ()
 
     # Print Inverted-Index
@@ -167,32 +217,42 @@ Cấm kỵ:
     qQuery = []
     positionFirst = []
     
-    queries = ('thịt gà','thịt vịt','thịt vịt có tính hàn','Bảng thành phần dinh dưỡng Việt Nam','Thịt gà dồi dài protein.')
+    queries = ('thịt gà','thịt vịt') #,'thịt vịt có tính hàn','theo Bảng thành phần dinh dưỡng Việt Nam','Thịt gà dồi dài protein.')
     for query in queries:
-        result_docs = search(inverted, query)
-        print ()
-        print ("Từ '%s' xuất hiện trong: %r" % (query, result_docs))
+        print ('\nquery muon tim: '+query)
+        # tach word trong query
+        print ('Tach word trong query')
+        temp1 = word_split(query)
+        temp1 = words_normalize(temp1)
+        for _,word in temp1:
+            print (word)
+            for doc_id,location in inverted[word].items():
+                print (doc_id)
+                print (location)
+#        result_docs = search(inverted, query)
+#        print ()
+#        print ("Từ '%s' xuất hiện trong: %r" % (query, result_docs))
         
-        for _, word in word_index(query):
-            qQuery.append(word)
-        
-#        for i in qQuery:
-        for i in range(0,len(qQuery)):
-            for doc in result_docs:
-                positionFirst.append(doc+':')
-                for index1 in inverted[qQuery[i]][doc]:
-#                    print (index1)
-                    tmp = index1+len(qQuery[i])+1
-#                    print (tmp)
-                    if i < len(qQuery)-1:
-                        for index2 in inverted[qQuery[i+1]][doc]:
-                            if tmp == index2:
-                                positionFirst.append(index1)
-                    elif i is (len(qQuery)-1):
-                        index2 = inverted[qQuery[i]][doc]
-                        if tmp == index2:
-                                positionFirst.append(index1)
-        print (positionFirst)
-        positionFirst = []
-        qQuery = []
+#        for _, word in word_index(query):
+#            qQuery.append(word)
+#        
+##        for i in qQuery:
+#        for i in range(0,len(qQuery)):
+#            for doc in result_docs:
+#                positionFirst.append(doc)
+#                for index1 in inverted[qQuery[i]][doc]:
+##                    print (index1)
+#                    tmp = index1+len(qQuery[i])+1
+##                    print (tmp)
+#                    if i < len(qQuery)-1:
+#                        for index2 in inverted[qQuery[i+1]][doc]:
+#                            if tmp == index2:
+#                                positionFirst.append(index1)
+#                    elif i is (len(qQuery)-1):
+#                        index2 = inverted[qQuery[i]][doc]
+#                        if tmp == index2:
+#                                positionFirst.append(index1)
+#        print (positionFirst)
+#        positionFirst = []
+#        qQuery = []
         
