@@ -36,3 +36,5 @@ triple quotes
 https://stackoverflow.com/questions/10840357/string-literal-with-triple-quotes-in-function-definitions
 lamda, map;reduce;
 http://vietvudanh.github.io/tech/2015/05/15/lambda-filter-reduce-map/
+json dict dumps
+https://stackoverflow.com/questions/36965507/writing-a-dictionary-to-a-text-file
