@@ -1,4 +1,5 @@
 from functools import reduce
+import json
 from datetime import datetime
 start=datetime.now()
 #http://xltiengviet.wikia.com/wiki/Danh_s%C3%A1ch_stop_word
@@ -113,6 +114,8 @@ def extract_text(doc, index):
     return documents[doc][first:last].replace('\n', '  ')
 
 link_sauKhiRemoveSome = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\sauKhiRemoveSome\\'
+link_folder = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\'
+
 
 if __name__ == '__main__':
 #    document string
@@ -172,7 +175,10 @@ if __name__ == '__main__':
         print ()
 
     # Print Inverted-Index
-    f = open('\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\InvertedIndex.txt','w',encoding='utf-8-sig')
+    f = open('\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\InvertedIndexDisplay.txt','w',encoding='utf-8-sig')
+    f1 = open('\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\InvertedIndex.txt','w',encoding='utf-8-sig')
+#    json.dump(inverted, f1, ensure_ascii=False))
+    f1.write(json.dumps(inverted, ensure_ascii=False))
     for key,value in inverted.items():
 #        f.write('%s:%s\n' % (key, value))
         f.write('%s:\n' % key)
