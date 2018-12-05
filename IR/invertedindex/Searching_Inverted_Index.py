@@ -29,17 +29,15 @@ def main():
 #    query = 'rau an toàn chật vật tìm chỗ đứng'
 #    query = 'Cụ thể, các quan chức liên quan sẽ không được phép vào EU.'
 #    query = 'Quốc, hội, châu, Âu.'
-    
+# ============================ Xử lý câu cần tìm ==============================    
     query = query.lower()
     query = re.sub('[^\w\s]','',query)
     words = query.split()
-    print (words)
     
     print ("Cần Tìm: "+query)
-    
+# =============================== Bắt đầu tìm =================================    
     found_at_last_word = []
 
-                
     for pos_0 in inverted[words[0]]['doc1']:
         next_0 = pos_0 + len(words[0]) + 1
         for i in range(1,len(words)):
@@ -50,6 +48,8 @@ def main():
             found_at_last_word.append(pos_0)
     
     print (found_at_last_word)
+    print ()
+# =============================== In câu chứa từ cần tìm  =====================
     f1 = open(link_document+'removed 0.txt','r',encoding='utf-8-sig')
     doc1 = f1.read()
     
@@ -58,7 +58,7 @@ def main():
         len_query = len_query + len(w)
         
     
-    for pos in found_at_last_word:
+    for index,pos in enumerate(found_at_last_word):
         sentence_pos = ''
         if pos-30 <= 0:
             pos_show = pos
@@ -66,6 +66,7 @@ def main():
         for i in range(pos_show,pos+len_query+20):
             sentence_pos = sentence_pos + doc1[i]
         sentence_pos = '...' + sentence_pos + '...'
+        print (index+1)
         print (sentence_pos)
         print ()
         
