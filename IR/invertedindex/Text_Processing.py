@@ -1,7 +1,4 @@
 from datetime import datetime
-from functools import reduce
-import json
-from collections import defaultdict
 import re
 from nltk.tokenize import word_tokenize
 import os
@@ -13,7 +10,8 @@ link_raw_text = '\\Users\\NghiLam\\Documents\\NLP\\RAW_TEXT\\van ban tho\\'
 
 link_folder = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\'
 link_input = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\input\\'
-link_sauKhiRemoveSome = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\sauKhiRemoveSome\\'
+#link_sauKhiRemoveSome = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\sauKhiRemoveSome\\'
+link_sauKhiRemoveSome = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\input\\'
 link_sauKhiTokenize = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\sauKhiTokenize\\'
 
 #global
