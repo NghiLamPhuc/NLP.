@@ -113,7 +113,8 @@ def extract_text(doc, index):
         
     return documents[doc][first:last].replace('\n', '  ')
 
-link_sauKhiRemoveSome = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\sauKhiRemoveSome\\'
+#link_text = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\sauKhiRemoveSome\\'
+link_text = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\input\\'
 link_folder = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\'
 
 
@@ -140,25 +141,25 @@ if __name__ == '__main__':
 #    
 #    doc3 = """ddaay la documetn so 3.Thịt gà"""
 
-    f1 = open(link_sauKhiRemoveSome+'removed 0.txt','r',encoding='utf-8-sig')
+    f1 = open(link_text+'removed 0.txt','r',encoding='utf-8-sig')
     doc1 = f1.read()
-    f2 = open(link_sauKhiRemoveSome+'removed 1.txt','r',encoding='utf-8-sig')
+    f2 = open(link_text+'removed 1.txt','r',encoding='utf-8-sig')
     doc2 = f2.read()
-    f3 = open(link_sauKhiRemoveSome+'removed 2.txt','r',encoding='utf-8-sig')
+    f3 = open(link_text+'removed 2.txt','r',encoding='utf-8-sig')
     doc3 = f3.read()
     
-    f4 = open(link_sauKhiRemoveSome+'removed 3.txt','r',encoding='utf-8-sig')
+    f4 = open(link_text+'removed 3.txt','r',encoding='utf-8-sig')
     doc4 = f4.read()
-    f5 = open(link_sauKhiRemoveSome+'removed 4.txt','r',encoding='utf-8-sig')
+    f5 = open(link_text+'removed 4.txt','r',encoding='utf-8-sig')
     doc5 = f5.read()
-    f6 = open(link_sauKhiRemoveSome+'removed 5.txt','r',encoding='utf-8-sig')
+    f6 = open(link_text+'removed 5.txt','r',encoding='utf-8-sig')
     doc6 = f6.read()
     
-    f7 = open(link_sauKhiRemoveSome+'removed 6.txt','r',encoding='utf-8-sig')
+    f7 = open(link_text+'removed 6.txt','r',encoding='utf-8-sig')
     doc7 = f7.read()
-    f8 = open(link_sauKhiRemoveSome+'removed 7.txt','r',encoding='utf-8-sig')
+    f8 = open(link_text+'removed 7.txt','r',encoding='utf-8-sig')
     doc8 = f8.read()
-    f9 = open(link_sauKhiRemoveSome+'removed 8.txt','r',encoding='utf-8-sig')
+    f9 = open(link_text+'removed 8.txt','r',encoding='utf-8-sig')
     doc9 = f9.read()
     
     inverted = {}
