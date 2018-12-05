@@ -14,3 +14,5 @@ svd
 https://machinelearningcoban.com/2017/06/07/svd/
 hoi quy tuyen tinh
 https://machinelearningcoban.com/2016/12/28/linearregression/
+
+http://mocilas.github.io/2015/11/18/Python-Inverted-Index-for-dummies/
