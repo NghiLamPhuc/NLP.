@@ -39,9 +39,9 @@ def word_split(text):
         word = ''.join(wcurrent)
         word_list.append((windex - len(word) + 1, word))
 
-#    f = open('wordlist.txt','w',encoding='utf-8-sig')
-#    f.write('\n'.join('%s %s' % x for x in word_list))
-#    print (word_list)
+    f = open(link_outfile + 'wordlist.txt','w',encoding='utf-8-sig')
+    f.write('\n'.join('%s %s' % x for x in word_list))
+    
     
     print ()
 
@@ -142,6 +142,7 @@ link_text = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\input\\'
 link_Eng_text = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\input\\English\\'
 link_folder = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\'
 link_output = link_folder + 'output\\'
+link_outfile = link_folder + 'outfile\\'
 
 
 if __name__ == '__main__':
