@@ -2,7 +2,7 @@ from collections import defaultdict
 import pprint
 import json
 
-link_folder_train = '\\Users\\NghiLam\\Documents\\GATSOP\\POSTagging\\train\\'
+link_folder_train = '\\Users\\NghiLam\\Documents\\NLP\\POSTagging\\train\\'
 link_out_file = link_folder_train + 'outfile\\'
 link_train_file = link_folder_train + 'trainfile\\'
 link_result_file = link_folder_train + 'model\\'
@@ -32,7 +32,7 @@ def main():
                 
             line = line1.lower() #-------------------------------------------------------luu y
             lst_word_tag = line.split()
-            print (lst_word_tag)
+#            print (lst_word_tag)
             for word_tag in lst_word_tag:
                 t = 0
                 for count in word_tag:

@@ -2,10 +2,11 @@ import json
 from collections import defaultdict
 import pprint
 
-link_input = '\\Users\\NghiLam\\Desktop\\NLP\\POSTagging\\decode\\input\\'
-link_model = '\\Users\\NghiLam\\Desktop\\NLP\\POSTagging\\decode\\model\\'
-link_output = '\\Users\\NghiLam\\Desktop\\NLP\\POSTagging\\decode\\output\\'
-link_out_file = '\\Users\\NghiLam\\Desktop\\NLP\\POSTagging\\decode\\outfile\\'
+link_folder = '\\Users\\NghiLam\\Documents\\NLP\\POSTagging\\decode\\'
+link_input = link_folder + 'input\\'
+link_model = link_folder + 'model\\'
+link_output = link_folder + 'output\\'
+link_out_file = link_folder + 'outfile\\'
 
 def display_out_file(lst,filename):
     file = link_out_file + filename

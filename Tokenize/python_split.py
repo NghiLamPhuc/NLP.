@@ -1,12 +1,17 @@
+import os
 import re
 from datetime import datetime
 
 start=datetime.now()
 
-link_folder = '\\Users\\NghiLam\\Documents\\GATSOP\\Tokenize\\'
-link_input_file = link_folder + 'input\\'
+link_folder = '\\Users\\NghiLam\\Documents\\NLP\\Tokenize\\'
+link_input_file = '\\Users\\NghiLam\\Documents\\NLP\\RAW_TEXT\\van ban tho\\'
 link_output_file = link_folder + 'output\\'
 link_out_file = link_folder + 'outfile\\'
+link_sentences = link_folder + 'sentences\\'
+link_token = link_folder + 'token\\'
+
+link_raw_text = '\\Users\\NghiLam\\Documents\\NLP\\RAW_TEXT\\van ban tho\\'
 
 #============================================================================== Một số hàm đọc ghi.
 #============================================================================== Ghi file ra từng dòng.
@@ -72,7 +77,8 @@ def add_space(s):
 #============================================================================== Tách câu.
 def split_sentences(url, filename):
     s = read_file_stringtype(url, filename)
-    regex = re.compile('(?<=[\.\?!])[\s\n]|\n|\.+s')
+#    regex = re.compile('(?<=[\.\?!])\n|\.+s')
+    regex = re.compile('(?<=[\.\?!])[\s\n]')
     sentences = re.split(regex,s)
     del sentences[-1]
     return sentences
@@ -86,11 +92,11 @@ def tokenize(the_list):
 #    curr = ''
     for i in the_list:
         
-#        i = add_space_word_matecharacter(i)
-#        i = add_space_metacharacter_word(i)
-#        i = add_space_1(i)
+        i = add_space_word_matecharacter(i)
+        i = add_space_metacharacter_word(i)
+        i = add_space_1(i)
 #        
-#        token = regex.findall(i)
+        token = regex.findall(i)
         i.split()
         lst.append(i)
         
@@ -101,7 +107,7 @@ def tokenizez(url,filename):
     s = list()
     regex1 = re.compile('(?<=[^\w+])(?=\w)')
     regex2 = re.compile('(?<=\w)(?=[^\w+])')
-    sentences = read_file_TextIOWrappertype(link_output_file,filename)
+    sentences = read_file_TextIOWrappertype(link_sentences,filename)
     for sentence in sentences:
         sentence = re.sub(regex1, ' ', sentence)
         sentence = re.sub(regex2, ' ', sentence)
@@ -111,23 +117,42 @@ def tokenizez(url,filename):
         s.append(sentence)
     return s
 #============================================================================== Tách từ.
-def word_seagment(the_list):
-    
+
+# Lấy danh sách các file txt trong folder.
+def get_os_dir_file(link):
+    all_files = os.listdir(link)
+    txt_files = filter(lambda x: x[-4:] == '.txt', all_files) # Co cung dc, khong co k sao.
+    return txt_files
+# Loại bỏ ký tự đặc biệt lưu vào file.
+def text_proccessing_before():
+    txt_files = get_os_dir_file(link_raw_text)
+    for index, file in enumerate(txt_files):
+        input_file = read_file_stringtype(link_input_file,file)
+        input_file = remove_some(input_file)
+        write_file(input_file,file+'.txt',link_out_file)
+
+def tach_cau():
+    proccessed_file = get_os_dir_file(link_out_file)
+    for index,file in enumerate(proccessed_file):
+        list_sentences = split_sentences(link_out_file,file)
+        write_listline_file(list_sentences,file,link_sentences)
+        print ('Số câu: %d' % len(list_sentences))
         
-    return 0
-
+def tach_tu_to():
+    proccessed_file = get_os_dir_file(link_sentences)
+    for index,file in enumerate(proccessed_file):
+#        tokens = tokenizez(link_sentences,file)
+        tokens = tokenizez(link_sentences,file)
+        write_listline_file(tokens,file,link_token)
+    
 #============================================================================== Main.
-input_file = read_file_stringtype(link_input_file,'12000-13000.txt')
-input_file = remove_some(input_file)
-write_file(input_file,'removed.txt',link_out_file)
-#============================================================================== In kết quả tách câu.
-list_sentences = split_sentences(link_out_file,'removed.txt')
-write_listline_file(list_sentences,'sentences.txt',link_output_file)
-print ('So cau: %d' % len(list_sentences))
-#============================================================================== In kết quả tách từ tố.
-tokens = tokenizez(link_output_file,'sentences.txt')
-print (tokens[1][-2])
+# Đầu tiên đọc file text, loại bỏ ký tự đặc biệt, ghi lại file vào outfile.
+text_proccessing_before()
+#============================================================================ In kết quả tách câu.
+tach_cau()
+#========================================================================== In kết quả tách từ tố.
+tach_tu_to()
 
-write_listline_file(tokens,'tokens.txt',link_output_file)
+
 
 print (datetime.now()-start)
