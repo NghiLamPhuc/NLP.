@@ -92,9 +92,9 @@ def printTreeByLine2(node):
         
 def printTree1(node):
     if node.lrow is -1:
-        return '\t'*node.level + node.name + '.' + node.terminal
-    return ' '*node.level + node.name + '\n' + printTree1(back[node.lrow][node.lcol][node.lorder]) + \
-    ' ' + printTree1(back[node.rrow][node.rcol][node.rorder])
+        return '   '*node.level + node.name + '.' + node.terminal
+    return '   '*node.level + node.name + '\n' + printTree1(back[node.lrow][node.lcol][node.lorder]) + \
+    '   '*node.level + printTree1(back[node.rrow][node.rcol][node.rorder])
 
 #============================================================================= Hàm.    
 
@@ -102,9 +102,9 @@ def printTree1(node):
 def main():
     start=datetime.now()
     
-#    sentence = read_file_TextIOWrappertype(link_folder,'sentence1.txt.')
+    sentence = read_file_TextIOWrappertype(link_folder,'sentence1.txt.')
 #    sentence = read_file_TextIOWrappertype(link_folder,'sentence2.txt.')
-    sentence = read_file_TextIOWrappertype(link_folder,'sentence4.txt.')
+#    sentence = read_file_TextIOWrappertype(link_folder,'sentence4.txt.')
     
     for i in sentence:
         print (i)
@@ -124,20 +124,20 @@ def main():
     global table
     global back
     table,back = CYK(words, grammar)
-#In bảng table được trả về bởi hàm CYK   
-    for i in table:
-        print (i)
-    print ()
-
-
+#=================In bảng table được trả về bởi hàm CYK =======================
+    for i in range(0,len(words)):
+        del table[i][0:i]
+    for index,i in enumerate(table):
+        print (index+1,i)
+        
+    print ('===================================================================')
+#============================================== In cây ========================
     for i in back[0][numOfWord-1]:
         print (printTreeByLine(i))
-#        print (printTreeByLine2(i))
         print (printTree1(i))
-        print ()
 
+        print ('====================================================================')
 #    print (l_node)
-        
     
     print (datetime.now()-start)
     
