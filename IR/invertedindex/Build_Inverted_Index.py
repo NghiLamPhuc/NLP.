@@ -1,16 +1,23 @@
+from nltk.stem import PorterStemmer
+from nltk.tokenize import sent_tokenize, word_tokenize
+ps = PorterStemmer()
+
 from functools import reduce
 import json
 from datetime import datetime
 start=datetime.now()
-#http://xltiengviet.wikia.com/wiki/Danh_s%C3%A1ch_stop_word
+#http://xltiengviet.wikia.com/wiki/Danh_s%C3%A1ch_stop_word     stopwords
 
+#https://github.com/stopwords/vietnamese-stopwords              stopwords2
+
+#https://www.ranks.nl/stopwords                           stop word in English
 file = open('stopwords.txt','r',encoding = 'utf-8-sig')
+#file = open('stopwords2.txt','r',encoding = 'utf-8-sig')
+#file = open('stopwords_Eng.txt','r',encoding = 'utf-8-sig')
 stopwords = set()
 for line in file:
     line = line.replace('\n','')
     stopwords.add(line)
-
-#print (stopwords)
 
 
 def word_split(text):
@@ -43,17 +50,25 @@ def word_split(text):
 #Lấy ra các từ không có trong stop words.
 def words_not_stop(words):
     not_stop_words = []
+    is_stop_words = []
     for index, word in words:
         if word in stopwords:
-            continue
-        not_stop_words.append((index, word))
+#            continue
+            is_stop_words.append((index, word))
+        else: 
+            not_stop_words.append((index, word))
+    
+#    Ghi file stop word
+    
     return not_stop_words
 
-def words_normalize(words):
-#                                           Trong tiếng Anh phải thêm STEMMING
+    
+def words_normalize(words): 
+#                                             Trong tiếng Anh phải thêm STEMMING
     normalized_words = []
     for index, word in words:
         wnormalized = word.lower()
+#        wnormalized = ps.stem(wnormalized)                       # stemming
         normalized_words.append((index, wnormalized))
     return normalized_words
 
@@ -63,6 +78,11 @@ def word_index(text):
     words = words_not_stop(words)
     return words
 
+
+def get_max_count(invert):        
+    _max=max(invert, key=lambda k: len(invert[k]))
+    return _max
+
 # Liệt kê từ xuất hiện vị trí nào trong 1 documents.
 def inverted_index(text):
     inverted = {}
@@ -70,6 +90,9 @@ def inverted_index(text):
     for index, word in word_index(text):
         locations = inverted.setdefault(word, [])
         locations.append(index)
+    
+    # Dem so lan xuat hien max
+    print (get_max_count(inverted))
     
 #    print (inverted)
     return inverted
@@ -79,7 +102,8 @@ def inverted_index_add(inverted, doc_id, doc_index):
     for word, locations in doc_index.items():
         temp = inverted.setdefault(word, {})
         temp[doc_id] = locations
-#    print (inverted)    
+
+#    print (inverted)
     return inverted
 
 #   Duyệt trong query, nếu có từ trong stop words thì bỏ đi.
@@ -115,7 +139,9 @@ def extract_text(doc, index):
 
 #link_text = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\sauKhiRemoveSome\\'
 link_text = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\input\\'
+link_Eng_text = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\input\\English\\'
 link_folder = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\'
+link_output = link_folder + 'output\\'
 
 
 if __name__ == '__main__':
@@ -141,6 +167,9 @@ if __name__ == '__main__':
 #    
 #    doc3 = """ddaay la documetn so 3.Thịt gà"""
 
+#    f1 = open(link_Eng_text+'doc1.txt','r',encoding='utf-8-sig')
+#    doc1 = f1.read()
+    
     f1 = open(link_text+'removed 0.txt','r',encoding='utf-8-sig')
     doc1 = f1.read()
     f2 = open(link_text+'removed 1.txt','r',encoding='utf-8-sig')
@@ -164,20 +193,22 @@ if __name__ == '__main__':
     
     inverted = {}
     documents = {'doc1':doc1, 'doc2':doc2, 'doc3':doc3,'doc4':doc4,'doc5':doc5,'doc6':doc6,'doc7':doc7,'doc8':doc8,'doc9':doc9 }
+#    documents = {'doc1':doc1}
     
     for doc_id, text in documents.items():
+        print (doc_id)
         doc_index = inverted_index(text)
         print ('Đầu tiên liệt kê các từ - vị trí trong mỗi document ---------------------\n')
 #        print (doc_index)
-        print ()
+#        print ()
         inverted_index_add(inverted, doc_id, doc_index)
         print ('Sau đó liệt kê các từ - document - vị trí -------------------------------\n')
 #        print (inverted)
-        print ()
+#        print ()
 
     # Print Inverted-Index
-    f = open('\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\InvertedIndexDisplay.txt','w',encoding='utf-8-sig')
-    f1 = open('\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\InvertedIndex.txt','w',encoding='utf-8-sig')
+    f = open(link_output + 'InvertedIndexDisplay.txt','w',encoding='utf-8-sig')
+    f1 = open(link_output + 'InvertedIndex.txt','w',encoding='utf-8-sig')
 #    json.dump(inverted, f1, ensure_ascii=False))
     f1.write(json.dumps(inverted, ensure_ascii=False))
     for key,value in inverted.items():
@@ -193,11 +224,11 @@ if __name__ == '__main__':
         
 
 #    queries = ['thịt gà','thịt vịt','thịt vịt có tính hàn','Theo Bảng thành phần dinh dưỡng Việt Nam']
-    queries = ['hải quân triều tiên']#,'đặc quyền kinh tế','KTĐT - Sáng 14/4, Thượng viện Kazakhstan đã thông qua hiệp định ký với Mỹ về vận tải quá cảnh sang Afghanistan.Trước đó một ngày, Hạ viện Kazakhstan cũng đã phê chuẩn văn kiện này.']
-    for query in queries:
-        result_docs = search(inverted, query)
-        print ()
-        print ("Từ '%s' xuất hiện trong: %r" % (query, result_docs))
+#    queries = ['hải quân triều tiên']#,'đặc quyền kinh tế','KTĐT - Sáng 14/4, Thượng viện Kazakhstan đã thông qua hiệp định ký với Mỹ về vận tải quá cảnh sang Afghanistan.Trước đó một ngày, Hạ viện Kazakhstan cũng đã phê chuẩn văn kiện này.']
+#    for query in queries:
+#        result_docs = search(inverted, query)
+#        print ()
+#        print ("Từ '%s' xuất hiện trong: %r" % (query, result_docs))
         
 #        for _, word in word_index(query):
 #            i=word
