@@ -7,4 +7,10 @@ Nếu từ trước, từ sau có trong model thì lấy ra.
 Nếu từ trước có trong model, từ sau không thì xác suất tính bằng:
 	1 / tổng số từ trước
 Nếu cả 2 từ chưa có trong model,
-	1 / 1+ tổng số từ (có trong train).
+	1 / 1 + tổng số từ (có trong train).
+
+folder input: Chứa input.pos -> file train.
+folder outfile: chứa test_probability.txt: kiểm tra tổng xác suất bằng 1 hay không.
+		     word_to_word_freq.txt: tần suất word -> word.
+folder output: mô hình ngôn ngữ sau khi train. model.txt.
+	       display_model.txt ghi lại cho dễ nhìn.

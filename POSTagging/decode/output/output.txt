@@ -323,4 +323,3 @@ start/ps tối/n 13/v -/n 3/v -/n 2005/v ,/n cảnh_sát/v đl/n ập/v vào/n k
 start/ps chị/n mai/v đã/n để_dành/v được/n 8.000/v đài_tệ/n (/v khoảng/n 4/v triệu/n đồng/v )/n ,/v cũng/n đã/v trả/n được/v một/n phần/v món/n nợ/v 25/n triệu/v lo/n thủ_tục/v sang/n đl/v ./n end/v
 start/ps ”/n ./v end/n
 start/ps hai/n năm/v làm_việc/n ,/v ngân/n hầu_như/v chỉ/n lặng_lẽ/v như/n chiếc/v bóng/n ,/v chỉ/n biết/v dành_dụm/n tiền/v gửi/n về/v nhà/n để/v trả/n bớt/v số/n nợ/v của/n gia_đình/v ,/n chị/v bảo/n chẳng/v dám/n mua/v gì/n cho/v mình/n ngoài/v mấy/n cái/v áo/n lạnh/v để_dành/n mặc/v mùa/n đông/v ./n end/v
-start/ps trông/n chị/v mai/n gầy_guộc/v ,/n mặt/v hốc_hác/n ,/v hai/n hốc/v mắt/n sâu/v trũng/n và/v còn/n hằn/v vết/n thâm/v ./n end/v

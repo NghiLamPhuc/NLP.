@@ -134,7 +134,8 @@ def main():
 # ==========================   Tính mô hình ngôn ngữ =====================================
     training('input.pos')
 # ==========================   Đoán từ tiếp theo  ========================================
-    guess_next_word('kinh_tế')
+#    guess_next_word('kinh_tế')
+    guess_next_word('có_thể')
     
 # ==========================   Tính xác suất một câu  ====================================    
 #    s = 'Dịch_vụ đang trở_thành lĩnh_vực xuất_khẩu mới đóng_góp đáng_kể vào kim_ngạch xuất_khẩu của Việt_Nam .'

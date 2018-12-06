@@ -1,0 +1,10 @@
+﻿folder corpus: Chứa các file dùng để train, test cho HMM.
+folder train: Chứa các file hiện thực trainning HMM, tính xác suất nhãn->nhãn; nhãn->từ.
+	folder model: chứa mô hình sau khi train.
+	folder outfile: chứa một số file text đếm tần suất nhãn->nhãn, nhãn->từ, đếm số nhãn, liệt kê nhãn khác nhau.
+	check_probability.txt: tổng các xác suất của 1 nhãn->nhãn có bằng 1 hay không.
+folder decode: Chứa các file hiện thực Viterbi, áp dụng mô hình để gán nhãn từ loại.
+	folder input: test_da2.input: file chưa gán nhãn, dùng để gán nhãn.
+	folder model: model.txt mô hình HMM sau train.
+	outfile: một số file để kiểm tra.
+	output: văn bản đã gán nhãn.

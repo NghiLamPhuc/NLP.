@@ -1,0 +1,4 @@
+﻿CYK.py: hiện thực CYK.
+Node.py: Để lưu cây, in cây.
+sentence1,2,3,4.txt Câu input.
+grammar1.txt Các quy tắc.

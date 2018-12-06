@@ -1,0 +1,8 @@
+﻿InvertedIndex.
+	Text_Processing.py: Xử lý văn bản input: bỏ dấu lạ,..
+	Build_Inverted_Index.py: Đọc các văn bản input, xây bộ inverted index.
+	Searching_Inverted_Index.py: Tìm kiếm từ theo invertedindex.
+stopwords.txt: Chứa một số stop words trong tiếng Việt.
+folder input: Chứa các văn bản input.
+folder output: InvertedIndex.txt: lưu các inverted index.
+	output doc1,2,3...: các output của tìm kiếm từ "tai nạn giao thông".

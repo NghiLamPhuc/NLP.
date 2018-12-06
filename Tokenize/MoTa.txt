@@ -1,0 +1,4 @@
+﻿python_split.py: Ham tach câu, tách từ tố.
+folder outfile: chứa các file text sau khi loại bỏ ký tự đặc biệt.
+folder sentences: chứa các file text sau khi tách câu.
+folder token: chứa các file text, chứa các từ tố sau khi tách.
