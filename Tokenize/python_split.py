@@ -6,7 +6,6 @@ start=datetime.now()
 
 link_folder = '\\Users\\NghiLam\\Documents\\NLP\\Tokenize\\'
 link_input_file = '\\Users\\NghiLam\\Documents\\NLP\\RAW_TEXT\\van ban tho\\'
-link_output_file = link_folder + 'output\\'
 link_out_file = link_folder + 'outfile\\'
 link_sentences = link_folder + 'sentences\\'
 link_token = link_folder + 'token\\'
