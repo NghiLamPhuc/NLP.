@@ -32,10 +32,10 @@ def main():
 #    print (stop_words)
 # =============================== Câu cần tìm =================================
 #    query = 'rau an toàn'
-#    query = 'rau an toàn chật vật tìm chỗ đứng'
+    query = 'rau an toàn chật vật tìm chỗ đứng'
 #    query = 'Cụ thể, các quan chức liên quan sẽ không được phép vào EU.'
 #    query = 'Quốc, hội, châu, Âu.'
-    query = 'Quốc hội châu'
+#    query = 'Quốc hội châu'
 #    query = 'bệnh viện'
 #    query = 'bệnh'
 #    query = 'thức ăn'
@@ -46,6 +46,7 @@ def main():
 #    query = 'bệnh ăn'
 #    query = 'của bệnh'
 #    query = "kinh tế xhcn"
+    
 # ============================ Xử lý câu cần tìm ==============================    
     query = query.lower()
     query = re.sub('[^\w\s]','',query)
@@ -116,10 +117,13 @@ def main():
             if words[i] == words[-1]:
                 found_at_first_word.append(pos_0)
 # =============================== Ghi vi tri vao KET QUA CUOI CUNG ============
-    out_file.write('Found at: ')
-    for i in found_at_first_word:
-        out_file.write(str(i)+' ')
-    out_file.write('\n\n')
+    if found_at_first_word:
+        out_file.write('Found at: ')
+        for i in found_at_first_word:
+            out_file.write(str(i)+' ')
+        out_file.write('\n\n')
+    else:
+        print ('Không tìm thấy')
     
 # =============================== In câu chứa từ cần tìm  =====================
     f1 = open(link_document+'removed 0.txt','r',encoding='utf-8-sig')
