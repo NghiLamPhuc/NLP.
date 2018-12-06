@@ -37,6 +37,7 @@ lên
 lúc
 mà
 mỗi
+một
 một_cách
 này
 nên
@@ -62,6 +63,7 @@ tại
 theo
 thì
 trên
+trong
 trước
 từ
 từng
