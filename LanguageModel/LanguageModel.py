@@ -9,6 +9,11 @@ link_out_file = link_folder_ + 'outfile\\'
 link_train_file = link_folder_ + 'input\\'
 link_result_file = link_folder_ + 'output\\'
 
+word_freq = dict() #count word.
+word_word_freq = defaultdict(dict)  #count word=>word
+word_word_prob = defaultdict(dict)  #calculate probability.
+word_prob_test = dict()             #sum of probability of one word.
+
 def display_file(lst,filename,link):
     with open(link + filename, 'w', encoding='utf-8') as fout:
         pprint.pprint(lst,fout)
@@ -115,18 +120,21 @@ def training(filename):
         for key,value in Lmodel['Word count'].items():
             outfile.write('%s:%s\n' % (key, value))
 
+    
+
 def main():
     
-    word_freq = dict() #count word.
-    word_word_freq = defaultdict(dict)  #count word=>word
-    word_word_prob = defaultdict(dict)  #calculate probability.
-    word_prob_test = dict()             #sum of probability of one word.
+    
+#    word_freq = dict() #count word.
+#    word_word_freq = defaultdict(dict)  #count word=>word
+#    word_word_prob = defaultdict(dict)  #calculate probability.
+#    word_prob_test = dict()             #sum of probability of one word.
     
     start=datetime.now()
 # ==========================   Tính mô hình ngôn ngữ =====================================
-#    training('input.pos')
+    training('input.pos')
 # ==========================   Đoán từ tiếp theo  ========================================
-#    guess_next_word('kinh_tế')
+    guess_next_word('kinh_tế')
     
 # ==========================   Tính xác suất một câu  ====================================    
 #    s = 'Dịch_vụ đang trở_thành lĩnh_vực xuất_khẩu mới đóng_góp đáng_kể vào kim_ngạch xuất_khẩu của Việt_Nam .'
