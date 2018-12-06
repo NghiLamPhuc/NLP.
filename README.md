@@ -6,4 +6,4 @@ NLP some.
 5. RAW_TEXT: Some input.
 6. Tokenize: Split sentences, tokenize a sentence, word segmentation (not yet).
 7. Book.
-12/7/2018 EndOfClass. :)) 14h~~
+8. 12/7/2018 EndOfClass. :)) 14h~~
