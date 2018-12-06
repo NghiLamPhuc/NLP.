@@ -4,7 +4,7 @@ import json
 from collections import OrderedDict
 from datetime import datetime
 
-link_folder_ = '\\Users\\NghiLam\\Documents\\GATSOP\\LanguageModel\\'
+link_folder_ = '\\Users\\NghiLam\\Documents\\NLP\\LanguageModel\\'
 link_out_file = link_folder_ + 'outfile\\'
 link_train_file = link_folder_ + 'input\\'
 link_result_file = link_folder_ + 'output\\'
@@ -17,7 +17,10 @@ def display_file(lst,filename,link):
 def guess_next_word(word):
     for item in word_word_prob[word]:
         sorted_by_value = OrderedDict(sorted(word_word_prob[word].items(), key=lambda x: x[1], reverse=True))
-    print (sorted_by_value)
+
+    for index,item in enumerate(sorted_by_value.items()):
+        print (index+1, item)
+
     return sorted_by_value
     
 # Tính xác suất câu.
@@ -88,7 +91,7 @@ def training(filename):
                     else: word_word_freq[preWord][curWord] += 1
     del word_freq['$end.']
         
-    display_file(word_word_freq,'word_to_word_freq.txt',link_out_file)                    #Ghi file tan suat word=>word
+    display_file(word_word_freq,'word_to_word_freq.txt',link_out_file)  #Ghi file tan suat word=>word
     
     for eachWord in word_freq:
         word_prob_test[eachWord] = 0
@@ -111,7 +114,7 @@ def training(filename):
         outfile.write('\nWord count:\n')    
         for key,value in Lmodel['Word count'].items():
             outfile.write('%s:%s\n' % (key, value))
-        
+
 def main():
     
     word_freq = dict() #count word.
@@ -120,15 +123,17 @@ def main():
     word_prob_test = dict()             #sum of probability of one word.
     
     start=datetime.now()
+# ==========================   Tính mô hình ngôn ngữ =====================================
 #    training('input.pos')
+# ==========================   Đoán từ tiếp theo  ========================================
+#    guess_next_word('kinh_tế')
     
-#    guess_next_word('dứt_khoát')
-    
+# ==========================   Tính xác suất một câu  ====================================    
 #    s = 'Dịch_vụ đang trở_thành lĩnh_vực xuất_khẩu mới đóng_góp đáng_kể vào kim_ngạch xuất_khẩu của Việt_Nam .'
 #    s = 'Hỏi sao gọi “ bù_kẹp ” , anh cười : “ Dân miền Tây gọi con bò_cạp là bù_kẹp .'
 #    s = 'Nhưng đó là quyết_định của anh .'
 #    s = 'Kỹ_thuật điêu_luyện , lối chơi thông_minh của Vinh “ sói ” đã làm điên_đảo hầu_hết những đối_thủ từ Á đến Âu mà tuyển miền Nam đã gặp thời ấy như Hàn_Quốc , Hong_Kong , Nhật , các đội Djugaden , Helsinborg ( Thụy_Điển ) , Lask ( Áo ) ...'
-#    s = 'Giờ_đây nhiều nông_dân cố_cựu vùng Đồng_Tháp_Mười này như bác Võ_Văn_Ni ( ấp Bàu_Môn , xã Thạnh_Hưng , huyện Mộc_Hóa ) vẫn còn nhớ như in những ngày đầu khi Trung_tâm Nghiên_cứu thực_nghiệm nông_nghiệp Đồng_Tháp_Mười vừa thành_lập : “ Tôi là người ở Đồng_Tháp_Mười từ thời ông cố đến giờ , tôi hiểu cục đất nơi này còn hơn cả con mình , vậy_mà hồi mấy chú vô tôi cứ cười bảo : để rồi coi , ở không được một vụ đâu , đất này làm chơi thôi chứ cao_sản cao_siếc cái gì ...'    
+#    s = 'Giờ_đây nhiều nông_dân cố_cựu vùng Đồng_Tháp_Mười này như bác Võ_Văn_Ni ( ấp Bàu_Môn , xã Thạnh_Hưng , huyện Mộc_Hóa ) vẫn còn nhớ như in những ngày đầu khi Trung_tâm Nghiên_cứu thực_nghiệm nông_nghiệp Đồng_Tháp_Mười vừa thành_lập : “ Tôi là người ở Đồng_Tháp_Mười từ thời ông cố đến giờ , tôi hiểu cục đất nơi này còn hơn cả con mình , vậy_mà hồi mấy chú vô tôi cứ cười bảo : để rồi coi , ở không được một vụ đâu , đất này làm chơi thôi chứ cao_sản cao_siếc cái gì ...'
 #    display_file(calculate_sentence_probability(s),'SentenceProb.txt',link_result_file)
     
     print (datetime.now()-start)
