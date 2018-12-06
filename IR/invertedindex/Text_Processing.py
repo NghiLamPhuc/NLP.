@@ -39,6 +39,7 @@ def sauKhiRemoveSome():
         inputFile = open(link_raw_text+file,'r',encoding='utf-8-sig').read()
         inputFile = remove_some(inputFile)
         with open(link_sauKhiRemoveSome+'removed ' + str(index) + '.txt','w',encoding='utf-8-sig') as f:
+#        with open(link_sauKhiRemoveSome+ file + '.txt','w',encoding='utf-8-sig') as f:
             f.write('%s\n' % inputFile)
 #============================================================================== Tach tu, moi phan tu la 1 cau sau khi tach.            
 def sauKhiTokenize():
