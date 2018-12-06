@@ -30,6 +30,8 @@ def word_split(text):
         if c.isalnum():
             wcurrent.append(c)
             windex = i
+#        elif (c.isalnum() == False):
+#            windex = windex+1
         elif wcurrent:
             word = ''.join(wcurrent)
             word_list.append((windex - len(word) + 1, word))
