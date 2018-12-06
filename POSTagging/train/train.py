@@ -121,9 +121,19 @@ def main():
 #    for eachWord in list_word_tag:
 #        for innerTag in list_word_tag[eachWord]:
 #            list_word_tag[eachWord][innerTag] = round(list_word_tag[eachWord][innerTag] / tagCount[innerTag],6)
+    check = dict()
     for eachTag in list_tag_word:
         for innerWord in list_tag_word[eachTag]:
             list_tag_word[eachTag][innerWord] = round(list_tag_word[eachTag][innerWord] / tagCount[eachTag],6)
+    for tag,word in list_tag_word.items():
+        c_heck = 0
+        for wOrd,count in list_tag_word[tag].items():
+            c_heck += count
+        check[tag] = c_heck
+    fIle = open(link_folder_train+'check_probability.txt','w',encoding='utf-8')
+    for key,value in check.items():
+        fIle.write('%s:%s\n' % (key, value))
+        
         
     HMMmodel = {}
     HMMmodel['Transition Probability'] = list_tag_tag
