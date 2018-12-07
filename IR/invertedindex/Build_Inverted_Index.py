@@ -1,11 +1,18 @@
 from nltk.stem import PorterStemmer
-
 ps = PorterStemmer()
-
+import os
 from functools import reduce
 import json
 from datetime import datetime
 start=datetime.now()
+
+def createFolder(directory):
+    try:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+    except OSError:
+        print ('Error: Creating directory. ' +  directory)
+
 #http://xltiengviet.wikia.com/wiki/Danh_s%C3%A1ch_stop_word     stopwords
 
 #https://github.com/stopwords/vietnamese-stopwords              stopwords2
@@ -18,7 +25,6 @@ stopwords = set()
 for line in file:
     line = line.replace('\n','')
     stopwords.add(line)
-
 
 def word_split(text):
 
@@ -94,6 +100,7 @@ def inverted_index(text):
         locations.append(index)
     
     # Dem so lan xuat hien max
+    print ('Tiếng nhiều nhất.')
     print (get_max_count(inverted))
     
 #    print (inverted)
@@ -148,30 +155,9 @@ link_outfile = link_folder + 'outfile\\'
 
 
 if __name__ == '__main__':
-#    document string
-#    https://suckhoe.vnexpress.net/tin-tuc/dinh-duong/an-thit-ga-hay-thit-vit-tot-hon-3845985.html
-#    doc1 = """
-#Thịt gà dồi dài protein. Theo Bảng thành phần dinh dưỡng Việt Nam, trong 100 g thịt gà chứa 199 kcalo, 20,3 g protein, 4,3 g chất béo và nhiều vitamin, khoáng chất có lợi cho sức khỏe. Có khoảng 75 mg cholesterol trong 100 g thịt gà. 
-#
-#Thịt vịt không phổ biến như thịt gà nhưng hàm lượng dinh dưỡng cao hơn. Trong Đông y, thịt vịt được coi là loại thuốc bổ điều hòa ngũ tạng, lợi thủy, trừ nhiệt, bổ hư. Trong 100 g thịt vịt có 267 kcalo, 7,3 g chất béo, 17,8 g protein, 76 mg cholesterol, vitamin và chất béo. """
-#
-#    doc2 = """
-#"Thịt gà mềm, dễ tiêu hóa hơn thịt vịt", bác sĩ Linh nhấn mạnh. Thịt gà là món ăn rất có ích cho những người bệnh, cần bổ sung năng lượng cho cơ thể để thúc đẩy quá trình trao đổi chất. Ức gà cũng phù hợp với những người đang ăn kiêng, nhiều phốt pho có lợi cho răng và xương.
-#
-#Thịt vịt có tính hàn nên được dùng để giải nhiệt, giải độc. Trong thịt vịt nhiều protein, sắt, canxi, vitamin A, B1, D... có lợi cho những người gầy muốn tăng cân. Tuy nhiên, thịt vịt dai và khó tiêu nên người già và trẻ em hạn chế ăn.
-#
-#Cấm kỵ:
-#
-#- Những người dương hư tỳ nhược, ngoại cảm chưa khỏi hẳn không nên ăn thịt vịt.
-#
-#- Da gà và lòng trắng trứng gà nhiều mỡ cùng cholesterol, do đó không phù hợp với người huyết áp cao, tim mạch.
-#
-#- Không ăn thịt bảo quản kém và không rõ nguồn gốc rõ ràng."""
-#    
-#    doc3 = """ddaay la documetn so 3.Thịt gà"""
+    
+    createFolder('./model')
 
-#    f1 = open(link_Eng_text+'doc1.txt','r',encoding='utf-8-sig')
-#    doc1 = f1.read()
     
     f1 = open(link_text+'removed 0.txt','r',encoding='utf-8-sig')
     doc1 = f1.read()
@@ -196,14 +182,11 @@ if __name__ == '__main__':
     
     inverted = {}
     documents = {'doc1':doc1, 'doc2':doc2, 'doc3':doc3,'doc4':doc4,'doc5':doc5,'doc6':doc6,'doc7':doc7,'doc8':doc8,'doc9':doc9 }
-#    documents = {'doc1':doc1}
     
     for doc_id, text in documents.items():
         print (doc_id)
         doc_index = inverted_index(text)
         print ('Đầu tiên liệt kê các từ - vị trí trong mỗi document ---------------------\n')
-#        print (doc_index)
-#        print ()
         inverted_index_add(inverted, doc_id, doc_index)
         print ('Sau đó liệt kê các từ - document - vị trí -------------------------------\n')
 #        print (inverted)
@@ -220,26 +203,6 @@ if __name__ == '__main__':
         for k,v in value.items():
             f.write('\t%s: %s\n' % (k,v))
 #        pprint.pprint(inverted,f)
-    
-#    In cac inverted index cho de nhin.
-#    for word, doc_locations in inverted.items():
-#        print (word, doc_locations)
-        
-
-#    queries = ['thịt gà','thịt vịt','thịt vịt có tính hàn','Theo Bảng thành phần dinh dưỡng Việt Nam']
-#    queries = ['hải quân triều tiên']#,'đặc quyền kinh tế','KTĐT - Sáng 14/4, Thượng viện Kazakhstan đã thông qua hiệp định ký với Mỹ về vận tải quá cảnh sang Afghanistan.Trước đó một ngày, Hạ viện Kazakhstan cũng đã phê chuẩn văn kiện này.']
-#    for query in queries:
-#        result_docs = search(inverted, query)
-#        print ()
-#        print ("Từ '%s' xuất hiện trong: %r" % (query, result_docs))
-        
-#        for _, word in word_index(query):
-#            i=word
-#            
-#        for doc in result_docs:
-#            for index in inverted[word][doc]:
-#                print (doc+'   - %s...' % extract_text(doc, index))
-#        print ()
             
     print ()
     print (datetime.now()-start)
