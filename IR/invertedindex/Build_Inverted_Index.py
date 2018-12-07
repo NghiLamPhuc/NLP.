@@ -41,8 +41,8 @@ def word_split(text):
         word = ''.join(wcurrent)
         word_list.append((windex - len(word) + 1, word))
 
-    f = open(link_outfile + 'wordlist.txt','w',encoding='utf-8-sig')
-    f.write('\n'.join('%s %s' % x for x in word_list))
+#    f = open(link_outfile + 'wordlist.txt','w',encoding='utf-8-sig')
+#    f.write('\n'.join('%s %s' % x for x in word_list))
     
     
     print ()
@@ -143,7 +143,7 @@ def extract_text(doc, index):
 link_text = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\input\\'
 link_Eng_text = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\input\\English\\'
 link_folder = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\'
-link_output = link_folder + 'output\\'
+link_model = link_folder + 'model\\'
 link_outfile = link_folder + 'outfile\\'
 
 
@@ -210,8 +210,8 @@ if __name__ == '__main__':
 #        print ()
 
     # Print Inverted-Index
-    f = open(link_output + 'InvertedIndexDisplay.txt','w',encoding='utf-8-sig')
-    f1 = open(link_output + 'InvertedIndex.txt','w',encoding='utf-8-sig')
+    f = open(link_model + 'InvertedIndexDisplay.txt','w',encoding='utf-8-sig')
+    f1 = open(link_model + 'InvertedIndex.txt','w',encoding='utf-8-sig')
 #    json.dump(inverted, f1, ensure_ascii=False))
     f1.write(json.dumps(inverted, ensure_ascii=False))
     for key,value in inverted.items():
