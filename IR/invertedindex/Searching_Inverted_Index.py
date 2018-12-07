@@ -12,6 +12,7 @@ def createFolder(directory):
 
 link_folder = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\'
 link_output = link_folder + 'output\\'
+link_model = link_folder + 'model\\'
 link_document = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\input\\'
 
 def get_stop_words():
@@ -47,13 +48,11 @@ def get_stop_words():
 query = 'bạo lực học đường'
 
 def run(index,find_word):#=========================================================   main
-    start=datetime.now()
 # =========================== Đọc file inverted index.=========================
-    f = open (link_output+'InvertedIndex.txt','r',encoding='utf-8-sig')
+    f = open (link_model+'InvertedIndex.txt','r',encoding='utf-8-sig')
     inverted = json.load(f)    
 # ================================ stop words.=================================
     stop_words = get_stop_words()
-#    print (stop_words)    
 # ============================ Xử lý câu cần tìm ==============================    
     regex1 = re.compile('(?<=[^\w+])(?=\w)')
     regex2 = re.compile('(?<=\w)(?=[^\w+])')
@@ -63,19 +62,10 @@ def run(index,find_word):#======================================================
     query = re.sub(regex1, ' ', query)
     query = re.sub(regex2, ' ', query)
     words = query.split()
-    
-    print ("Cần Tìm: %s trong document %d" % (find_word,index))
-    
 # ============================================================================= Bắt đầu tìm ==
     found_at_first_word = [] # Luu vi tri cua tu.
-    in_dex = index #=======================================================================       index
-    doc_id = 'doc' + str(in_dex)
-    doc_name = 'removed '+ str(in_dex-1) +'.txt'
-    out_file = open(link_output + find_word + '\\' + doc_id+'.txt','w',encoding='utf-8-sig') # Luu KET QUA CUOI CUNG.
-# Duyeejt qua tat ca document.
-#    for i in range(0,9):
-#        doc_id = 'doc'
-#        doc_id = doc_id+str(i+1)
+    doc_id = 'doc' + str(index)
+    doc_name = 'removed '+ str(index-1) +'.txt'
 # =============================== Bắt đầu tìm =============== nếu query có 1 từ
     if len(words) == 1:
         if words[0] in stop_words:
@@ -83,7 +73,6 @@ def run(index,find_word):#======================================================
         else:
             for pos in inverted[words[0]][doc_id]:
                found_at_first_word.append(pos)
-
 # =============================== Bắt đầu tìm =============== nếu query có 2 từ
     if len(words) == 2:
 #        Nếu cả là stop word.
@@ -98,11 +87,9 @@ def run(index,find_word):#======================================================
                 for pos in inverted[words[1]][doc_id]:
                     pos_of_stop_word = pos - len(words[0]) -1
                     end_of_stop_word = pos - 2
-#                    print (end_of_stop_word)
                     words_0 = ''
                     for character in range(pos_of_stop_word,end_of_stop_word+1):
                         words_0 = words_0 + document_1[character]
-#                    print (words_0)
                     if words_0 == words[0]:
                         found_at_first_word.append(pos)
                 temp.close()
@@ -123,7 +110,7 @@ def run(index,find_word):#======================================================
                 next_0 = pos_0 + len(words[0]) + 1
                 if next_0 in inverted[words[1]][doc_id]:
                     found_at_first_word.append(pos_0)
-# =============================== Bắt đầu tìm =================================
+# =============================== Bắt đầu tìm ========================== nhiều hơn 2 từ
     if len(words) > 2:
 #        Nếu từ đầu tiên là stop word
 #        if words[0] in stop_words:
@@ -148,42 +135,54 @@ def run(index,find_word):#======================================================
                     
 # =============================== Ghi vi tri vao KET QUA CUOI CUNG =========================================
     if found_at_first_word:
+        out_file = open(link_output + find_word + '\\' + doc_id+'.txt','w',encoding='utf-8-sig') # Luu KET QUA CUOI CUNG.
         out_file.write('Found at: ')
         for i in found_at_first_word:
             out_file.write(str(i)+' ')
         out_file.write('\n\n')
-    else:
-        print ('Không tìm thấy')
-    
 # =============================== In câu chứa từ cần tìm  =====================
-    f1 = open(link_document+doc_name,'r',encoding='utf-8-sig')
-    doc1 = f1.read()
+        f1 = open(link_document+doc_name,'r',encoding='utf-8-sig')
+        doc1 = f1.read()
+        
+        len_query = len(words)
+        for w in words:
+            len_query = len_query + len(w)
     
-    len_query = len(words)
-    for w in words:
-        len_query = len_query + len(w)
-        
-#    out_file = open(link_folder+'output.txt','w',encoding='utf-8-sig')
-        
-    for index,pos in enumerate(found_at_first_word):
-        sentence_pos = ''
-        if pos-30 <= 0: pos_left_show = pos
-        else: pos_left_show = pos-30
-        
-        if pos+len_query+20 > len(doc1): pos_right_show = pos+len_query
-        else: pos_right_show = pos+len_query+20
-        
-        for i in range(pos_left_show,pos_right_show):
-            sentence_pos = sentence_pos + doc1[i]
-        sentence_pos = '...' + sentence_pos + '...'
-        
-        out_file.write(str(index+1)+' '+sentence_pos+'\n')
-        
-    print ()
-    print (datetime.now()-start)
+        for index,pos in enumerate(found_at_first_word):
+            sentence_pos = ''
+            if pos-30 <= 0: pos_left_show = pos
+            else: pos_left_show = pos-30
+            
+            if pos+len_query+20 > len(doc1): pos_right_show = pos+len_query
+            else: pos_right_show = pos+len_query+20
+            
+            for i in range(pos_left_show,pos_right_show):
+                sentence_pos = sentence_pos + doc1[i]
+            sentence_pos = '...' + sentence_pos + '...'
+            
+            out_file.write(str(index+1)+' '+sentence_pos+'\n')
+        return 1
+    else:
+#        print ('Không tìm thấy')
+        return 0
+    
+def document_contain_query(num_of_doct):
+    ket_qua = [] # Lưu các document có chứa query.
+    for i in range(1,num_of_doct+1):
+        if run(i,query):
+            ket_qua.append(str(i))
+    if ket_qua: return ket_qua,1
+    else: return ket_qua,0
     
 def main():
+    start=datetime.now()
+    print ("Cần Tìm: '%s'" % query)
     createFolder('./output/%s' % query)
-    for i in range(1,10):
-        run(i,query)
+    a,b = document_contain_query(9)
+    if b == 0:
+        print ('Không tìm thấy.')
+    else:
+        print ('Tìm thấy tại các document.')
+        print (a)
+    print (datetime.now()-start)
 if __name__ == "__main__":main()
