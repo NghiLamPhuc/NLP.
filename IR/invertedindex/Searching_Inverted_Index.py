@@ -23,30 +23,6 @@ def get_stop_words():
         stopwords.add(line)
     return stopwords
 
-# ======================================================================== Câu cần tìm =================================
-#query = 'rau an toàn'
-#query = 'rau an toàn chật vật tìm chỗ đứng'
-#query = 'Tôi từng thuộc danh sách những cầu thủ nòng cốt cho tới'
-#query = 'Quốc, hội, châu, Âu.'
-#query = 'Quốc hội châu'
-#query = 'bệnh viện'
-#query = 'bệnh'
-#query = 'thức ăn'
-#query = 'thức tỉnh'
-#query = 'thức'
-#query = 'các'
-#query = 'các một'
-#query = 'bệnh ăn'
-#query = 'của bệnh'
-#query = "xhcn"
-#query = 'văn hóa Việt Nam'
-#query = 'khoa học kỹ thuật'
-#query = 'tai nạn giao thông'
-#query = 'lê nin về vấn đề dân tộc'
-#query = 'hối lộ'
-#query = 'hành vi đáng lên án'
-query = 'bạo lực học đường'
-
 def run(index,find_word):#=========================================================   main
 # =========================== Đọc file inverted index.=========================
     f = open (link_model+'InvertedIndex.txt','r',encoding='utf-8-sig')
@@ -65,51 +41,66 @@ def run(index,find_word):#======================================================
 # ============================================================================= Bắt đầu tìm ==
     found_at_first_word = [] # Luu vi tri cua tu.
     doc_id = 'doc' + str(index)
+    
     doc_name = 'removed '+ str(index-1) +'.txt'
 # =============================== Bắt đầu tìm =============== nếu query có 1 từ
     if len(words) == 1:
         if words[0] in stop_words:
-            print ('Từ %s là stop word.' % words[0])
+#            print ('Từ %s là stop word.' % words[0])
+            return -1
         else:
-            for pos in inverted[words[0]][doc_id]:
-               found_at_first_word.append(pos)
+            if doc_id not in inverted[words[0]]:
+                return 0
+            else:
+                for pos in inverted[words[0]][doc_id]:
+                   found_at_first_word.append(pos)
 # =============================== Bắt đầu tìm =============== nếu query có 2 từ
     if len(words) == 2:
 #        Nếu cả là stop word.
         if words[0] in stop_words:
             if words[1] in stop_words:
-                print ('"%s %s" là stop word.' % (words[0],words[1]))
+#                print ('"%s %s" là stop word.' % (words[0],words[1]))
+                return -1
             else:
 #                Tìm vị trí từ thứ 2, trừ đi len(từ thứ 1) - 1
 #                Dò lại trong document vị trí mới đó.
                 temp = open(link_document+doc_name,'r',encoding='utf-8-sig')
                 document_1 = temp.read()
-                for pos in inverted[words[1]][doc_id]:
-                    pos_of_stop_word = pos - len(words[0]) -1
-                    end_of_stop_word = pos - 2
-                    words_0 = ''
-                    for character in range(pos_of_stop_word,end_of_stop_word+1):
-                        words_0 = words_0 + document_1[character]
-                    if words_0 == words[0]:
-                        found_at_first_word.append(pos)
-                temp.close()
+                if doc_id not in inverted[words[1]]:
+                    return 0
+                else:
+                    for pos in inverted[words[1]][doc_id]:
+                        pos_of_stop_word = pos - len(words[0]) -1
+                        end_of_stop_word = pos - 2
+                        words_0 = ''
+                        for character in range(pos_of_stop_word,end_of_stop_word+1):
+                            words_0 = words_0 + document_1[character]
+                        if words_0 == words[0]:
+                            found_at_first_word.append(pos)
+                    temp.close()
         elif words[1] in stop_words:
             temp = open(link_document+doc_name,'r',encoding='utf-8-sig')
             document_1 = temp.read()
-            for pos in inverted[words[0]][doc_id]:
-                pos_of_stop_word = pos + len(words[0])
-                end_of_stop_word = pos_of_stop_word + len(words[1]) -1
-                words_1 = ''
-                for character in range(pos_of_stop_word,end_of_stop_word):
-                    words_1 = words_1 + document_1[character]
-                    if words_1 == words[1]:
-                        found_at_first_word.append(pos)
-            temp.close()
+            if doc_id not in inverted[words[0]]:
+                return 0
+            else:
+                for pos in inverted[words[0]][doc_id]:
+                    pos_of_stop_word = pos + len(words[0])
+                    end_of_stop_word = pos_of_stop_word + len(words[1]) -1
+                    words_1 = ''
+                    for character in range(pos_of_stop_word,end_of_stop_word):
+                        words_1 = words_1 + document_1[character]
+                        if words_1 == words[1]:
+                            found_at_first_word.append(pos)
+                temp.close()
         else:
-            for pos_0 in inverted[words[0]][doc_id]:
-                next_0 = pos_0 + len(words[0]) + 1
-                if next_0 in inverted[words[1]][doc_id]:
-                    found_at_first_word.append(pos_0)
+            if doc_id not in inverted[words[0]]:
+                return 0
+            else:
+                for pos_0 in inverted[words[0]][doc_id]:
+                    next_0 = pos_0 + len(words[0]) + 1
+                    if next_0 in inverted[words[1]][doc_id]:
+                        found_at_first_word.append(pos_0)
 # =============================== Bắt đầu tìm ========================== nhiều hơn 2 từ
     if len(words) > 2:
 #        Nếu từ đầu tiên là stop word
@@ -173,7 +164,31 @@ def document_contain_query(num_of_doct):
             ket_qua.append(str(i))
     if ket_qua: return ket_qua,1
     else: return ket_qua,0
-    
+# ======================================================================== Câu cần tìm =================================
+#query = 'rau an toàn'
+#query = 'rau an toàn chật vật tìm chỗ đứng'
+#query = 'Tôi từng thuộc danh sách những cầu thủ nòng cốt cho tới'
+#query = 'Quốc, hội, châu, Âu.'
+#query = 'Quốc hội châu Âu'
+#query = 'Quốc hội châu'
+#query = 'bệnh viện'
+#query = 'bệnh'
+#query = 'thức ăn'
+#query = 'thức tỉnh'
+#query = 'thức'
+#query = 'các'
+#query = 'các một'
+#query = 'bệnh ăn'
+#query = 'của bệnh'
+#query = "xhcn"
+#query = "667"
+query = 'văn hóa Việt Nam'
+#query = 'khoa học kỹ thuật'
+#query = 'tai nạn giao thông'
+#query = 'lê nin về vấn đề dân tộc'
+#query = 'hối lộ'
+#query = 'hành vi đáng lên án'
+#query = 'bạo lực học đường'
 def main():
     start=datetime.now()
     print ("Cần Tìm: '%s'" % query)
@@ -181,8 +196,10 @@ def main():
     a,b = document_contain_query(9)
     if b == 0:
         print ('Không tìm thấy.')
-    else:
-        print ('Tìm thấy tại các document.')
+    elif b == 1:
+        print ('Tìm thấy tại các document: ')
         print (a)
+    elif b == -1:
+        print ('Từ cần tìm thuộc stop words.')
     print (datetime.now()-start)
 if __name__ == "__main__":main()
