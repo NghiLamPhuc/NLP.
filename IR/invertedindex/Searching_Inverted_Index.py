@@ -1,6 +1,14 @@
 from datetime import datetime
 import re
 import json
+import os
+
+def createFolder(directory):
+    try:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+    except OSError:
+        print ('Error: Creating directory. ' +  directory)
 
 link_folder = '\\Users\\NghiLam\\Documents\\NLP\\IR\\invertedindex\\'
 link_output = link_folder + 'output\\'
@@ -14,60 +22,56 @@ def get_stop_words():
         stopwords.add(line)
     return stopwords
 
-def add_pos(pos,word):
-    return pos+len(word)+1
+# ======================================================================== Câu cần tìm =================================
+#query = 'rau an toàn'
+#query = 'rau an toàn chật vật tìm chỗ đứng'
+#query = 'Tôi từng thuộc danh sách những cầu thủ nòng cốt cho tới'
+#query = 'Quốc, hội, châu, Âu.'
+#query = 'Quốc hội châu'
+#query = 'bệnh viện'
+#query = 'bệnh'
+#query = 'thức ăn'
+#query = 'thức tỉnh'
+#query = 'thức'
+#query = 'các'
+#query = 'các một'
+#query = 'bệnh ăn'
+#query = 'của bệnh'
+#query = "xhcn"
+#query = 'văn hóa Việt Nam'
+#query = 'khoa học kỹ thuật'
+#query = 'tai nạn giao thông'
+#query = 'lê nin về vấn đề dân tộc'
+#query = 'hối lộ'
+#query = 'hành vi đáng lên án'
+query = 'bạo lực học đường'
 
-def main():
+def run(index,find_word):#=========================================================   main
     start=datetime.now()
 # =========================== Đọc file inverted index.=========================
     f = open (link_output+'InvertedIndex.txt','r',encoding='utf-8-sig')
-    inverted = json.load(f)
-    print ('Có ' + str(len(inverted)) + ' tiếng.')
+    inverted = json.load(f)    
 # ================================ stop words.=================================
     stop_words = get_stop_words()
-#    print (stop_words)
-# =============================== Câu cần tìm =================================
-#    query = 'rau an toàn'
-#    query = 'rau an toàn chật vật tìm chỗ đứng'
-#    query = 'Tôi từng thuộc danh sách những cầu thủ nòng cốt cho tới'
-#    query = 'Quốc, hội, châu, Âu.'
-#    query = 'Quốc hội châu'
-#    query = 'bệnh viện'
-#    query = 'bệnh'
-#    query = 'thức ăn'
-#    query = 'thức tỉnh'
-#    query = 'thức'
-#    query = 'các'
-#    query = 'các một'
-#    query = 'bệnh ăn'
-#    query = 'của bệnh'
-#    query = "xhcn"
-#    query = 'văn hóa Việt Nam'
-#    query = 'khoa học kỹ thuật'
-    query = 'tai nạn giao thông'
-    
+#    print (stop_words)    
 # ============================ Xử lý câu cần tìm ==============================    
     regex1 = re.compile('(?<=[^\w+])(?=\w)')
     regex2 = re.compile('(?<=\w)(?=[^\w+])')
     
-    query = query.lower()
+    query = find_word.lower()
 #    query = re.sub('[^\w\s]','',query)
     query = re.sub(regex1, ' ', query)
     query = re.sub(regex2, ' ', query)
     words = query.split()
     
-    print ("Cần Tìm: ")
-#    for i in words:
-#        if i.isalnum(): print ('1')
-#        else: print ('Khong phai tu')
-    print (words)
+    print ("Cần Tìm: %s trong document %d" % (find_word,index))
     
 # ============================================================================= Bắt đầu tìm ==
     found_at_first_word = [] # Luu vi tri cua tu.
-    in_dex = 1 #=======================================================================       index
+    in_dex = index #=======================================================================       index
     doc_id = 'doc' + str(in_dex)
     doc_name = 'removed '+ str(in_dex-1) +'.txt'
-    out_file = open(link_output+'output '+doc_id+'.txt','w',encoding='utf-8-sig') # Luu KET QUA CUOI CUNG.
+    out_file = open(link_output + find_word + '\\' + doc_id+'.txt','w',encoding='utf-8-sig') # Luu KET QUA CUOI CUNG.
 # Duyeejt qua tat ca document.
 #    for i in range(0,9):
 #        doc_id = 'doc'
@@ -176,5 +180,10 @@ def main():
         out_file.write(str(index+1)+' '+sentence_pos+'\n')
         
     print ()
-    print (datetime.now()-start)    
+    print (datetime.now()-start)
+    
+def main():
+    createFolder('./output/%s' % query)
+    for i in range(1,10):
+        run(i,query)
 if __name__ == "__main__":main()
