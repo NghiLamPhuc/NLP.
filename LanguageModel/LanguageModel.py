@@ -183,10 +183,10 @@ def counting_trigram(textFileName):
                     bi_count[bigram] += 1
 
 #                word_word_word frequency.
-                if bigram not in word_word_freq:
+                if bigram not in trigram_frequency:
                     trigram_frequency[bigram][third_word] = 1
                 else:
-                    if third_word not in word_word_freq[bigram]:
+                    if third_word not in trigram_frequency[bigram]:
                         trigram_frequency[bigram][third_word] = 1
                     else:
                         trigram_frequency[bigram][third_word] += 1
