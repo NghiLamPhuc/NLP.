@@ -5,7 +5,7 @@ from collections import OrderedDict
 from datetime import datetime
 import os
 
-def createFolder(directory):
+def create_Folder(directory):
     try:
         if not os.path.exists(directory):
             os.makedirs(directory)
@@ -24,9 +24,15 @@ word_word_prob = defaultdict(dict)  #calculate probability.
 word_prob_test = dict()             #sum of probability of one word.
 bi_for_tri_freq = dict
 
-def display_file(lst,filename,link):
+def write_count_one_word(objet,filename,link):
+    with open(link + filename, 'w', encoding='utf-8') as fout:
+        json.dump(objet,'count_one_word.txt',)
+
+def write_word_frequency_to_see(lst,filename,link):
     with open(link + filename, 'w', encoding='utf-8') as fout:
         pprint.pprint(lst,fout)
+
+#def output_Model()
 
 # Đoán từ tiếp theo.
 def guess_next_word(word):
@@ -107,8 +113,8 @@ def training_bigram(filename):
                     else: word_word_freq[preWord][curWord] += 1
     del word_freq['$end.']
     
-    createFolder('./outfile/')
-    display_file(word_word_freq,'bigram_freq_display.txt',link_out_file)  #Ghi file tan suat word=>word
+    create_Folder('./outfile/')
+    write_word_frequency_to_see(word_word_freq,'bigram_freq_display.txt',link_out_file)  #Ghi file tan suat word=>word
     with open(link_out_file+ 'bigram_frequency.txt','w',encoding='utf-8') as biFreq:
         json.dump(word_word_freq,biFreq,ensure_ascii=False)
     
@@ -118,9 +124,9 @@ def training_bigram(filename):
             word_word_prob[eachWord][followWord] = word_word_freq[eachWord][followWord]/word_freq[eachWord]
             word_prob_test[eachWord] += word_word_prob[eachWord][followWord]
     
-    display_file(word_prob_test,'test_probability.txt',link_out_file)
+    write_word_frequency_to_see(word_prob_test,'test_probability.txt',link_out_file)
     
-    createFolder('./model/')
+    create_Folder('./model/')
     Lmodel = {}
     Lmodel['Language model'] = word_word_prob
     Lmodel['Word count'] = word_freq
@@ -143,43 +149,36 @@ def training_trigram(textFileName):
         for line in inputfile:                                                  #Duyet tung dong.
             line1 = line.lower()                                                #Bo? viet hoa.
             
-            line_lowcase = line1.split()                                        #Cat ca^u thanh list word.
-#            line_lowcase.append('$end.')
+            line_lowcase = line1.split()
             
-#            curWord = line_lowcase[0]                                           #Xet word dau tien.
-#            preWord = 'None'
-#            nextCur = line_lowcase[1]
-                                                                                #Dem word dau tien cua moi cau.
-#            if curWord not in word_freq:
-#                word_freq[curWord] = 1
-#            else:
-#                word_freq[curWord] += 1
-            #Duyet tu word thu 2.
-#            for word in line_lowcase:
             for i in range(0,len(line_lowcase)-2):
-#                if preWord is 'None':                                           #Neu chua duyet tiep word thư 2.
-#                    preWord = ''
-#                    pass
-#                else:
-#                preWord = curWord
-#                curWord = word
+
                 curWord = line_lowcase[i]
-                nextWord1 = line_lowcase[i+1]
-                nextWord2 = line_lowcase[i+2]
-                nextBigram = (nextWord1,nextWord2)
+                second_word = line_lowcase[i+1]
+                third_word = line_lowcase[i+2]
+                nextBigram = (second_word, third_word)
                 
+#                Count first word.
+                if curWord not in word_freq:
+                    word_freq[curWord] = 1
+                else:
+                    word_freq[curWord] += 1
+#                word_word_word frequency.
+                if curWord not in word_word_freq:
+                    word_word_freq[curWord][nextBigram] = 1
+                else:
+                    if nextBigram not in word_word_freq[curWord]:
+                        word_word_freq[curWord][nextBigram] = 1
+                    else:
+                        word_word_freq[curWord][nextBigram] += 1
+                        
                 
-#                if curWord not in word_freq:
-#                    word_freq[curWord] = 1
-#                else:
-#                    word_freq[curWord] += 1
-                                                                            
-#                if preWord not in word_word_freq:                           # Thiếu word => $.
-#                    word_word_freq[preWord][curWord] = 1
-#                elif curWord not in word_word_freq[preWord]:
-#                    word_word_freq[preWord][curWord] = 1
-#                else: word_word_freq[preWord][curWord] += 1
-#    del word_freq['$end.']
+
+#                        In couting each word.
+#    with open(link_out_file + 'trigram_one_word_freq.txt','w',encoding='utf-8') as f:
+#        json.dump(word_freq,f,ensure_ascii=False)
+#                        In word_word_word frequency.
+    write_word_frequency_to_see(word_word_freq,'trigram_freq_display.txt',link_out_file)  #Ghi file tan suat word=>word
     
     return 0
     
@@ -206,7 +205,7 @@ def main():
 #    s = 'Nhưng đó là quyết_định của anh .'
 #    s = 'Kỹ_thuật điêu_luyện , lối chơi thông_minh của Vinh “ sói ” đã làm điên_đảo hầu_hết những đối_thủ từ Á đến Âu mà tuyển miền Nam đã gặp thời ấy như Hàn_Quốc , Hong_Kong , Nhật , các đội Djugaden , Helsinborg ( Thụy_Điển ) , Lask ( Áo ) ...'
 #    s = 'Giờ_đây nhiều nông_dân cố_cựu vùng Đồng_Tháp_Mười này như bác Võ_Văn_Ni ( ấp Bàu_Môn , xã Thạnh_Hưng , huyện Mộc_Hóa ) vẫn còn nhớ như in những ngày đầu khi Trung_tâm Nghiên_cứu thực_nghiệm nông_nghiệp Đồng_Tháp_Mười vừa thành_lập : “ Tôi là người ở Đồng_Tháp_Mười từ thời ông cố đến giờ , tôi hiểu cục đất nơi này còn hơn cả con mình , vậy_mà hồi mấy chú vô tôi cứ cười bảo : để rồi coi , ở không được một vụ đâu , đất này làm chơi thôi chứ cao_sản cao_siếc cái gì ...'
-#    display_file(calculate_sentence_probability(s),'SentenceProb.txt',link_result_file)
+#    write_word_frequency_to_see(calculate_sentence_probability(s),'SentenceProb.txt',link_result_file)
     
     print (datetime.now()-start)
 if __name__ == "__main__":main()
