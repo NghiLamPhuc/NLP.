@@ -5,6 +5,7 @@ from collections import OrderedDict
 from datetime import datetime
 import os
 
+
 def create_Folder(directory):
     try:
         if not os.path.exists(directory):
@@ -124,16 +125,16 @@ def training_bigram(filename):
             word_word_prob[eachWord][followWord] = word_word_freq[eachWord][followWord]/word_freq[eachWord]
             word_prob_test[eachWord] += word_word_prob[eachWord][followWord]
     
-    write_word_frequency_to_see(word_prob_test,'test_probability.txt',link_out_file)
+    write_word_frequency_to_see(word_prob_test,'test_bi_probability.txt',link_out_file)
     
     create_Folder('./model/')
     Lmodel = {}
     Lmodel['Language model'] = word_word_prob
     Lmodel['Word count'] = word_freq
-    with open(link_model + 'model.txt', 'w',encoding='utf8') as outfile:
+    with open(link_model + 'bi_model.txt', 'w',encoding='utf8') as outfile:
         json.dump(Lmodel, outfile, ensure_ascii=False)
     # GHI LAI CHO DE NHIN.
-    with open(link_model + 'display_model.txt', 'w',encoding='utf8') as outfile:
+    with open(link_model + 'display_bi_model.txt', 'w',encoding='utf8') as outfile:
         outfile.write('Language model:\n')
         for key,value in Lmodel['Language model'].items():
             outfile.write('%s:%s\n' % (key, value))
@@ -142,9 +143,26 @@ def training_bigram(filename):
             outfile.write('%s:%s\n' % (key, value))
 # tri gram #########################################################################
 def training_trigram(textFileName):
-    bigram_freq = open(link_out_file+'bigram_frequency.txt','r',encoding='utf-8')
-    bi_for_tri_freq = json.load(bigram_freq)
+    bi,tri = counting_trigram(textFileName)
+    prob = tri_prob(bi,tri)
+    Lmodel = {}
+    Lmodel['Language model'] = prob
+    Lmodel['Word count'] = bi
+    with open(link_model + 'tri_model.txt', 'w',encoding='utf8') as outfile:
+        json.dump(Lmodel,outfile,ensure_ascii=False)
+    # GHI LAI CHO DE NHIN.
+    with open(link_model + 'display_tri_model.txt', 'w',encoding='utf8') as outfile:
+        outfile.write('Language model:\n')
+        for key,value in Lmodel['Language model'].items():
+            outfile.write('%s:%s\n' % (key, value))
+        outfile.write('\nWord count:\n')    
+        for key,value in Lmodel['Word count'].items():
+            outfile.write('%s:%s\n' % (key, value))
+    return prob
     
+def counting_trigram(textFileName):
+    bi_count = dict()
+    trigram_frequency = defaultdict(dict)
     with open(link_train_file + textFileName,'r',encoding='utf-8') as inputfile:
         for line in inputfile:                                                  #Duyet tung dong.
             line1 = line.lower()                                                #Bo? viet hoa.
@@ -153,35 +171,44 @@ def training_trigram(textFileName):
             
             for i in range(0,len(line_lowcase)-2):
 
-                curWord = line_lowcase[i]
+                first_word = line_lowcase[i]
                 second_word = line_lowcase[i+1]
                 third_word = line_lowcase[i+2]
-                nextBigram = (second_word, third_word)
+#                bigram = (first_word, second_word)
+                bigram = first_word+' '+second_word
                 
-#                Count first word.
-                if curWord not in word_freq:
-                    word_freq[curWord] = 1
+                if bigram not in bi_count:
+                    bi_count[bigram] = 1
                 else:
-                    word_freq[curWord] += 1
-#                word_word_word frequency.
-                if curWord not in word_word_freq:
-                    word_word_freq[curWord][nextBigram] = 1
-                else:
-                    if nextBigram not in word_word_freq[curWord]:
-                        word_word_freq[curWord][nextBigram] = 1
-                    else:
-                        word_word_freq[curWord][nextBigram] += 1
-                        
-                
+                    bi_count[bigram] += 1
 
-#                        In couting each word.
-#    with open(link_out_file + 'trigram_one_word_freq.txt','w',encoding='utf-8') as f:
-#        json.dump(word_freq,f,ensure_ascii=False)
+#                word_word_word frequency.
+                if bigram not in word_word_freq:
+                    trigram_frequency[bigram][third_word] = 1
+                else:
+                    if third_word not in word_word_freq[bigram]:
+                        trigram_frequency[bigram][third_word] = 1
+                    else:
+                        trigram_frequency[bigram][third_word] += 1
+                        
 #                        In word_word_word frequency.
-    write_word_frequency_to_see(word_word_freq,'trigram_freq_display.txt',link_out_file)  #Ghi file tan suat word=>word
+    write_word_frequency_to_see(trigram_frequency,'trigram_freq_display.txt',link_out_file)  #Ghi file tan suat word=>word
+    write_word_frequency_to_see(bi_count,'bigram_count.txt',link_out_file)
     
-    return 0
+    return bi_count,trigram_frequency
+######################################### Probability
+def tri_prob(bigram_count, trigram_count):
+    probability = defaultdict(dict)
     
+    for bigram in bigram_count:
+        word_prob_test[bigram] = 0
+        for third_word in trigram_count[bigram]:
+            probability[bigram][third_word] = trigram_count[bigram][third_word]/bigram_count[bigram]
+            word_prob_test[bigram] += probability[bigram][third_word]
+    
+    write_word_frequency_to_see(word_prob_test,'test_tri_probability.txt',link_out_file)
+    
+    return probability
 
 def main():
     
