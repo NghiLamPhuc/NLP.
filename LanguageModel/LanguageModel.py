@@ -27,7 +27,7 @@ bi_for_tri_freq = dict
 
 def write_count_one_word(objet,filename,link):
     with open(link + filename, 'w', encoding='utf-8') as fout:
-        json.dump(objet,'count_one_word.txt',)
+        json.dump(objet,'count_one_word.txt',fout)
 
 def write_word_frequency_to_see(lst,filename,link):
     with open(link + filename, 'w', encoding='utf-8') as fout:
@@ -36,15 +36,32 @@ def write_word_frequency_to_see(lst,filename,link):
 #def output_Model()
 
 # Đoán từ tiếp theo.
-def guess_next_word(word):
-    for item in word_word_prob[word]:
-        sorted_by_value = OrderedDict(sorted(word_word_prob[word].items(), key=lambda x: x[1], reverse=True))
+def guess_next_bi(word):
+    with open(link_model + 'bi_model.txt',encoding='utf-8') as model_file:    
+        HMMmodel = json.load(model_file)
+        probability = HMMmodel['Language model']
+#        emissionProb = HMMmodel['Emission Probability']
+    for item in probability[word]:
+        sorted_by_value = OrderedDict(sorted(probability[word].items(), key=lambda x: x[1], reverse=True))
 
     for index,item in enumerate(sorted_by_value.items()):
         print (index+1, item)
 
     return sorted_by_value
-    
+# Doan tu tiep theo 1 bigram.
+def guess_next_tri(word):
+    with open(link_model + 'tri_model.txt',encoding='utf-8') as model_file:    
+        HMMmodel = json.load(model_file)
+        probability = HMMmodel['Language model']
+    bigram = word
+    for item in probability[bigram]:
+        sorted_by_value = OrderedDict(sorted(probability[bigram].items(), key=lambda x: x[1], reverse=True))
+
+    for index,item in enumerate(sorted_by_value.items()):
+        print (index+1, item)
+
+    return sorted_by_value
+
 # Tính xác suất câu.
 def calculate_sentence_probability(s):
     lst_word = s.lower().split()
@@ -78,61 +95,81 @@ def calculate_sentence_probability(s):
     return sentence_prob,prob
 
 # bi-gram
-def training_bigram(filename):
-    with open(link_train_file + filename,'r',encoding='utf-8') as inputfile:
-        for line in inputfile:                                                  #Duyet tung dong.
-            line1 = line.lower()                                                #Bo? viet hoa.
-            
-            line_lowcase = line1.split()                                        #Cat ca^u thanh list word.
-            line_lowcase.append('$end.')
-            
-            curWord = line_lowcase[0]                                           #Xet word dau tien.
-            preWord = 'None'
-                                                                                #Dem word dau tien cua moi cau.
-            if curWord not in word_freq:
-                word_freq[curWord] = 1
-            else:
-                word_freq[curWord] += 1
-            #Duyet tu word thu 2.
-            for word in line_lowcase:
-                if preWord is 'None':                                           #Neu chua duyet tiep word thư 2.
-                    preWord = ''
-                    pass
-                else:
-                    preWord = curWord
-                    curWord = word
-                                                                                #Dem tan suat word.
-                    if word not in word_freq:
-                        word_freq[word] = 1
-                    else:
-                        word_freq[word] += 1
-                                                                                #Dem tan suat word_to_word.
-                    if preWord not in word_word_freq:                           # Thiếu word => $.
-                        word_word_freq[preWord][curWord] = 1
-                    elif curWord not in word_word_freq[preWord]:
-                        word_word_freq[preWord][curWord] = 1
-                    else: word_word_freq[preWord][curWord] += 1
-    del word_freq['$end.']
-    
-    create_Folder('./outfile/')
-    write_word_frequency_to_see(word_word_freq,'bigram_freq_display.txt',link_out_file)  #Ghi file tan suat word=>word
-    with open(link_out_file+ 'bigram_frequency.txt','w',encoding='utf-8') as biFreq:
-        json.dump(word_word_freq,biFreq,ensure_ascii=False)
-    
-    for eachWord in word_freq:
-        word_prob_test[eachWord] = 0
-        for followWord in word_word_freq[eachWord]:
-            word_word_prob[eachWord][followWord] = word_word_freq[eachWord][followWord]/word_freq[eachWord]
-            word_prob_test[eachWord] += word_word_prob[eachWord][followWord]
-    
-    write_word_frequency_to_see(word_prob_test,'test_bi_probability.txt',link_out_file)
-    
-    create_Folder('./model/')
+#def training_bigram(filename):
+#    with open(link_train_file + filename,'r',encoding='utf-8') as inputfile:
+#        for line in inputfile:                                                  #Duyet tung dong.
+#            line1 = line.lower()                                                #Bo? viet hoa.
+#            
+#            line_lowcase = line1.split()                                        #Cat ca^u thanh list word.
+#            line_lowcase.append('$end.')
+#            
+#            curWord = line_lowcase[0]                                           #Xet word dau tien.
+#            preWord = 'None'
+#                                                                                #Dem word dau tien cua moi cau.
+#            if curWord not in word_freq:
+#                word_freq[curWord] = 1
+#            else:
+#                word_freq[curWord] += 1
+#            #Duyet tu word thu 2.
+#            for word in line_lowcase:
+#                if preWord is 'None':                                           #Neu chua duyet tiep word thư 2.
+#                    preWord = ''
+#                    pass
+#                else:
+#                    preWord = curWord
+#                    curWord = word
+#                                                                                #Dem tan suat word.
+#                    if word not in word_freq:
+#                        word_freq[word] = 1
+#                    else:
+#                        word_freq[word] += 1
+#                                                                                #Dem tan suat word_to_word.
+#                    if preWord not in word_word_freq:                           # Thiếu word => $.
+#                        word_word_freq[preWord][curWord] = 1
+#                    elif curWord not in word_word_freq[preWord]:
+#                        word_word_freq[preWord][curWord] = 1
+#                    else: word_word_freq[preWord][curWord] += 1
+#    del word_freq['$end.']
+#    
+#    create_Folder('./outfile/')
+#    write_word_frequency_to_see(word_word_freq,'bigram_freq_display.txt',link_out_file)  #Ghi file tan suat word=>word
+#    with open(link_out_file+ 'bigram_frequency.txt','w',encoding='utf-8') as biFreq:
+#        json.dump(word_word_freq,biFreq,ensure_ascii=False)
+#    
+#    for eachWord in word_freq:
+#        word_prob_test[eachWord] = 0
+#        for followWord in word_word_freq[eachWord]:
+#            word_word_prob[eachWord][followWord] = word_word_freq[eachWord][followWord]/word_freq[eachWord]
+#            word_prob_test[eachWord] += word_word_prob[eachWord][followWord]
+#    
+#    write_word_frequency_to_see(word_prob_test,'test_bi_probability.txt',link_out_file)
+#    
+#    create_Folder('./model/')
+#    Lmodel = {}
+#    Lmodel['Language model'] = word_word_prob
+#    Lmodel['Word count'] = word_freq
+#    with open(link_model + 'bi_model.txt', 'w',encoding='utf8') as outfile:
+#        json.dump(Lmodel, outfile, ensure_ascii=False)
+#    # GHI LAI CHO DE NHIN.
+#    with open(link_model + 'display_bi_model.txt', 'w',encoding='utf8') as outfile:
+#        outfile.write('Language model:\n')
+#        for key,value in Lmodel['Language model'].items():
+#            outfile.write('%s:%s\n' % (key, value))
+#        outfile.write('\nWord count:\n')    
+#        for key,value in Lmodel['Word count'].items():
+#            outfile.write('%s:%s\n' % (key, value))
+
+###############################################################################################################
+# ----------------------------------------------------------------------------------------------------- BI GRAM.
+###############################################################################################################
+def training_bigram(textFileName):
+    uni,bi = counting_bigram(textFileName)
+    prob = bi_prob(uni,bi)
     Lmodel = {}
-    Lmodel['Language model'] = word_word_prob
-    Lmodel['Word count'] = word_freq
+    Lmodel['Language model'] = prob
+    Lmodel['Word count'] = bi
     with open(link_model + 'bi_model.txt', 'w',encoding='utf8') as outfile:
-        json.dump(Lmodel, outfile, ensure_ascii=False)
+        json.dump(Lmodel,outfile,ensure_ascii=False)
     # GHI LAI CHO DE NHIN.
     with open(link_model + 'display_bi_model.txt', 'w',encoding='utf8') as outfile:
         outfile.write('Language model:\n')
@@ -141,7 +178,56 @@ def training_bigram(filename):
         outfile.write('\nWord count:\n')    
         for key,value in Lmodel['Word count'].items():
             outfile.write('%s:%s\n' % (key, value))
-# tri gram #########################################################################
+    return prob
+# Counting word frequency; word to word frequency.
+def counting_bigram(textFileName):
+#    word or uni
+    word_count = dict()
+    bigram_frequency = defaultdict(dict)
+    with open(link_train_file + textFileName,'r',encoding='utf-8') as inputfile:
+        for line in inputfile:                                                  #Duyet tung dong.
+            line1 = line.lower()                                                #Bo? viet hoa.
+            line_lowcase = line1.split()
+            for i in range(0,len(line_lowcase)-1):
+
+                first_word = line_lowcase[i]
+                second_word = line_lowcase[i+1]
+                
+                if first_word not in word_count:
+                    word_count[first_word] = 1
+                else:
+                    word_count[first_word] += 1
+
+#                word_word frequency.
+                if first_word not in bigram_frequency:
+                    bigram_frequency[first_word][second_word] = 1
+                else:
+                    if second_word not in bigram_frequency[first_word]:
+                        bigram_frequency[first_word][second_word] = 1
+                    else:
+                        bigram_frequency[first_word][second_word] += 1
+                        
+#                        In word_word_word frequency.
+    write_word_frequency_to_see(bigram_frequency,'bigram_freq_display.txt',link_out_file)  #Ghi file tan suat word=>word
+    write_word_frequency_to_see(word_count,'uni_count.txt',link_out_file)
+    return word_count, bigram_frequency
+
+# Probability bi gram p(w2|w1) = count(w1,w2) / count(w1)
+def bi_prob(word_count, bigram_count):
+    probability = defaultdict(dict)
+    
+    for word in word_count:
+        word_prob_test[word] = 0
+        for nd_word in bigram_count[word]:
+            probability[word][nd_word] = bigram_count[word][nd_word]/word_count[word]
+            word_prob_test[word] += probability[word][nd_word]
+    
+    write_word_frequency_to_see(word_prob_test,'test_bi_probability.txt',link_out_file)
+    
+    return probability
+###############################################################################################################
+# ----------------------------------------------------------------------------------------------------- TRI GRAM.
+###############################################################################################################
 def training_trigram(textFileName):
     bi,tri = counting_trigram(textFileName)
     prob = tri_prob(bi,tri)
@@ -159,7 +245,7 @@ def training_trigram(textFileName):
         for key,value in Lmodel['Word count'].items():
             outfile.write('%s:%s\n' % (key, value))
     return prob
-    
+# Counting tri gram ################################################################
 def counting_trigram(textFileName):
     bi_count = dict()
     trigram_frequency = defaultdict(dict)
@@ -196,7 +282,8 @@ def counting_trigram(textFileName):
     write_word_frequency_to_see(bi_count,'bigram_count.txt',link_out_file)
     
     return bi_count,trigram_frequency
-######################################### Probability
+
+# Probability tri gram
 def tri_prob(bigram_count, trigram_count):
     probability = defaultdict(dict)
     
@@ -209,22 +296,97 @@ def tri_prob(bigram_count, trigram_count):
     write_word_frequency_to_see(word_prob_test,'test_tri_probability.txt',link_out_file)
     
     return probability
+###############################################################################################################
+# ----------------------------------------------------------------------------------------------------- 4 GRAM.
+###############################################################################################################
+def training_fourgram(textFileName):
+    bi,tri = counting_trigram(textFileName)
+    prob = tri_prob(bi,tri)
+    Lmodel = {}
+    Lmodel['Language model'] = prob
+    Lmodel['Word count'] = bi
+    with open(link_model + 'tri_model.txt', 'w',encoding='utf8') as outfile:
+        json.dump(Lmodel,outfile,ensure_ascii=False)
+    # GHI LAI CHO DE NHIN.
+    with open(link_model + 'display_tri_model.txt', 'w',encoding='utf8') as outfile:
+        outfile.write('Language model:\n')
+        for key,value in Lmodel['Language model'].items():
+            outfile.write('%s:%s\n' % (key, value))
+        outfile.write('\nWord count:\n')    
+        for key,value in Lmodel['Word count'].items():
+            outfile.write('%s:%s\n' % (key, value))
+    return prob
+# Counting tri gram ################################################################
+def counting_fourgram(textFileName):
+    tri_count = dict()
+    trigram_frequency = defaultdict(dict)
+    with open(link_train_file + textFileName,'r',encoding='utf-8') as inputfile:
+        for line in inputfile:                                                  #Duyet tung dong.
+            line1 = line.lower()                                                #Bo? viet hoa.
+            
+            line_lowcase = line1.split()
+            
+            for i in range(0,len(line_lowcase)-2):
 
-def main():
+                first_word = line_lowcase[i]
+                second_word = line_lowcase[i+1]
+                third_word = line_lowcase[i+2]
+#                bigram = (first_word, second_word)
+                bigram = first_word+' '+second_word
+                
+                if bigram not in bi_count:
+                    bi_count[bigram] = 1
+                else:
+                    bi_count[bigram] += 1
+
+#                word_word_word frequency.
+                if bigram not in trigram_frequency:
+                    trigram_frequency[bigram][third_word] = 1
+                else:
+                    if third_word not in trigram_frequency[bigram]:
+                        trigram_frequency[bigram][third_word] = 1
+                    else:
+                        trigram_frequency[bigram][third_word] += 1
+                        
+#                        In word_word_word frequency.
+    write_word_frequency_to_see(trigram_frequency,'trigram_freq_display.txt',link_out_file)  #Ghi file tan suat word=>word
+    write_word_frequency_to_see(bi_count,'bigram_count.txt',link_out_file)
     
+    return bi_count,trigram_frequency
+
+# Probability tri gram
+def four_prob(bigram_count, trigram_count):
+    probability = defaultdict(dict)
+    
+    for bigram in bigram_count:
+        word_prob_test[bigram] = 0
+        for third_word in trigram_count[bigram]:
+            probability[bigram][third_word] = trigram_count[bigram][third_word]/bigram_count[bigram]
+            word_prob_test[bigram] += probability[bigram][third_word]
+    
+    write_word_frequency_to_see(word_prob_test,'test_tri_probability.txt',link_out_file)
+    
+    return probability
+
+###############################################################################################################################
+################################################################################################################     MAIN
+###############################################################################################################################
+def main():
+    start=datetime.now()
     
 #    word_freq = dict() #count word.
 #    word_word_freq = defaultdict(dict)  #count word=>word
 #    word_word_prob = defaultdict(dict)  #calculate probability.
 #    word_prob_test = dict()             #sum of probability of one word.
     
-    start=datetime.now()
+    create_Folder('./outfile/')
+    create_Folder('./model/')
 # ==========================   Tính mô hình ngôn ngữ =====================================
-#    training_bigram('input.pos')
-    training_trigram('input.pos')
+#    bi_prob = training_bigram('input.pos')
+#    tri_prob = training_trigram('input.pos')
 # ==========================   Đoán từ tiếp theo  ========================================
-#    guess_next_word('kinh_tế')
-#    guess_next_word('có_thể')
+#    guess_next_bi('kinh_tế')
+#    guess_next_tri('kinh_tế và')
     
 # ==========================   Tính xác suất một câu  ====================================    
 #    s = 'Dịch_vụ đang trở_thành lĩnh_vực xuất_khẩu mới đóng_góp đáng_kể vào kim_ngạch xuất_khẩu của Việt_Nam .'
