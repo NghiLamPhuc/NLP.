@@ -38,9 +38,9 @@ def write_word_frequency_to_see(lst,filename,link):
 # Đoán từ tiếp theo.
 def guess_next_bi(word):
     with open(link_model + 'bi_model.txt',encoding='utf-8') as model_file:    
-        HMMmodel = json.load(model_file)
-        probability = HMMmodel['Language model']
-#        emissionProb = HMMmodel['Emission Probability']
+        Lmodel = json.load(model_file)
+        probability = Lmodel['Language model']
+#        emissionProb = Lmodel['Emission Probability']
     for item in probability[word]:
         sorted_by_value = OrderedDict(sorted(probability[word].items(), key=lambda x: x[1], reverse=True))
 
@@ -51,8 +51,8 @@ def guess_next_bi(word):
 # Doan tu tiep theo 1 bigram.
 def guess_next_tri(word):
     with open(link_model + 'tri_model.txt',encoding='utf-8') as model_file:    
-        HMMmodel = json.load(model_file)
-        probability = HMMmodel['Language model']
+        Lmodel = json.load(model_file)
+        probability = Lmodel['Language model']
     bigram = word
     for item in probability[bigram]:
         sorted_by_value = OrderedDict(sorted(probability[bigram].items(), key=lambda x: x[1], reverse=True))
@@ -64,8 +64,8 @@ def guess_next_tri(word):
 # Doan tu tiep theo 1 trigram.
 def guess_next_four(word):
     with open(link_model + 'four_model.txt',encoding='utf-8') as model_file:    
-        HMMmodel = json.load(model_file)
-        probability = HMMmodel['Language model']
+        Lmodel = json.load(model_file)
+        probability = Lmodel['Language model']
     trigram = word
     for item in probability[trigram]:
         sorted_by_value = OrderedDict(sorted(probability[trigram].items(), key=lambda x: x[1], reverse=True))
@@ -77,6 +77,11 @@ def guess_next_four(word):
 
 # Tính xác suất câu.
 def calculate_sentence_probability(s):
+    with open(link_model + 'bi_model.txt',encoding='utf-8') as model_file:    
+        Lmodel = json.load(model_file)
+        probability = Lmodel['Language model']
+        word_freq = Lmodel['Word count']
+        
     lst_word = s.lower().split()
     prev = 'None'
     curr = lst_word[0]
@@ -92,9 +97,9 @@ def calculate_sentence_probability(s):
             prev = curr
             curr = word
             #TU da co
-            if prev in word_word_prob:
-                if curr in word_word_prob[prev]:
-                    prob[prev][curr] = word_word_prob[prev][curr]
+            if prev in probability:
+                if curr in probability[prev]:
+                    prob[prev][curr] = probability[prev][curr]
                     sentence_prob *= prob[prev][curr]
                 else:
 #                    prob[prev][curr] = 1/(word_count[prev]+totalWord)
@@ -347,7 +352,9 @@ def main():
 #    s = 'Nhưng đó là quyết_định của anh .'
 #    s = 'Kỹ_thuật điêu_luyện , lối chơi thông_minh của Vinh “ sói ” đã làm điên_đảo hầu_hết những đối_thủ từ Á đến Âu mà tuyển miền Nam đã gặp thời ấy như Hàn_Quốc , Hong_Kong , Nhật , các đội Djugaden , Helsinborg ( Thụy_Điển ) , Lask ( Áo ) ...'
 #    s = 'Giờ_đây nhiều nông_dân cố_cựu vùng Đồng_Tháp_Mười này như bác Võ_Văn_Ni ( ấp Bàu_Môn , xã Thạnh_Hưng , huyện Mộc_Hóa ) vẫn còn nhớ như in những ngày đầu khi Trung_tâm Nghiên_cứu thực_nghiệm nông_nghiệp Đồng_Tháp_Mười vừa thành_lập : “ Tôi là người ở Đồng_Tháp_Mười từ thời ông cố đến giờ , tôi hiểu cục đất nơi này còn hơn cả con mình , vậy_mà hồi mấy chú vô tôi cứ cười bảo : để rồi coi , ở không được một vụ đâu , đất này làm chơi thôi chứ cao_sản cao_siếc cái gì ...'
-#    write_word_frequency_to_see(calculate_sentence_probability(s),'SentenceProb.txt',link_result_file)
+#    s = 'Hôm nay là ngày nắng'
+#    create_Folder('./output/')
+#    write_word_frequency_to_see(calculate_sentence_probability(s),'SentenceProbability.txt',link_result_file)
     
     print (datetime.now()-start)
 if __name__ == "__main__":main()
