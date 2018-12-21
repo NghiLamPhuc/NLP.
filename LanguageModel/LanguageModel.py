@@ -15,9 +15,12 @@ def create_Folder(directory):
 
 link_folder_ = '\\Users\\NghiLam\\Documents\\NLP\\LanguageModel\\'
 link_out_file = link_folder_ + 'outfile\\'
-link_train_file = link_folder_ + 'input\\'
+#link_train_file = link_folder_ + 'input\\'
+link_train_file = '/Users/NghiLam/Documents/NLP/Tokenize/token/'
+
 link_result_file = link_folder_ + 'output\\'
 link_model = link_folder_ + 'model\\'
+
 
 word_freq = dict() #count word.
 word_word_freq = defaultdict(dict)  #count word=>word
@@ -337,11 +340,18 @@ def main():
     
     create_Folder('./outfile/')
     create_Folder('./model/')
+    all_files = os.listdir(link_train_file)
+#    txt_files = filter(lambda x: x[-4:] == '.txt', all_files)
+#    for index, file in enumerate(txt_files):
+    f1 = all_files[0]
 # ==========================   Tính mô hình ngôn ngữ =====================================
 #    bi_prob = training_bigram('input.pos')
+    bi_prob = training_bigram(f1)
+    
 #    tri_prob = training_trigram('input.pos')
 #    four_prob = training_fourgram('input.pos')
 # ==========================   Đoán từ tiếp theo  ========================================
+    guess_next_bi("'kinh'")
 #    guess_next_bi('kinh_tế')
 #    guess_next_tri('kinh_tế và')
 #    guess_next_four('kinh_tế và hội_nhập')
