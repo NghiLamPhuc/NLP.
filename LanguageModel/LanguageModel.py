@@ -13,13 +13,13 @@ def create_Folder(directory):
     except OSError:
         print ('Error: Creating directory. ' +  directory)
 
-link_folder_ = '\\Users\\NghiLam\\Documents\\NLP\\LanguageModel\\'
-link_out_file = link_folder_ + 'outfile\\'
-#link_train_file = link_folder_ + 'input\\'
-link_train_file = '/Users/NghiLam/Documents/NLP/Tokenize/token/'
+link_folder_ = '/Users/NghiLam/Documents/NLP/LanguageModel/'
+link_out_file = link_folder_ + 'outfile/'
+link_train_file = link_folder_ + 'input/'
+#link_train_file = '/Users/NghiLam/Documents/NLP/Tokenize/token/'
 
-link_result_file = link_folder_ + 'output\\'
-link_model = link_folder_ + 'model\\'
+link_result_file = link_folder_ + 'output/'
+link_model = link_folder_ + 'model/'
 
 
 word_freq = dict() #count word.
@@ -166,8 +166,8 @@ def counting_bigram(textFileName):
                         
     create_Folder('./outfile/bigram/')
 #                        In word_word_word frequency.
-    write_word_frequency_to_see(bigram_frequency,'bigram_freq_display.txt',link_out_file+'\\bigram\\')  #Ghi file tan suat word=>word
-    write_word_frequency_to_see(word_count,'uni_count.txt',link_out_file+'\\bigram\\')
+    write_word_frequency_to_see(bigram_frequency,'bigram_freq_display.txt',link_out_file+'/bigram/')  #Ghi file tan suat word=>word
+    write_word_frequency_to_see(word_count,'uni_count.txt',link_out_file+'/bigram/')
     return word_count, bigram_frequency
 
 # Probability bi gram p(w2|w1) = count(w1,w2) / count(w1)
@@ -180,7 +180,7 @@ def bi_prob(word_count, bigram_count):
             probability[word][nd_word] = bigram_count[word][nd_word]/word_count[word]
             word_prob_test[word] += probability[word][nd_word]
     
-    write_word_frequency_to_see(word_prob_test,'test_bi_probability.txt',link_out_file+'\\bigram\\')
+    write_word_frequency_to_see(word_prob_test,'test_bi_probability.txt',link_out_file+'/bigram/')
     
     return probability
 ###############################################################################################################
@@ -236,7 +236,7 @@ def counting_trigram(textFileName):
                         trigram_frequency[bigram][third_word] += 1
     create_Folder('./outfile/trigram/')
 #                        In word_word_word frequency.
-    write_word_frequency_to_see(trigram_frequency,'trigram_freq_display.txt',link_out_file+'\\trigram\\')
+    write_word_frequency_to_see(trigram_frequency,'trigram_freq_display.txt',link_out_file+'/trigram/')
     write_word_frequency_to_see(bi_count,'bigram_count.txt',link_out_file+'//trigram//')
     
     return bi_count,trigram_frequency
@@ -351,8 +351,8 @@ def main():
 #    tri_prob = training_trigram('input.pos')
 #    four_prob = training_fourgram('input.pos')
 # ==========================   Đoán từ tiếp theo  ========================================
-    guess_next_bi("'kinh'")
-#    guess_next_bi('kinh_tế')
+#    guess_next_bi("'kinh'")
+    guess_next_bi('kinh_tế')
 #    guess_next_tri('kinh_tế và')
 #    guess_next_four('kinh_tế và hội_nhập')
     
