@@ -2,30 +2,38 @@ import os
 import re
 from datetime import datetime
 
-start=datetime.now()
 
-link_folder = '\\Users\\NghiLam\\Documents\\NLP\\Tokenize\\'
-link_input_file = '\\Users\\NghiLam\\Documents\\NLP\\RAW_TEXT\\van ban tho\\'
-link_out_file = link_folder + 'outfile\\'
-link_sentences = link_folder + 'sentences\\'
-link_token = link_folder + 'token\\'
+def create_Folder(directory):
+    try:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+    except OSError:
+        print ('Error: Creating directory. ' +  directory)
 
-link_raw_text = '\\Users\\NghiLam\\Documents\\NLP\\RAW_TEXT\\van ban tho\\'
+link_folder = '/Users/NghiLam/Documents/NLP/Tokenize/'
+#link_folder = './'
+link_input_file = '/Users/NghiLam/Documents/NLP/RAW_TEXT/van ban tho/'
+link_out_file = link_folder + 'outfile/'
+link_sentences = link_folder + 'sentences/'
+link_token = link_folder + 'token/'
+
+link_raw_text = '/Users/NghiLam/Documents/NLP/RAW_TEXT/van ban tho/'
 
 #============================================================================== Một số hàm đọc ghi.
 #============================================================================== Ghi file ra từng dòng.
-def write_listline_file(List, filename, url):
+def write_Listline_File(List, filename, url):
     f = open(url + filename,'w',encoding='utf8')
     for t in List:
         f.write("%s\n" % t)
     f.close()
+    
 #============================================================================== Ghi 1 list.
-def write_file(file, filename, url):
+def write_File(file, filename, url):
     f = open(url + filename,'w',encoding='utf8')
     f.write(file)
     f.close()
 #============================================================================== Đọc file kiểu string.
-def read_file_stringtype(url,filename):
+def read_File_Stringtype(url,filename):
     f = open(url + filename,'r',encoding='utf8')
     input_file = f.read()
     f.close()
@@ -48,17 +56,17 @@ def remove_some(s):
 #    new_s = re.sub('\]\]',']',new_s)
     return new_s
 #============================================================================== Thêm khoảng trắng vào ký tự.
-def add_space_word_matecharacter(s):
+def add_Space_Word_Matecharacter(s):
     return re.sub('(?<=\w)(?=[\/\_\-\(\)\{\}\[\]?!%\":;]\s)', ' ', s)
     
-def add_space_metacharacter_word(s):
+def add_Space_Metacharacter_Word(s):
     return re.sub('(?<=\s[,\/\_\-\(\)\{\}\[\]?!%\":;])(?=\w)', ' ', s)
     
-def add_space_1(s):
+def add_Space_1(s):
     return re.sub('(?<=[,\/\_\-\(\)\{\}\[\]?!%\":;])(?=[,\/\_\-\(\)\{\}\[\]?!%\":;]\s)', ' ', s)
 
 #https://vi.wikipedia.org/wiki/D%E1%BA%A5u_c%C3%A2u
-def add_space(s):
+def add_Space(s):
     regex1 = re.compile('(?<=[\'\"])(?=\w) | (?<=\w)(?=[\'\"])')                #Nháy đơn, nháy kép.
     regex2 = re.compile('(?<=[\(\[\{])(?=\w) | (?<=\w)(?=[\)\]\}])')            #Ngoặc [ ( {
     regex3 = re.compile('(?<=[])(?=) | (?<=)(?=[])')                            #Hai chấm :
@@ -74,8 +82,8 @@ def add_space(s):
 #    regex13 = re.compile('(?<=[])(?=) | (?<=)(?=[])')                           #Dấu &
 
 #============================================================================== Tách câu.
-def split_sentences(url, filename):
-    s = read_file_stringtype(url, filename)
+def split_Sentences(url, filename):
+    s = read_File_Stringtype(url, filename)
 #    regex = re.compile('(?<=[\.\?!])\n|\.+s')
     regex = re.compile('(?<=[\.\?!])[\s\n]')
     sentences = re.split(regex,s)
@@ -91,9 +99,9 @@ def tokenize(the_list):
 #    curr = ''
     for i in the_list:
         
-        i = add_space_word_matecharacter(i)
-        i = add_space_metacharacter_word(i)
-        i = add_space_1(i)
+        i = add_Space_Word_Matecharacter(i)
+        i = add_Space_Metacharacter_Word(i)
+        i = add_Space_1(i)
 #        
         token = regex.findall(i)
         i.split()
@@ -118,40 +126,49 @@ def tokenizez(url,filename):
 #============================================================================== Tách từ.
 
 # Lấy danh sách các file txt trong folder.
-def get_os_dir_file(link):
+def get_Os_Dir_File(link):
     all_files = os.listdir(link)
     txt_files = filter(lambda x: x[-4:] == '.txt', all_files) # Co cung dc, khong co k sao.
     return txt_files
 # Loại bỏ ký tự đặc biệt lưu vào file.
-def text_proccessing_before():
-    txt_files = get_os_dir_file(link_raw_text)
+def text_Proccessing_Before():
+    create_Folder('./outfile/')
+    txt_files = get_Os_Dir_File(link_raw_text)
+    text_proccessed = ''
     for index, file in enumerate(txt_files):
-        input_file = read_file_stringtype(link_input_file,file)
+        input_file = read_File_Stringtype(link_input_file,file)
         input_file = remove_some(input_file)
-        write_file(input_file,file+'.txt',link_out_file)
+        text_proccessed = text_proccessed + input_file
+        write_File(input_file,file+'.txt',link_out_file)
+    write_File(text_proccessed,'all_text_file_after_proccessing.txt',link_out_file)
+    return text_proccessed
 
-def tach_cau():
-    proccessed_file = get_os_dir_file(link_out_file)
+def tach_Cau():
+    proccessed_file = get_Os_Dir_File(link_out_file)
     for index,file in enumerate(proccessed_file):
-        list_sentences = split_sentences(link_out_file,file)
-        write_listline_file(list_sentences,file,link_sentences)
+        list_sentences = split_Sentences(link_out_file,file)
+        write_Listline_File(list_sentences,file,link_sentences)
         print ('Số câu: %d' % len(list_sentences))
         
-def tach_tu_to():
-    proccessed_file = get_os_dir_file(link_sentences)
+def tach_Tu_To():
+    proccessed_file = get_Os_Dir_File(link_sentences)
     for index,file in enumerate(proccessed_file):
 #        tokens = tokenizez(link_sentences,file)
         tokens = tokenizez(link_sentences,file)
-        write_listline_file(tokens,file,link_token)
+        write_Listline_File(tokens,file,link_token)
+
+def main():
+    start=datetime.now()
+
+    #============================================================================== Main.
+    # Đầu tiên đọc file text, loại bỏ ký tự đặc biệt, ghi lại file vào outfile.
+    pre_proccessing_text = text_Proccessing_Before()
     
-#============================================================================== Main.
-# Đầu tiên đọc file text, loại bỏ ký tự đặc biệt, ghi lại file vào outfile.
-text_proccessing_before()
-#============================================================================ In kết quả tách câu.
-tach_cau()
-#========================================================================== In kết quả tách từ tố.
-tach_tu_to()
+    #============================================================================ In kết quả tách câu.
+#    tach_Cau()
+    #========================================================================== In kết quả tách từ tố.
+#    tach_Tu_To()
+    
+    print (datetime.now()-start)
 
-
-
-print (datetime.now()-start)
+if __name__ == "__main__":main()
