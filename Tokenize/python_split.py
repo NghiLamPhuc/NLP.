@@ -2,6 +2,7 @@ import os
 import re
 from datetime import datetime
 
+cwd = os.getcwd()
 
 def create_Folder(directory):
     try:
@@ -10,14 +11,11 @@ def create_Folder(directory):
     except OSError:
         print ('Error: Creating directory. ' +  directory)
 
-link_folder = '/Users/NghiLam/Documents/NLP/Tokenize/'
-#link_folder = './'
-link_input_file = '/Users/NghiLam/Documents/NLP/RAW_TEXT/van ban tho/'
-link_out_file = link_folder + 'outfile/'
-link_sentences = link_folder + 'sentences/'
-link_token = link_folder + 'token/'
-
-link_raw_text = '/Users/NghiLam/Documents/NLP/RAW_TEXT/van ban tho/'
+link_folder = cwd
+link_input_file = '/Workspace/NLP/RAW_TEXT/van ban tho/'
+link_out_file = link_folder + '/outfile/'
+link_sentences = link_folder + '/sentences/'
+link_token = link_folder + '/token/'
 
 #============================================================================== Một số hàm đọc ghi.
 #============================================================================== Ghi file ra từng dòng.
@@ -133,7 +131,7 @@ def get_Os_Dir_File(link):
 # Loại bỏ ký tự đặc biệt lưu vào file.
 def text_Proccessing_Before():
     create_Folder('./outfile/')
-    txt_files = get_Os_Dir_File(link_raw_text)
+    txt_files = get_Os_Dir_File(link_input_file)   # raw text
     text_proccessed = ''
     for index, file in enumerate(txt_files):
         input_file = read_File_Stringtype(link_input_file,file)
