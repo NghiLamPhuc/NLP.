@@ -1,3 +1,5 @@
 https://viblo.asia/p/xay-dung-chuong-trinh-tom-tat-van-ban-tieng-viet-don-gian-voi-machine-learning-YWOZrgAwlQ0
 https://scialert.net/fulltext/?doi=itj.2009.1249.1255
 https://en.wikipedia.org/wiki/Automatic_summarization
+https://sites.google.com/site/trangmonhocitc/text-summarization
+https://forum.machinelearningcoban.com/t/vnlp-core-1-bai-toan-tach-tu-tieng-viet-tokenization-word-segmentation/2002/2
