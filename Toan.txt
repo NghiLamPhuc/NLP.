@@ -1,0 +1,6 @@
+http://cs229.stanford.edu/section/cs229-linalg.pdf?fbclid=IwAR0wBYyvEJLStC60_piJvyS6qC0uIhN6IaV_bUTFj9i27m2Hcr0CGmBJWQo
+http://cs229.stanford.edu/section/cs229-prob.pdf?fbclid=IwAR3n8ggnWXfsM-WNfQNeN1TwtIkJ7uhxvslMqnuusXBXP9wMXSkAKAKA74c
+https://www.deeplearningbook.org/contents/prob.html?fbclid=IwAR0ockZrfvoXcV9_NZ7949aEmRgyk7ihumX2RoRNanpj0TKdRGqZ5NJH3KE
+https://gwthomas.github.io/docs/math4ml.pdf?fbclid=IwAR1_UxXYBFqULGWjbS3ci738tt9Gn5MM-29M17aqyVFqLNFZTiUfp1Y8e9M
+https://explained.ai/matrix-calculus/index.html?fbclid=IwAR0MMnVbGqkJFAlSwMllNwRVKwhPbqLI1r4WCi1Z1X1nW0VkzH1fkacRSbc
+https://mml-book.github.io/?fbclid=IwAR1wiggq9BXJxUb7XClVO1qZ14dxYS2xxiWr-OI5hdNSAiY1akGjivdHxKA
