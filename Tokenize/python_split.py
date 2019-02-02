@@ -2,8 +2,6 @@ import os
 import re
 from datetime import datetime
 
-cwd = os.getcwd()
-
 def create_Folder(directory):
     try:
         if not os.path.exists(directory):
@@ -11,11 +9,13 @@ def create_Folder(directory):
     except OSError:
         print ('Error: Creating directory. ' +  directory)
 
+cwd = os.getcwd()
+
 link_folder = cwd
 link_input_file = '/Workspace/NLP/RAW_TEXT/van ban tho/'
 link_out_file = link_folder + '/outfile/'
 link_sentences = link_folder + '/sentences/'
-link_token = link_folder + '/token/'
+link_token = link_folder + '/tokens/'
 
 #============================================================================== Một số hàm đọc ghi.
 #============================================================================== Ghi file ra từng dòng.
@@ -40,7 +40,7 @@ def read_File_Stringtype(url,filename):
 def read_file_TextIOWrappertype(url, filename):                                 # Dùng for để duyệt qua từng phần tử.
     return open(url + filename, 'r', encoding='utf8')
     
-#============================================================================== Loại bỏ một số dấu trng văn bản input.
+#============================================================================== Loại bỏ một số dấu trong văn bản input.
 def remove_some(s):
     new_s = re.sub('<<\w\s','',s)
     new_s = re.sub('\/\w>>','',new_s)
@@ -55,10 +55,10 @@ def remove_some(s):
     return new_s
 #============================================================================== Thêm khoảng trắng vào ký tự.
 def add_Space_Word_Matecharacter(s):
-    return re.sub('(?<=\w)(?=[\/\_\-\(\)\{\}\[\]?!%\":;]\s)', ' ', s)
+    return re.sub('(?<=\w)(?=[\/\_\-\(\)\{\}\[\]?!%\":;]\s)', ' ', s)          # abc{
     
 def add_Space_Metacharacter_Word(s):
-    return re.sub('(?<=\s[,\/\_\-\(\)\{\}\[\]?!%\":;])(?=\w)', ' ', s)
+    return re.sub('(?<=\s[,\/\_\-\(\)\{\}\[\]?!%\":;])(?=\w)', ' ', s)         # }abc
     
 def add_Space_1(s):
     return re.sub('(?<=[,\/\_\-\(\)\{\}\[\]?!%\":;])(?=[,\/\_\-\(\)\{\}\[\]?!%\":;]\s)', ' ', s)
@@ -82,12 +82,15 @@ def add_Space(s):
 #============================================================================== Tách câu.
 def split_Sentences(url, filename):
     s = read_File_Stringtype(url, filename)
-#    regex = re.compile('(?<=[\.\?!])\n|\.+s')
-    regex = re.compile('(?<=[\.\?!])[\s\n]')
+    regex = re.compile('(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s')
+#    regex = re.compile('(?<=[\.\?!])[\s\n]')
     sentences = re.split(regex,s)
     del sentences[-1]
     return sentences
 
+def sentencize(url, filename):
+    s = read_File_Stringtype(url, filename)
+    
 #============================================================================== Tách từ tố.
 def tokenize(the_list):
     lst = list()
@@ -138,34 +141,40 @@ def text_Proccessing_Before():
         input_file = remove_some(input_file)
         text_proccessed = text_proccessed + input_file
         write_File(input_file,file+'.txt',link_out_file)
-    write_File(text_proccessed,'all_text_file_after_proccessing.txt',link_out_file)
+#    write_File(text_proccessed,'all_text.txt',link_out_file)
     return text_proccessed
 
 def tach_Cau():
+    create_Folder('./sentences/')
     proccessed_file = get_Os_Dir_File(link_out_file)
     for index,file in enumerate(proccessed_file):
         list_sentences = split_Sentences(link_out_file,file)
-        write_Listline_File(list_sentences,file,link_sentences)
-        print ('Số câu: %d' % len(list_sentences))
+#        write_Listline_File(list_sentences,file,link_sentences)
+        print ('%d. Số câu: %d' % (index,len(list_sentences)))
+    return list_sentences
         
 def tach_Tu_To():
+    create_Folder('./tokens/')
     proccessed_file = get_Os_Dir_File(link_sentences)
     for index,file in enumerate(proccessed_file):
-#        tokens = tokenizez(link_sentences,file)
         tokens = tokenizez(link_sentences,file)
-        write_Listline_File(tokens,file,link_token)
+#        write_Listline_File(tokens,file,link_token)
+        print ('%d. Số tokens: %d' % (index,len(tokens)))
+    return tokens
 
 def main():
     start=datetime.now()
 
     #============================================================================== Main.
     # Đầu tiên đọc file text, loại bỏ ký tự đặc biệt, ghi lại file vào outfile.
-    pre_proccessing_text = text_Proccessing_Before()
-    
+    text_proccessed = text_Proccessing_Before()
+    write_File(text_proccessed,'all_text.txt',link_out_file)
     #============================================================================ In kết quả tách câu.
-#    tach_Cau()
+    a = tach_Cau()
+    write_Listline_File(a,'sentences.txt',link_sentences)
     #========================================================================== In kết quả tách từ tố.
-#    tach_Tu_To()
+    b = tach_Tu_To()
+    write_Listline_File(b,'tokens.txt',link_token)
     
     print (datetime.now()-start)
 
