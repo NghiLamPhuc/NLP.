@@ -38,3 +38,6 @@ lamda, map;reduce;
 http://vietvudanh.github.io/tech/2015/05/15/lambda-filter-reduce-map/
 json dict dumps
 https://stackoverflow.com/questions/36965507/writing-a-dictionary-to-a-text-file
+
+if name==main 
+https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/
