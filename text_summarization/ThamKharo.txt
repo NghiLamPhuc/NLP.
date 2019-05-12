@@ -3,3 +3,5 @@ https://scialert.net/fulltext/?doi=itj.2009.1249.1255
 https://en.wikipedia.org/wiki/Automatic_summarization
 https://sites.google.com/site/trangmonhocitc/text-summarization
 https://forum.machinelearningcoban.com/t/vnlp-core-1-bai-toan-tach-tu-tieng-viet-tokenization-word-segmentation/2002/2
+http://luanvan.net.vn/luan-van/luan-an-nghien-cuu-phat-trien-cac-ky-thuat-tu-dong-tom-tat-van-ban-tieng-viet-73362/
+https://www.scribd.com/document/96282162/Khoa-lu%E1%BA%ADn-%C4%90H-Cong-Ngh%E1%BB%87-Tom-t%E1%BA%AFt-v%C4%83n-b%E1%BA%A3n-t%E1%BB%B1-%C4%91%E1%BB%99ng-b%E1%BA%B1ng-xich-t%E1%BB%AB-v%E1%BB%B1ng
