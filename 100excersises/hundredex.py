@@ -112,7 +112,55 @@ def display_all_ngram(dictNgram):
         print (value)
         print ()
 #5
-print (get_any_gram_from_string("I am an NLPer",2))
-print (get_any_gram_char_from_string("I am an NLPer",2))
+#print (get_any_gram_from_string("I am an NLPer",2))
+#print (get_any_gram_char_from_string("I am an NLPer",2))
 
 #6
+str61 = "paraparaparadise"
+str62 = "paragraph"
+X=set(get_any_gram_char_from_string(str61,2))
+Y=set(get_any_gram_char_from_string(str62,2))
+XUY = X.union(Y)
+XIY = X.intersection(Y)
+XDY = X.difference(Y)
+#print ("X")
+#print (X)
+#print ("Y")
+#print (Y)
+#print ("X union Y")
+#print (XUY)
+#print ("X intersetion Y")
+#print (XIY)
+#print ("X difference Y")
+#print (XDY)
+#print ("s e" in X)
+#print ("s e" in Y)
+#7
+def generate_sentence_from_template(x,y,z):
+    return "%s vào lúc %d giờ là %.1f"%(y,x,z)
+
+#print (generate_sentence_from_template(12,"Nhieejt ddooj",22.4))
+    
+#8
+def cipher(inString):
+    s = list(inString)
+    for i in range(len(s)):
+        if s[i].isalpha() and s[i].islower():
+            s[i] = str(219 - ord(s[i]))
+    s = " ".join(s)
+    return s
+def de_cipher(inString):
+    s = inString.split()
+    for i in range(len(s)):
+        if s[i].isalpha()==False:
+            s[i] = chr(219 - int(s[i]))
+    s = " ".join(s)
+    return s
+#print (de_cipher(cipher(("i love you"))))
+#9 typoglycemia
+sentence3="I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
+def typoglycemia(inSentence):
+    
+    
+    
+
