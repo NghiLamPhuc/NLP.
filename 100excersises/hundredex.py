@@ -1,4 +1,5 @@
 import re
+import random
 
 fStr = "stressed stressed stressed"
 fStr2 = "fresh fresh"
@@ -157,10 +158,26 @@ def de_cipher(inString):
     s = " ".join(s)
     return s
 #print (de_cipher(cipher(("i love you"))))
+    
 #9 typoglycemia
 sentence3="I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
 def typoglycemia(inSentence):
-    
+    listWord = inSentence.split()
+    sentence = ""
+    for word in listWord:
+        listChar = list(word)
+        l = len(word)
+        if l>3:
+            for char in range(1,l-2):
+                newChar = random.randint(1,l-2)
+                listChar[newChar],listChar[char]=listChar[char],listChar[newChar]
+        newWord = "".join(listChar)
+        listWord[listWord.index(word)] = newWord
+    sentence = " ".join(listWord)
+    return sentence
+
+print(typoglycemia(sentence3))
+
     
     
 
