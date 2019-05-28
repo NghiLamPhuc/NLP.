@@ -1,11 +1,14 @@
 from collections import defaultdict
 import pprint
 import json
+import os
+cwd = os.getcwd()
 
-link_folder_train = '\\Users\\NghiLam\\Documents\\NLP\\POSTagging\\train\\'
-link_out_file = link_folder_train + 'outfile\\'
-link_train_file = link_folder_train + 'trainfile\\'
-link_result_file = link_folder_train + 'model\\'
+
+link_folder_train = cwd
+link_out_file = link_folder_train + '\\outfile\\'
+link_train_file = link_folder_train + '\\trainfile\\'
+link_result_file = link_folder_train + '\\model\\'
 
 def display_out_file(lst,filename):
     file = link_out_file + filename
