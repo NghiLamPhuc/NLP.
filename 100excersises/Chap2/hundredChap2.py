@@ -27,7 +27,7 @@ def count_Line(f):
 #11
 def tab_To_Space(f): return f.replace("\t"," ")
 #sed -e "s/\t/ /g" hightemp.txt
-
+#12
 def get_col_in_txt_file(strFile):
     col1 = list()
     col2 = list()
@@ -39,6 +39,24 @@ def get_col_in_txt_file(strFile):
         col2.append(lineSpt[1])
     return col1,col2
 
-a,b=get_col_in_txt_file(f)
-write_Listline_File(a,'col1.txt',cwd+'\\Chap2')
-write_Listline_File(a,'col2.txt',cwd+'\\Chap2')
+#a,b = get_col_in_txt_file(f)
+#write_Listline_File(a,'col1.txt',cwd+'\\Chap2')
+#write_Listline_File(b,'col2.txt',cwd+'\\Chap2')
+
+#13
+def combine_col():
+    combineCols = list()
+    combineStr = ""
+    col1 = read_File_Stringtype(cwd,"\\col1.txt")
+    col2 = read_File_Stringtype(cwd,"\\col2.txt")
+    col1Splited = col1.split()
+    col2Splited = col2.split()
+    for i in range(len(col1Splited)):
+        combineStr = col1Splited[i] + "\t" + col2Splited[i]
+        combineCols.append(combineStr)
+    return combineCols
+
+a = combine_col()
+write_Listline_File(a,"Combine col1 col2.txt",cwd+'\\Chap2')
+
+
