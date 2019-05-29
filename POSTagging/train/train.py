@@ -99,9 +99,9 @@ def main():
         
     ####### Transition Probability ####### P(T)
     
-#    P(T|W)= P(W|T)P(T) / P(W) ma W khong doi, can tim max( P(W|T)P(T) )
-#    P(T) = P(t1.t2.t3....tn) = P(t1)P(t2|t1)...P(t n|t n-1) = ...(count(tn-1|tn) + alpha ) / count(tn-1) + v.alpha...
-#    P(W|T) = P(w1.w2...wn | t1...tn) = P(w1|T)P(w2|T)... voi w1,w2 độc lập theo điều kiện T
+#  + P(T|W)= P(W|T)P(T) / P(W) ma W khong doi, can tim max( P(W|T)P(T) )
+#  + P(T) = P(t1.t2.t3....tn) = P(t1)P(t2|t1)...P(t n|t n-1) = ...(count(tn-1|tn) + alpha ) / count(tn-1) + v.alpha...
+#  + P(W|T) = P(w1.w2...wn | t1...tn) = P(w1|T)P(w2|T)... voi w1,w2 độc lập theo điều kiện T
 #           = P(w i  | T) = P(w i | t1...tn) ~ P(wi|t1) voi gia su: ti chỉ tac dong len wi
 #           = count(ti|wi) / count(ti)
     
