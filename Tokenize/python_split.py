@@ -80,11 +80,45 @@ def add_Space(s):
 #    regex13 = re.compile('(?<=[])(?=) | (?<=)(?=[])')                           #Dấu &
 
 #============================================================================== Tách câu.
+alphabets = "(A-Za-z)"
+prefixes = "(Mr|St|Mrs|Ms|Dr)[.]"
+suffixes = "(Inc|Ltd|Jr|Sr|Co)"
+starters = "(Mr|Mrs|Ms|Dr|He\s|She\s|It\s|They\s|Their\s|Our\s|We\s|But\s|However\s|That\s|This\s|Wherever)"
+acronyms = "([A-Z][.][A-Z][.](?:[A-Z][.])?)"
+websites = "[.](vn|com|net|org|io|gov)"
+
+def split_into_sentences(text):
+    text = " " + text + "  "
+    text = text.replace("\n"," ")
+    text = re.sub(prefixes,"\\1<prd>",text)
+    text = re.sub(websites,"<prd>\\1",text)
+    if "Ph.D" in text: text = text.replace("Ph.D.","Ph<prd>D<prd>")
+    text = re.sub("\s" + alphabets + "[.] "," \\1<prd> ",text)
+    text = re.sub(acronyms+" "+starters,"\\1<stop> \\2",text)
+    text = re.sub(alphabets + "[.]" + alphabets + "[.]" + alphabets + "[.]","\\1<prd>\\2<prd>\\3<prd>",text)
+    text = re.sub(alphabets + "[.]" + alphabets + "[.]","\\1<prd>\\2<prd>",text)
+    text = re.sub(" "+suffixes+"[.] "+starters," \\1<stop> \\2",text)
+    text = re.sub(" "+suffixes+"[.]"," \\1<prd>",text)
+    text = re.sub(" " + alphabets + "[.]"," \\1<prd>",text)
+    if "”" in text: text = text.replace(".”","”.")
+    if "\"" in text: text = text.replace(".\"","\".")
+    if "!" in text: text = text.replace("!\"","\"!")
+    if "?" in text: text = text.replace("?\"","\"?")
+    text = text.replace(".",".<stop>")
+    text = text.replace("?","?<stop>")
+    text = text.replace("!","!<stop>")
+    text = text.replace("<prd>",".")
+    sentences = text.split("<stop>")
+    sentences = sentences[:-1]
+    sentences = [s.strip() for s in sentences]
+    return sentences
+
 def split_Sentences(url, filename):
     s = read_File_Stringtype(url, filename)
-    regex = re.compile('(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s')
+    regex = re.compile('(?<!\w\.\w.)(?<![A-Z][a-z])(?<=\.|\?|\!)\s')
 #    regex = re.compile('(?<=[\.\?!])[\s\n]')
     sentences = re.split(regex,s)
+         
     del sentences[-1]
     return sentences
 
@@ -114,14 +148,15 @@ def tokenize(the_list):
 def tokenizez(url,filename):
     s = list()
     regex1 = re.compile('(?<=[^\w+])(?=\w)')
+#    regex1 = re.compile('(?<=[^\[A-Z][a-z]+])(?=\w)') // sai roi sao?
     regex2 = re.compile('(?<=\w)(?=[^\w+])')
+#    regex2 = re.compile('(?<=\w)(?=[^[A-Z][a-z]+])')
     sentences = read_file_TextIOWrappertype(link_sentences,filename)
     for sentence in sentences:
         sentence = re.sub(regex1, ' ', sentence)
         sentence = re.sub(regex2, ' ', sentence)
         sentence = sentence.split()
 
-        
         s.append(sentence)
     return s
 #============================================================================== Tách từ.
@@ -159,7 +194,8 @@ def tach_Tu_To():
     for index,file in enumerate(proccessed_file):
         tokens = tokenizez(link_sentences,file)
 #        write_Listline_File(tokens,file,link_token)
-        print ('%d. Số tokens: %d' % (index,len(tokens)))
+#        print ('%d. Số tokens: %d' % (index,len(tokens)))
+        print ('Số tokens: %d' % len(tokens))
     return tokens
 
 def main():
@@ -167,8 +203,8 @@ def main():
 
     #============================================================================== Main.
     # Đầu tiên đọc file text, loại bỏ ký tự đặc biệt, ghi lại file vào outfile.
-    text_proccessed = text_Proccessing_Before()
-    write_File(text_proccessed,'all_text.txt',link_out_file)
+#    text_proccessed = text_Proccessing_Before()
+#    write_File(text_proccessed,'all_text.txt',link_out_file)
     #============================================================================ In kết quả tách câu.
     a = tach_Cau()
     write_Listline_File(a,'sentences.txt',link_sentences)
