@@ -1,42 +1,20 @@
 from collections import defaultdict
-import pprint
-import json
 import os
+
+#current folder this file
 cwd = os.getcwd()
+#get back folder of cwd 
+chdir = os.path.normpath(cwd + os.sep + os.pardir)
+#go to folder readwrite
+os.chdir(chdir + '\\readwrite\\')
+from readwrite import read_train_file, read_dictionary, write_dict, write_dict_two_type, write_Listline_File
+#back to folder this file
+os.chdir(cwd)
 
-link_folder_train = cwd
-link_out_file = link_folder_train + '\\outfile\\'
-link_train_file = link_folder_train + '\\trainfile\\'
-link_result_file = link_folder_train + '\\model\\'
-
-def read_train_file(fileName):
-    f = open(link_train_file + fileName, 'r', encoding = 'utf-8')
-    file = f.read()
-    f.close()
-    return file
-
-def read_dictionary(url, fileName):
-    dictionary = json.load(open(url + fileName, encoding = 'utf-8'))
-    return dictionary
-
-def write_for_display_out_file(lst, fileName, url):
-    file = url + fileName
-    with open(file, 'w', encoding = 'utf-8') as fout:
-        pprint.pprint(lst, fout)
-
-def write_dict(dct, fileName, url):
-    with open(url + fileName,'w', encoding = 'utf-8') as outfile:
-        outfile.write(json.dumps(dct, ensure_ascii = False))
-
-def write_Listline_File(List, filename, url):
-    f = open(url + filename, 'w', encoding = 'utf8')
-    for t in List:
-        f.write("%s\n" % t)
-    f.close()
-
-def write_dict_two_type(dictionary, fileName, url):
-    write_for_display_out_file(dictionary, 'display ' + fileName, url)
-    write_dict(dictionary, fileName, url)
+LINK_FOLDER_TRAIN = cwd
+LINK_OUT_FILE = LINK_FOLDER_TRAIN + '\\outfile\\'
+LINK_TRAIN_FILE = LINK_FOLDER_TRAIN + '\\trainfile\\'
+LINK_RESULT_FILE = LINK_FOLDER_TRAIN + '\\model\\'
 
 def convert_string_file_to_sentences(stringFile):
     listSentences = stringFile.split('\n')
@@ -103,10 +81,10 @@ def get_some_from_list_tokens(listTokenizedSentences):
     for tag, count in listTagCount.items():
         countTag += count
     listUniqueTags.append('P_s')
-    write_Listline_File(listUniqueTags, 'unique_tag.txt', link_out_file)
-    write_dict_two_type(listTagWord, 'list_Tag_Word.txt', link_out_file)
-    write_dict_two_type(listTagTag, 'list_Tag_Tag.txt', link_out_file)
-    write_dict(listTagCount, 'list_Tag_Count.txt', link_out_file)
+    write_Listline_File(listUniqueTags, LINK_OUT_FILE, 'unique_tag.txt')
+    write_dict_two_type(listTagWord, LINK_OUT_FILE, 'list_Tag_Word.txt')
+    write_dict_two_type(listTagTag, LINK_OUT_FILE, 'list_Tag_Tag.txt')
+    write_dict(listTagCount, LINK_OUT_FILE, 'list_Tag_Count.txt')
 #    self check count
     print ('tag_word: %d' % countTagWord)
     print ('tag_tag: %d' % countTagTag)
@@ -114,7 +92,7 @@ def get_some_from_list_tokens(listTokenizedSentences):
     return listTagWord, listTagTag, listUniqueTags
 
 def step_one():
-    trainFile = read_train_file('train_da2.pos')
+    trainFile = read_train_file(LINK_TRAIN_FILE, 'train_da2.pos')
     listSentences = convert_string_file_to_sentences(trainFile)
     listTokenziedSentences = convert_list_sentences_to_list_tokenized_sentences(listSentences)
     tagWord, tagTag, uniqueTags = get_some_from_list_tokens(listTokenziedSentences)
@@ -126,8 +104,8 @@ def step_one():
 #           = count(ti|wi) / count(ti)
 
 def transition_probability(nameListTagTag, nameListTagCount):
-    listTagTag = read_dictionary(link_out_file, nameListTagTag)
-    listTagCount = read_dictionary(link_out_file, nameListTagCount)
+    listTagTag = read_dictionary(LINK_OUT_FILE, nameListTagTag)
+    listTagCount = read_dictionary(LINK_OUT_FILE, nameListTagCount)
     alpha = 1
     totalTags = len(listTagCount)
 #    add value for null item, using division equation.
@@ -140,7 +118,7 @@ def transition_probability(nameListTagTag, nameListTagCount):
         if tag != 'P_s':
             for nextTag in listTagTag[tag]:
                 listTagTag[tag][nextTag] = round((listTagTag[tag][nextTag] + alpha) / (count + totalTags), 6)
-    write_dict_two_type(listTagTag, 'transition_probability.txt', link_out_file)
+    write_dict_two_type(listTagTag, LINK_OUT_FILE, 'transition_probability.txt')
 #    check total probability = 1 or not.
     check = 0
     checkProb = dict()
@@ -149,16 +127,16 @@ def transition_probability(nameListTagTag, nameListTagCount):
             check += count
         checkProb[tag] = check
         check = 0
-    write_dict(checkProb, 'Check_TagTag_Probability.txt', link_out_file)    
+    write_dict(checkProb, LINK_OUT_FILE, 'Check_TagTag_Probability.txt')    
     return listTagTag
 
 def emission_probability(nameListTagWord, nameListTagCount):
-    listTagWord = read_dictionary(link_out_file, nameListTagWord)
-    listTagCount = read_dictionary(link_out_file, nameListTagCount)
+    listTagWord = read_dictionary(LINK_OUT_FILE, nameListTagWord)
+    listTagCount = read_dictionary(LINK_OUT_FILE, nameListTagCount)
     for tag, wordCount in listTagWord.items():
         for word, count in wordCount.items():
             listTagWord[tag][word] = round(count / listTagCount[tag], 6)
-    write_dict_two_type(listTagWord, 'emission_probability.txt', link_out_file)
+    write_dict_two_type(listTagWord, LINK_OUT_FILE, 'emission_probability.txt')
     check = 0
     checkProb = dict()
     for tag, wordCount in listTagWord.items():
@@ -166,7 +144,7 @@ def emission_probability(nameListTagWord, nameListTagCount):
             check += count
         checkProb[tag] = check
         check = 0
-    write_dict(checkProb, 'Check_TagWord_Probability.txt', link_out_file)    
+    write_dict(checkProb, LINK_OUT_FILE, 'Check_TagWord_Probability.txt')    
     return listTagWord
 
 def step_two():
@@ -174,7 +152,7 @@ def step_two():
 
 def main():
 #    step_one()
-#    transition_probability('list_Tag_Tag.txt', 'list_Tag_Count.txt')
+    transition_probability('list_Tag_Tag.txt', 'list_Tag_Count.txt')
     emission_probability('list_Tag_Word.txt', 'list_Tag_Count.txt')
     
     
