@@ -1,6 +1,10 @@
 from collections import defaultdict
 import os
-
+import urllib
+#response = urllib.urlopen('https://github.com/NghiLamPhuc/NLP./blob/master/POSTagging/train/trainfile/train_da2.pos')
+#urllib.urlretrieve ("https://github.com/NghiLamPhuc/NLP./blob/master/POSTagging/train/trainfile", "train_da2.pos")
+# Tao ham download file train ve, create folder cho file train.
+#
 #current folder this file
 cwd = os.getcwd()
 #get back folder of cwd 
@@ -8,6 +12,7 @@ chdir = os.path.normpath(cwd + os.sep + os.pardir)
 #go to folder readwrite
 os.chdir(chdir + '\\readwrite\\')
 from readwrite import read_train_file, read_dictionary, write_dict, write_dict_two_type, write_Listline_File
+from create_Folder import createFolder
 #back to folder this file
 os.chdir(cwd)
 
@@ -81,6 +86,7 @@ def get_some_from_list_tokens(listTokenizedSentences):
     for tag, count in listTagCount.items():
         countTag += count
     listUniqueTags.append('P_s')
+    createFolder('./outfile/')
     write_Listline_File(listUniqueTags, LINK_OUT_FILE, 'unique_tag.txt')
     write_dict_two_type(listTagWord, LINK_OUT_FILE, 'list_Tag_Word.txt')
     write_dict_two_type(listTagTag, LINK_OUT_FILE, 'list_Tag_Tag.txt')
@@ -151,7 +157,7 @@ def step_two():
     return 0
 
 def main():
-#    step_one()
+    step_one()
     transition_probability('list_Tag_Tag.txt', 'list_Tag_Count.txt')
     emission_probability('list_Tag_Word.txt', 'list_Tag_Count.txt')
     
