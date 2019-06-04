@@ -52,8 +52,7 @@ def calculate_prob_start_to_first_word(wordFirst ,transition, emission, possible
     
     return probabilities, backTag
 
-def calculate_prob_second_word_to_end(listWords, transition, \
-                                      emission, possibleTags, probabilities, backTag):
+def calculate_prob_second_word_to_end(listWords, transition, emission, possibleTags, probabilities, backTag):
     
 #    word is in training file.
     
@@ -67,8 +66,7 @@ def calculate_prob_second_word_to_end(listWords, transition, \
                 if word in emission[tag]:
                     for prevTag in possibleTags:
                         if prevTag != 'p_s':
-                            probability = emission[tag][word] * transition[prevTag][tag] \
-                                        * probabilities[tag][i - 1]
+                            probability = emission[tag][word] * transition[prevTag][tag] * probabilities[tag][i - 1]
                             if probability > max:
                                 probability, max = max, probability
                                 backOfTag = prevTag
@@ -77,6 +75,7 @@ def calculate_prob_second_word_to_end(listWords, transition, \
                     for prevTag in possibleTags:
                         if prevTag != 'p_s':
                             probability = transition[prevTag][tag] * probabilities[tag][i - 1]
+#                            probability = transition[prevTag][tag]
                             if probability > max:
                                 probability, max = max, probability
                                 backOfTag = prevTag
@@ -86,11 +85,11 @@ def calculate_prob_second_word_to_end(listWords, transition, \
 
     return probabilities, backTag
 
-def get_best_tag_list(probabilities, backTag):
+def get_best_list_tags(probabilities, backTag):
     max = -1
     target = 'error'
     lenWords = 0
-    strListTags = ''
+    strListTags = list()
     for (tag, position) in probabilities.items():
         lenWords = len(position)
         for (pos, prob) in position.items():
@@ -98,9 +97,10 @@ def get_best_tag_list(probabilities, backTag):
                 if prob > max:
                     max, prob = prob, max
                     target = tag
-    strListTags += target
+    strListTags.append(target)
     for i in range(lenWords - 1, 0, -1):
-        strListTags += ' ' + backTag[target][i]
+        strListTags.append(backTag[target][i])
+    strListTags.reverse()
     return strListTags
     
 
@@ -108,7 +108,9 @@ def main():
     (transition, emission, possibleTags) = \
         get_model(LINK_MODEL, 'transition_probability.txt', 'emission_probability.txt')
     
-    inputSentence = 'start Không ít học_viên đã phải bỏ_cuộc trong giai_đoạn này vì không_thể lết đi nổi với hai ống_quyển sưng_vù , thậm_chí nứt xương . end'
+#    inputSentence = 'start Không ít học_viên đã phải bỏ_cuộc trong giai_đoạn này vì không_thể lết đi nổi với hai ống_quyển sưng_vù , thậm_chí nứt xương . end'
+    inputSentence = 'start Những học_sinh nội_trú bắt_đầu một ngày làm_việc rất vất_vả . end'
+#    inputSentence = 'start Em muốn trở_thành một võ_sĩ chuyên_nghiệp , nhưng giấc mơ xa hơn của em là được vào đại_học ” . end'
     inputSentence = inputSentence.lower()
     inputSentence = inputSentence.split()
     
@@ -121,7 +123,7 @@ def main():
     
     write_dict_two_type(probabilities, LINK_OUT_FILE, 'prob.txt')
     write_dict_two_type(backTags, LINK_OUT_FILE, 'back.txt')
-    print (get_best_tag_list(a, b))
+    print (get_best_list_tags(a, b))
 #   kiem tra key của từ 
     
 #    for key, value in emission.items():
